@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Tournament#getType <em>Type</em>}</li>
  *   <li>{@link eSport.Tournament#getAllowedZones <em>Allowed Zones</em>}</li>
  *   <li>{@link eSport.Tournament#getTeams <em>Teams</em>}</li>
+ *   <li>{@link eSport.Tournament#getYear <em>Year</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getTournament()
@@ -162,5 +163,31 @@ public interface Tournament extends EObject {
 	 * @generated
 	 */
 	EList<Team> getTeams();
+
+	/**
+	 * Returns the value of the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Year</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Year</em>' attribute.
+	 * @see #setYear(int)
+	 * @see eSport.ESportPackage#getTournament_Year()
+	 * @model
+	 * @generated
+	 */
+	int getYear();
+
+	/**
+	 * Sets the value of the '{@link eSport.Tournament#getYear <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Year</em>' attribute.
+	 * @see #getYear()
+	 * @generated
+	 */
+	void setYear(int value);
 
 } // Tournament

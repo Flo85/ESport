@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.League#getSize <em>Size</em>}</li>
  *   <li>{@link eSport.League#getZone <em>Zone</em>}</li>
  *   <li>{@link eSport.League#getTeams <em>Teams</em>}</li>
+ *   <li>{@link eSport.League#getYear <em>Year</em>}</li>
+ *   <li>{@link eSport.League#getSeason <em>Season</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getLeague()
@@ -123,5 +125,57 @@ public interface League extends EObject {
 	 * @generated
 	 */
 	EList<Team> getTeams();
+
+	/**
+	 * Returns the value of the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Year</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Year</em>' attribute.
+	 * @see #setYear(int)
+	 * @see eSport.ESportPackage#getLeague_Year()
+	 * @model
+	 * @generated
+	 */
+	int getYear();
+
+	/**
+	 * Sets the value of the '{@link eSport.League#getYear <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Year</em>' attribute.
+	 * @see #getYear()
+	 * @generated
+	 */
+	void setYear(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Season</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Season</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Season</em>' attribute.
+	 * @see #setSeason(String)
+	 * @see eSport.ESportPackage#getLeague_Season()
+	 * @model
+	 * @generated
+	 */
+	String getSeason();
+
+	/**
+	 * Sets the value of the '{@link eSport.League#getSeason <em>Season</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Season</em>' attribute.
+	 * @see #getSeason()
+	 * @generated
+	 */
+	void setSeason(String value);
 
 } // League

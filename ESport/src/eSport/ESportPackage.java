@@ -368,13 +368,22 @@ public interface ESportPackage extends EPackage {
 	int TOURNAMENT__TEAMS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOURNAMENT__YEAR = 6;
+
+	/**
 	 * The number of structural features of the '<em>Tournament</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOURNAMENT_FEATURE_COUNT = 6;
+	int TOURNAMENT_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Tournament</em>' class.
@@ -432,13 +441,31 @@ public interface ESportPackage extends EPackage {
 	int LEAGUE__TEAMS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEAGUE__YEAR = 4;
+
+	/**
+	 * The feature id for the '<em><b>Season</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEAGUE__SEASON = 5;
+
+	/**
 	 * The number of structural features of the '<em>League</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEAGUE_FEATURE_COUNT = 4;
+	int LEAGUE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>League</em>' class.
@@ -875,6 +902,17 @@ public interface ESportPackage extends EPackage {
 	EReference getTournament_Teams();
 
 	/**
+	 * Returns the meta object for the attribute '{@link eSport.Tournament#getYear <em>Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Year</em>'.
+	 * @see eSport.Tournament#getYear()
+	 * @see #getTournament()
+	 * @generated
+	 */
+	EAttribute getTournament_Year();
+
+	/**
 	 * Returns the meta object for class '{@link eSport.League <em>League</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -927,6 +965,28 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLeague_Teams();
+
+	/**
+	 * Returns the meta object for the attribute '{@link eSport.League#getYear <em>Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Year</em>'.
+	 * @see eSport.League#getYear()
+	 * @see #getLeague()
+	 * @generated
+	 */
+	EAttribute getLeague_Year();
+
+	/**
+	 * Returns the meta object for the attribute '{@link eSport.League#getSeason <em>Season</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Season</em>'.
+	 * @see eSport.League#getSeason()
+	 * @see #getLeague()
+	 * @generated
+	 */
+	EAttribute getLeague_Season();
 
 	/**
 	 * Returns the meta object for class '{@link eSport.Capacity <em>Capacity</em>}'.
@@ -1376,6 +1436,14 @@ public interface ESportPackage extends EPackage {
 		EReference TOURNAMENT__TEAMS = eINSTANCE.getTournament_Teams();
 
 		/**
+		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TOURNAMENT__YEAR = eINSTANCE.getTournament_Year();
+
+		/**
 		 * The meta object literal for the '{@link eSport.impl.LeagueImpl <em>League</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1416,6 +1484,22 @@ public interface ESportPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LEAGUE__TEAMS = eINSTANCE.getLeague_Teams();
+
+		/**
+		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LEAGUE__YEAR = eINSTANCE.getLeague_Year();
+
+		/**
+		 * The meta object literal for the '<em><b>Season</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LEAGUE__SEASON = eINSTANCE.getLeague_Season();
 
 		/**
 		 * The meta object literal for the '{@link eSport.impl.CapacityImpl <em>Capacity</em>}' class.

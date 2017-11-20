@@ -35,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.LeagueImpl#getSize <em>Size</em>}</li>
  *   <li>{@link eSport.impl.LeagueImpl#getZone <em>Zone</em>}</li>
  *   <li>{@link eSport.impl.LeagueImpl#getTeams <em>Teams</em>}</li>
+ *   <li>{@link eSport.impl.LeagueImpl#getYear <em>Year</em>}</li>
+ *   <li>{@link eSport.impl.LeagueImpl#getSeason <em>Season</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,6 +101,46 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * @ordered
 	 */
 	protected EList<Team> teams;
+
+	/**
+	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int YEAR_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected int year = YEAR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSeason() <em>Season</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeason()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SEASON_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSeason() <em>Season</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeason()
+	 * @generated
+	 * @ordered
+	 */
+	protected String season = SEASON_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -238,6 +280,48 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getYear() {
+		return year;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setYear(int newYear) {
+		int oldYear = year;
+		year = newYear;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.LEAGUE__YEAR, oldYear, year));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSeason() {
+		return season;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSeason(String newSeason) {
+		String oldSeason = season;
+		season = newSeason;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.LEAGUE__SEASON, oldSeason, season));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -285,6 +369,10 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				return basicGetZone();
 			case ESportPackage.LEAGUE__TEAMS:
 				return getTeams();
+			case ESportPackage.LEAGUE__YEAR:
+				return getYear();
+			case ESportPackage.LEAGUE__SEASON:
+				return getSeason();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -311,6 +399,12 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				getTeams().clear();
 				getTeams().addAll((Collection<? extends Team>)newValue);
 				return;
+			case ESportPackage.LEAGUE__YEAR:
+				setYear((Integer)newValue);
+				return;
+			case ESportPackage.LEAGUE__SEASON:
+				setSeason((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -335,6 +429,12 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 			case ESportPackage.LEAGUE__TEAMS:
 				getTeams().clear();
 				return;
+			case ESportPackage.LEAGUE__YEAR:
+				setYear(YEAR_EDEFAULT);
+				return;
+			case ESportPackage.LEAGUE__SEASON:
+				setSeason(SEASON_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -355,6 +455,10 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				return zone != null;
 			case ESportPackage.LEAGUE__TEAMS:
 				return teams != null && !teams.isEmpty();
+			case ESportPackage.LEAGUE__YEAR:
+				return year != YEAR_EDEFAULT;
+			case ESportPackage.LEAGUE__SEASON:
+				return SEASON_EDEFAULT == null ? season != null : !SEASON_EDEFAULT.equals(season);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -373,6 +477,10 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 		result.append(name);
 		result.append(", size: ");
 		result.append(size);
+		result.append(", year: ");
+		result.append(year);
+		result.append(", season: ");
+		result.append(season);
 		result.append(')');
 		return result.toString();
 	}

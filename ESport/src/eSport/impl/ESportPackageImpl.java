@@ -290,6 +290,15 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTournament_Year() {
+		return (EAttribute)tournamentEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLeague() {
 		return leagueEClass;
 	}
@@ -328,6 +337,24 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 */
 	public EReference getLeague_Teams() {
 		return (EReference)leagueEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLeague_Year() {
+		return (EAttribute)leagueEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLeague_Season() {
+		return (EAttribute)leagueEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -642,12 +669,15 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		createEAttribute(tournamentEClass, TOURNAMENT__TYPE);
 		createEReference(tournamentEClass, TOURNAMENT__ALLOWED_ZONES);
 		createEReference(tournamentEClass, TOURNAMENT__TEAMS);
+		createEAttribute(tournamentEClass, TOURNAMENT__YEAR);
 
 		leagueEClass = createEClass(LEAGUE);
 		createEAttribute(leagueEClass, LEAGUE__NAME);
 		createEAttribute(leagueEClass, LEAGUE__SIZE);
 		createEReference(leagueEClass, LEAGUE__ZONE);
 		createEReference(leagueEClass, LEAGUE__TEAMS);
+		createEAttribute(leagueEClass, LEAGUE__YEAR);
+		createEAttribute(leagueEClass, LEAGUE__SEASON);
 
 		capacityEClass = createEClass(CAPACITY);
 		createEAttribute(capacityEClass, CAPACITY__TYPE);
@@ -733,12 +763,15 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		initEAttribute(getTournament_Type(), this.getEnumTournamentType(), "type", null, 0, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTournament_AllowedZones(), this.getZone(), this.getZone_Tournaments(), "allowedZones", null, 0, -1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTournament_Teams(), this.getTeam(), this.getTeam_Tournaments(), "teams", null, 0, -1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTournament_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(leagueEClass, League.class, "League", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLeague_Name(), ecorePackage.getEString(), "name", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLeague_Size(), ecorePackage.getEInt(), "size", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLeague_Zone(), this.getZone(), this.getZone_League(), "zone", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLeague_Teams(), this.getTeam(), this.getTeam_League(), "teams", null, 0, -1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLeague_Year(), ecorePackage.getEInt(), "year", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLeague_Season(), ecorePackage.getEString(), "season", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(capacityEClass, Capacity.class, "Capacity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCapacity_Type(), this.getEnumCapacity(), "type", null, 0, 1, Capacity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

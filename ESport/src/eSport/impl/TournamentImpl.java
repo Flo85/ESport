@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.TournamentImpl#getType <em>Type</em>}</li>
  *   <li>{@link eSport.impl.TournamentImpl#getAllowedZones <em>Allowed Zones</em>}</li>
  *   <li>{@link eSport.impl.TournamentImpl#getTeams <em>Teams</em>}</li>
+ *   <li>{@link eSport.impl.TournamentImpl#getYear <em>Year</em>}</li>
  * </ul>
  *
  * @generated
@@ -133,6 +134,26 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * @ordered
 	 */
 	protected EList<Team> teams;
+
+	/**
+	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int YEAR_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected int year = YEAR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,6 +278,27 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getYear() {
+		return year;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setYear(int newYear) {
+		int oldYear = year;
+		year = newYear;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.TOURNAMENT__YEAR, oldYear, year));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -309,6 +351,8 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return getAllowedZones();
 			case ESportPackage.TOURNAMENT__TEAMS:
 				return getTeams();
+			case ESportPackage.TOURNAMENT__YEAR:
+				return getYear();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -343,6 +387,9 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				getTeams().clear();
 				getTeams().addAll((Collection<? extends Team>)newValue);
 				return;
+			case ESportPackage.TOURNAMENT__YEAR:
+				setYear((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -373,6 +420,9 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 			case ESportPackage.TOURNAMENT__TEAMS:
 				getTeams().clear();
 				return;
+			case ESportPackage.TOURNAMENT__YEAR:
+				setYear(YEAR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -397,6 +447,8 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return allowedZones != null && !allowedZones.isEmpty();
 			case ESportPackage.TOURNAMENT__TEAMS:
 				return teams != null && !teams.isEmpty();
+			case ESportPackage.TOURNAMENT__YEAR:
+				return year != YEAR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -417,6 +469,8 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 		result.append(size);
 		result.append(", type: ");
 		result.append(type);
+		result.append(", year: ");
+		result.append(year);
 		result.append(')');
 		return result.toString();
 	}
