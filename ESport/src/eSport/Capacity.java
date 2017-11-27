@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Capacity extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link eSport.EnumCapacity}.
+	 * The literals are from the enumeration {@link eSport.CapacityType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -32,24 +32,24 @@ public interface Capacity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see eSport.EnumCapacity
-	 * @see #setType(EnumCapacity)
+	 * @see eSport.CapacityType
+	 * @see #setType(CapacityType)
 	 * @see eSport.ESportPackage#getCapacity_Type()
 	 * @model unique="false" ordered="false"
 	 * @generated
 	 */
-	EnumCapacity getType();
+	CapacityType getType();
 
 	/**
 	 * Sets the value of the '{@link eSport.Capacity#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see eSport.EnumCapacity
+	 * @see eSport.CapacityType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(EnumCapacity value);
+	void setType(CapacityType value);
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

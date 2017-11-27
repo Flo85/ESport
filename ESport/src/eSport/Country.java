@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Country#getName <em>Name</em>}</li>
  *   <li>{@link eSport.Country#getTournaments <em>Tournaments</em>}</li>
  *   <li>{@link eSport.Country#getZone <em>Zone</em>}</li>
- *   <li>{@link eSport.Country#getTeams <em>Teams</em>}</li>
  *   <li>{@link eSport.Country#getPersons <em>Persons</em>}</li>
  * </ul>
  *
@@ -72,7 +71,7 @@ public interface Country extends EObject {
 	EList<Tournament> getTournaments();
 
 	/**
-	 * Returns the value of the '<em><b>Zone</b></em>' reference.
+	 * Returns the value of the '<em><b>Zone</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link eSport.Zone#getCountries <em>Countries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -80,42 +79,24 @@ public interface Country extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Zone</em>' reference.
+	 * @return the value of the '<em>Zone</em>' container reference.
 	 * @see #setZone(Zone)
 	 * @see eSport.ESportPackage#getCountry_Zone()
 	 * @see eSport.Zone#getCountries
-	 * @model opposite="countries"
+	 * @model opposite="countries" transient="false"
 	 * @generated
 	 */
 	Zone getZone();
 
 	/**
-	 * Sets the value of the '{@link eSport.Country#getZone <em>Zone</em>}' reference.
+	 * Sets the value of the '{@link eSport.Country#getZone <em>Zone</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Zone</em>' reference.
+	 * @param value the new value of the '<em>Zone</em>' container reference.
 	 * @see #getZone()
 	 * @generated
 	 */
 	void setZone(Zone value);
-
-	/**
-	 * Returns the value of the '<em><b>Teams</b></em>' reference list.
-	 * The list contents are of type {@link eSport.Team}.
-	 * It is bidirectional and its opposite is '{@link eSport.Team#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Teams</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Teams</em>' reference list.
-	 * @see eSport.ESportPackage#getCountry_Teams()
-	 * @see eSport.Team#getCountry
-	 * @model opposite="country"
-	 * @generated
-	 */
-	EList<Team> getTeams();
 
 	/**
 	 * Returns the value of the '<em><b>Persons</b></em>' reference list.

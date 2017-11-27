@@ -23,7 +23,7 @@ package eSport;
 public interface Player extends Person {
 	/**
 	 * Returns the value of the '<em><b>Position</b></em>' attribute.
-	 * The literals are from the enumeration {@link eSport.EnumPosition}.
+	 * The literals are from the enumeration {@link eSport.Position}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Position</em>' attribute isn't clear,
@@ -31,24 +31,24 @@ public interface Player extends Person {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Position</em>' attribute.
-	 * @see eSport.EnumPosition
-	 * @see #setPosition(EnumPosition)
+	 * @see eSport.Position
+	 * @see #setPosition(Position)
 	 * @see eSport.ESportPackage#getPlayer_Position()
 	 * @model unique="false" ordered="false"
 	 * @generated
 	 */
-	EnumPosition getPosition();
+	Position getPosition();
 
 	/**
 	 * Sets the value of the '{@link eSport.Player#getPosition <em>Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Position</em>' attribute.
-	 * @see eSport.EnumPosition
+	 * @see eSport.Position
 	 * @see #getPosition()
 	 * @generated
 	 */
-	void setPosition(EnumPosition value);
+	void setPosition(Position value);
 
 	/**
 	 * Returns the value of the '<em><b>Team</b></em>' reference.

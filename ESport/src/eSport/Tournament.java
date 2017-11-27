@@ -20,8 +20,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Tournament#getCountries <em>Countries</em>}</li>
  *   <li>{@link eSport.Tournament#getType <em>Type</em>}</li>
  *   <li>{@link eSport.Tournament#getAllowedZones <em>Allowed Zones</em>}</li>
- *   <li>{@link eSport.Tournament#getTeams <em>Teams</em>}</li>
  *   <li>{@link eSport.Tournament#getYear <em>Year</em>}</li>
+ *   <li>{@link eSport.Tournament#getFinalstages <em>Finalstages</em>}</li>
+ *   <li>{@link eSport.Tournament#getGroupstages <em>Groupstages</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getTournament()
@@ -101,7 +102,7 @@ public interface Tournament extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link eSport.EnumTournamentType}.
+	 * The literals are from the enumeration {@link eSport.TournamentType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -109,24 +110,24 @@ public interface Tournament extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see eSport.EnumTournamentType
-	 * @see #setType(EnumTournamentType)
+	 * @see eSport.TournamentType
+	 * @see #setType(TournamentType)
 	 * @see eSport.ESportPackage#getTournament_Type()
 	 * @model unique="false" ordered="false"
 	 * @generated
 	 */
-	EnumTournamentType getType();
+	TournamentType getType();
 
 	/**
 	 * Sets the value of the '{@link eSport.Tournament#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see eSport.EnumTournamentType
+	 * @see eSport.TournamentType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(EnumTournamentType value);
+	void setType(TournamentType value);
 
 	/**
 	 * Returns the value of the '<em><b>Allowed Zones</b></em>' reference list.
@@ -145,24 +146,6 @@ public interface Tournament extends EObject {
 	 * @generated
 	 */
 	EList<Zone> getAllowedZones();
-
-	/**
-	 * Returns the value of the '<em><b>Teams</b></em>' reference list.
-	 * The list contents are of type {@link eSport.Team}.
-	 * It is bidirectional and its opposite is '{@link eSport.Team#getTournaments <em>Tournaments</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Teams</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Teams</em>' reference list.
-	 * @see eSport.ESportPackage#getTournament_Teams()
-	 * @see eSport.Team#getTournaments
-	 * @model opposite="tournaments"
-	 * @generated
-	 */
-	EList<Team> getTeams();
 
 	/**
 	 * Returns the value of the '<em><b>Year</b></em>' attribute.
@@ -189,5 +172,41 @@ public interface Tournament extends EObject {
 	 * @generated
 	 */
 	void setYear(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Finalstages</b></em>' containment reference list.
+	 * The list contents are of type {@link eSport.FinalStage}.
+	 * It is bidirectional and its opposite is '{@link eSport.FinalStage#getTournament <em>Tournament</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Finalstages</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Finalstages</em>' containment reference list.
+	 * @see eSport.ESportPackage#getTournament_Finalstages()
+	 * @see eSport.FinalStage#getTournament
+	 * @model opposite="tournament" containment="true"
+	 * @generated
+	 */
+	EList<FinalStage> getFinalstages();
+
+	/**
+	 * Returns the value of the '<em><b>Groupstages</b></em>' containment reference list.
+	 * The list contents are of type {@link eSport.GroupStage}.
+	 * It is bidirectional and its opposite is '{@link eSport.GroupStage#getTournament <em>Tournament</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Groupstages</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Groupstages</em>' containment reference list.
+	 * @see eSport.ESportPackage#getTournament_Groupstages()
+	 * @see eSport.GroupStage#getTournament
+	 * @model opposite="tournament" containment="true"
+	 * @generated
+	 */
+	EList<GroupStage> getGroupstages();
 
 } // Tournament

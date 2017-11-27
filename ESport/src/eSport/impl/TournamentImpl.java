@@ -4,9 +4,10 @@ package eSport.impl;
 
 import eSport.Country;
 import eSport.ESportPackage;
-import eSport.EnumTournamentType;
-import eSport.Team;
+import eSport.FinalStage;
+import eSport.GroupStage;
 import eSport.Tournament;
+import eSport.TournamentType;
 import eSport.Zone;
 
 import java.util.Collection;
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,8 +40,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.TournamentImpl#getCountries <em>Countries</em>}</li>
  *   <li>{@link eSport.impl.TournamentImpl#getType <em>Type</em>}</li>
  *   <li>{@link eSport.impl.TournamentImpl#getAllowedZones <em>Allowed Zones</em>}</li>
- *   <li>{@link eSport.impl.TournamentImpl#getTeams <em>Teams</em>}</li>
  *   <li>{@link eSport.impl.TournamentImpl#getYear <em>Year</em>}</li>
+ *   <li>{@link eSport.impl.TournamentImpl#getFinalstages <em>Finalstages</em>}</li>
+ *   <li>{@link eSport.impl.TournamentImpl#getGroupstages <em>Groupstages</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,7 +106,7 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EnumTournamentType TYPE_EDEFAULT = EnumTournamentType.WORLDS;
+	protected static final TournamentType TYPE_EDEFAULT = TournamentType.WORLDS;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -113,7 +116,7 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * @generated
 	 * @ordered
 	 */
-	protected EnumTournamentType type = TYPE_EDEFAULT;
+	protected TournamentType type = TYPE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAllowedZones() <em>Allowed Zones</em>}' reference list.
@@ -124,16 +127,6 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * @ordered
 	 */
 	protected EList<Zone> allowedZones;
-
-	/**
-	 * The cached value of the '{@link #getTeams() <em>Teams</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTeams()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Team> teams;
 
 	/**
 	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
@@ -154,6 +147,26 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * @ordered
 	 */
 	protected int year = YEAR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFinalstages() <em>Finalstages</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinalstages()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FinalStage> finalstages;
+
+	/**
+	 * The cached value of the '{@link #getGroupstages() <em>Groupstages</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroupstages()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<GroupStage> groupstages;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,7 +246,7 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnumTournamentType getType() {
+	public TournamentType getType() {
 		return type;
 	}
 
@@ -242,8 +255,8 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(EnumTournamentType newType) {
-		EnumTournamentType oldType = type;
+	public void setType(TournamentType newType) {
+		TournamentType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.TOURNAMENT__TYPE, oldType, type));
@@ -259,18 +272,6 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 			allowedZones = new EObjectWithInverseResolvingEList.ManyInverse<Zone>(Zone.class, this, ESportPackage.TOURNAMENT__ALLOWED_ZONES, ESportPackage.ZONE__TOURNAMENTS);
 		}
 		return allowedZones;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Team> getTeams() {
-		if (teams == null) {
-			teams = new EObjectWithInverseResolvingEList.ManyInverse<Team>(Team.class, this, ESportPackage.TOURNAMENT__TEAMS, ESportPackage.TEAM__TOURNAMENTS);
-		}
-		return teams;
 	}
 
 	/**
@@ -299,6 +300,30 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<FinalStage> getFinalstages() {
+		if (finalstages == null) {
+			finalstages = new EObjectContainmentWithInverseEList<FinalStage>(FinalStage.class, this, ESportPackage.TOURNAMENT__FINALSTAGES, ESportPackage.FINAL_STAGE__TOURNAMENT);
+		}
+		return finalstages;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<GroupStage> getGroupstages() {
+		if (groupstages == null) {
+			groupstages = new EObjectContainmentWithInverseEList<GroupStage>(GroupStage.class, this, ESportPackage.TOURNAMENT__GROUPSTAGES, ESportPackage.GROUP_STAGE__TOURNAMENT);
+		}
+		return groupstages;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -307,8 +332,10 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCountries()).basicAdd(otherEnd, msgs);
 			case ESportPackage.TOURNAMENT__ALLOWED_ZONES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAllowedZones()).basicAdd(otherEnd, msgs);
-			case ESportPackage.TOURNAMENT__TEAMS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeams()).basicAdd(otherEnd, msgs);
+			case ESportPackage.TOURNAMENT__FINALSTAGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFinalstages()).basicAdd(otherEnd, msgs);
+			case ESportPackage.TOURNAMENT__GROUPSTAGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGroupstages()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -325,8 +352,10 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return ((InternalEList<?>)getCountries()).basicRemove(otherEnd, msgs);
 			case ESportPackage.TOURNAMENT__ALLOWED_ZONES:
 				return ((InternalEList<?>)getAllowedZones()).basicRemove(otherEnd, msgs);
-			case ESportPackage.TOURNAMENT__TEAMS:
-				return ((InternalEList<?>)getTeams()).basicRemove(otherEnd, msgs);
+			case ESportPackage.TOURNAMENT__FINALSTAGES:
+				return ((InternalEList<?>)getFinalstages()).basicRemove(otherEnd, msgs);
+			case ESportPackage.TOURNAMENT__GROUPSTAGES:
+				return ((InternalEList<?>)getGroupstages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -349,10 +378,12 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return getType();
 			case ESportPackage.TOURNAMENT__ALLOWED_ZONES:
 				return getAllowedZones();
-			case ESportPackage.TOURNAMENT__TEAMS:
-				return getTeams();
 			case ESportPackage.TOURNAMENT__YEAR:
 				return getYear();
+			case ESportPackage.TOURNAMENT__FINALSTAGES:
+				return getFinalstages();
+			case ESportPackage.TOURNAMENT__GROUPSTAGES:
+				return getGroupstages();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -377,18 +408,22 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				getCountries().addAll((Collection<? extends Country>)newValue);
 				return;
 			case ESportPackage.TOURNAMENT__TYPE:
-				setType((EnumTournamentType)newValue);
+				setType((TournamentType)newValue);
 				return;
 			case ESportPackage.TOURNAMENT__ALLOWED_ZONES:
 				getAllowedZones().clear();
 				getAllowedZones().addAll((Collection<? extends Zone>)newValue);
 				return;
-			case ESportPackage.TOURNAMENT__TEAMS:
-				getTeams().clear();
-				getTeams().addAll((Collection<? extends Team>)newValue);
-				return;
 			case ESportPackage.TOURNAMENT__YEAR:
 				setYear((Integer)newValue);
+				return;
+			case ESportPackage.TOURNAMENT__FINALSTAGES:
+				getFinalstages().clear();
+				getFinalstages().addAll((Collection<? extends FinalStage>)newValue);
+				return;
+			case ESportPackage.TOURNAMENT__GROUPSTAGES:
+				getGroupstages().clear();
+				getGroupstages().addAll((Collection<? extends GroupStage>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -417,11 +452,14 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 			case ESportPackage.TOURNAMENT__ALLOWED_ZONES:
 				getAllowedZones().clear();
 				return;
-			case ESportPackage.TOURNAMENT__TEAMS:
-				getTeams().clear();
-				return;
 			case ESportPackage.TOURNAMENT__YEAR:
 				setYear(YEAR_EDEFAULT);
+				return;
+			case ESportPackage.TOURNAMENT__FINALSTAGES:
+				getFinalstages().clear();
+				return;
+			case ESportPackage.TOURNAMENT__GROUPSTAGES:
+				getGroupstages().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -445,10 +483,12 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return type != TYPE_EDEFAULT;
 			case ESportPackage.TOURNAMENT__ALLOWED_ZONES:
 				return allowedZones != null && !allowedZones.isEmpty();
-			case ESportPackage.TOURNAMENT__TEAMS:
-				return teams != null && !teams.isEmpty();
 			case ESportPackage.TOURNAMENT__YEAR:
 				return year != YEAR_EDEFAULT;
+			case ESportPackage.TOURNAMENT__FINALSTAGES:
+				return finalstages != null && !finalstages.isEmpty();
+			case ESportPackage.TOURNAMENT__GROUPSTAGES:
+				return groupstages != null && !groupstages.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

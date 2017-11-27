@@ -5,7 +5,6 @@ package eSport.impl;
 import eSport.Country;
 import eSport.ESportPackage;
 import eSport.Person;
-import eSport.Team;
 import eSport.Tournament;
 import eSport.Zone;
 
@@ -23,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.CountryImpl#getName <em>Name</em>}</li>
  *   <li>{@link eSport.impl.CountryImpl#getTournaments <em>Tournaments</em>}</li>
  *   <li>{@link eSport.impl.CountryImpl#getZone <em>Zone</em>}</li>
- *   <li>{@link eSport.impl.CountryImpl#getTeams <em>Teams</em>}</li>
  *   <li>{@link eSport.impl.CountryImpl#getPersons <em>Persons</em>}</li>
  * </ul>
  *
@@ -72,26 +71,6 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 	 * @ordered
 	 */
 	protected EList<Tournament> tournaments;
-
-	/**
-	 * The cached value of the '{@link #getZone() <em>Zone</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getZone()
-	 * @generated
-	 * @ordered
-	 */
-	protected Zone zone;
-
-	/**
-	 * The cached value of the '{@link #getTeams() <em>Teams</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTeams()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Team> teams;
 
 	/**
 	 * The cached value of the '{@link #getPersons() <em>Persons</em>}' reference list.
@@ -161,24 +140,8 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 	 * @generated
 	 */
 	public Zone getZone() {
-		if (zone != null && zone.eIsProxy()) {
-			InternalEObject oldZone = (InternalEObject)zone;
-			zone = (Zone)eResolveProxy(oldZone);
-			if (zone != oldZone) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.COUNTRY__ZONE, oldZone, zone));
-			}
-		}
-		return zone;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Zone basicGetZone() {
-		return zone;
+		if (eContainerFeatureID() != ESportPackage.COUNTRY__ZONE) return null;
+		return (Zone)eInternalContainer();
 	}
 
 	/**
@@ -187,12 +150,7 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 	 * @generated
 	 */
 	public NotificationChain basicSetZone(Zone newZone, NotificationChain msgs) {
-		Zone oldZone = zone;
-		zone = newZone;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.COUNTRY__ZONE, oldZone, newZone);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newZone, ESportPackage.COUNTRY__ZONE, msgs);
 		return msgs;
 	}
 
@@ -202,10 +160,12 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 	 * @generated
 	 */
 	public void setZone(Zone newZone) {
-		if (newZone != zone) {
+		if (newZone != eInternalContainer() || (eContainerFeatureID() != ESportPackage.COUNTRY__ZONE && newZone != null)) {
+			if (EcoreUtil.isAncestor(this, newZone))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (zone != null)
-				msgs = ((InternalEObject)zone).eInverseRemove(this, ESportPackage.ZONE__COUNTRIES, Zone.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newZone != null)
 				msgs = ((InternalEObject)newZone).eInverseAdd(this, ESportPackage.ZONE__COUNTRIES, Zone.class, msgs);
 			msgs = basicSetZone(newZone, msgs);
@@ -213,18 +173,6 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.COUNTRY__ZONE, newZone, newZone));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Team> getTeams() {
-		if (teams == null) {
-			teams = new EObjectWithInverseResolvingEList<Team>(Team.class, this, ESportPackage.COUNTRY__TEAMS, ESportPackage.TEAM__COUNTRY);
-		}
-		return teams;
 	}
 
 	/**
@@ -251,11 +199,9 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 			case ESportPackage.COUNTRY__TOURNAMENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTournaments()).basicAdd(otherEnd, msgs);
 			case ESportPackage.COUNTRY__ZONE:
-				if (zone != null)
-					msgs = ((InternalEObject)zone).eInverseRemove(this, ESportPackage.ZONE__COUNTRIES, Zone.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetZone((Zone)otherEnd, msgs);
-			case ESportPackage.COUNTRY__TEAMS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeams()).basicAdd(otherEnd, msgs);
 			case ESportPackage.COUNTRY__PERSONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPersons()).basicAdd(otherEnd, msgs);
 		}
@@ -274,12 +220,24 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 				return ((InternalEList<?>)getTournaments()).basicRemove(otherEnd, msgs);
 			case ESportPackage.COUNTRY__ZONE:
 				return basicSetZone(null, msgs);
-			case ESportPackage.COUNTRY__TEAMS:
-				return ((InternalEList<?>)getTeams()).basicRemove(otherEnd, msgs);
 			case ESportPackage.COUNTRY__PERSONS:
 				return ((InternalEList<?>)getPersons()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ESportPackage.COUNTRY__ZONE:
+				return eInternalContainer().eInverseRemove(this, ESportPackage.ZONE__COUNTRIES, Zone.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -295,10 +253,7 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 			case ESportPackage.COUNTRY__TOURNAMENTS:
 				return getTournaments();
 			case ESportPackage.COUNTRY__ZONE:
-				if (resolve) return getZone();
-				return basicGetZone();
-			case ESportPackage.COUNTRY__TEAMS:
-				return getTeams();
+				return getZone();
 			case ESportPackage.COUNTRY__PERSONS:
 				return getPersons();
 		}
@@ -323,10 +278,6 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 				return;
 			case ESportPackage.COUNTRY__ZONE:
 				setZone((Zone)newValue);
-				return;
-			case ESportPackage.COUNTRY__TEAMS:
-				getTeams().clear();
-				getTeams().addAll((Collection<? extends Team>)newValue);
 				return;
 			case ESportPackage.COUNTRY__PERSONS:
 				getPersons().clear();
@@ -353,9 +304,6 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 			case ESportPackage.COUNTRY__ZONE:
 				setZone((Zone)null);
 				return;
-			case ESportPackage.COUNTRY__TEAMS:
-				getTeams().clear();
-				return;
 			case ESportPackage.COUNTRY__PERSONS:
 				getPersons().clear();
 				return;
@@ -376,9 +324,7 @@ public class CountryImpl extends MinimalEObjectImpl.Container implements Country
 			case ESportPackage.COUNTRY__TOURNAMENTS:
 				return tournaments != null && !tournaments.isEmpty();
 			case ESportPackage.COUNTRY__ZONE:
-				return zone != null;
-			case ESportPackage.COUNTRY__TEAMS:
-				return teams != null && !teams.isEmpty();
+				return getZone() != null;
 			case ESportPackage.COUNTRY__PERSONS:
 				return persons != null && !persons.isEmpty();
 		}

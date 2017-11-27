@@ -103,6 +103,42 @@ public interface ESportFactory extends EFactory {
 	Team createTeam();
 
 	/**
+	 * Returns a new object of class '<em>Match</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Match</em>'.
+	 * @generated
+	 */
+	Match createMatch();
+
+	/**
+	 * Returns a new object of class '<em>Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Group</em>'.
+	 * @generated
+	 */
+	Group createGroup();
+
+	/**
+	 * Returns a new object of class '<em>Group Stage</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Group Stage</em>'.
+	 * @generated
+	 */
+	GroupStage createGroupStage();
+
+	/**
+	 * Returns a new object of class '<em>Final Stage</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Final Stage</em>'.
+	 * @generated
+	 */
+	FinalStage createFinalStage();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

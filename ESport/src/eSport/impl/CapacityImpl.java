@@ -3,9 +3,8 @@
 package eSport.impl;
 
 import eSport.Capacity;
+import eSport.CapacityType;
 import eSport.ESportPackage;
-import eSport.EnumCapacity;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -36,7 +35,7 @@ public class CapacityImpl extends MinimalEObjectImpl.Container implements Capaci
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EnumCapacity TYPE_EDEFAULT = EnumCapacity.POSITIONING;
+	protected static final CapacityType TYPE_EDEFAULT = CapacityType.POSITIONING;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -46,7 +45,7 @@ public class CapacityImpl extends MinimalEObjectImpl.Container implements Capaci
 	 * @generated
 	 * @ordered
 	 */
-	protected EnumCapacity type = TYPE_EDEFAULT;
+	protected CapacityType type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -92,7 +91,7 @@ public class CapacityImpl extends MinimalEObjectImpl.Container implements Capaci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnumCapacity getType() {
+	public CapacityType getType() {
 		return type;
 	}
 
@@ -101,8 +100,8 @@ public class CapacityImpl extends MinimalEObjectImpl.Container implements Capaci
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(EnumCapacity newType) {
-		EnumCapacity oldType = type;
+	public void setType(CapacityType newType) {
+		CapacityType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.CAPACITY__TYPE, oldType, type));
@@ -154,7 +153,7 @@ public class CapacityImpl extends MinimalEObjectImpl.Container implements Capaci
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ESportPackage.CAPACITY__TYPE:
-				setType((EnumCapacity)newValue);
+				setType((CapacityType)newValue);
 				return;
 			case ESportPackage.CAPACITY__VALUE:
 				setValue((Integer)newValue);

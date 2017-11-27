@@ -2,8 +2,6 @@
  */
 package eSport;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,9 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.League#getName <em>Name</em>}</li>
  *   <li>{@link eSport.League#getSize <em>Size</em>}</li>
  *   <li>{@link eSport.League#getZone <em>Zone</em>}</li>
- *   <li>{@link eSport.League#getTeams <em>Teams</em>}</li>
  *   <li>{@link eSport.League#getYear <em>Year</em>}</li>
  *   <li>{@link eSport.League#getSeason <em>Season</em>}</li>
+ *   <li>{@link eSport.League#getGroupstage <em>Groupstage</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getLeague()
@@ -109,24 +107,6 @@ public interface League extends EObject {
 	void setZone(Zone value);
 
 	/**
-	 * Returns the value of the '<em><b>Teams</b></em>' reference list.
-	 * The list contents are of type {@link eSport.Team}.
-	 * It is bidirectional and its opposite is '{@link eSport.Team#getLeague <em>League</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Teams</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Teams</em>' reference list.
-	 * @see eSport.ESportPackage#getLeague_Teams()
-	 * @see eSport.Team#getLeague
-	 * @model opposite="league"
-	 * @generated
-	 */
-	EList<Team> getTeams();
-
-	/**
 	 * Returns the value of the '<em><b>Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -177,5 +157,33 @@ public interface League extends EObject {
 	 * @generated
 	 */
 	void setSeason(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Groupstage</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link eSport.GroupStage#getLeague <em>League</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Groupstage</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Groupstage</em>' containment reference.
+	 * @see #setGroupstage(GroupStage)
+	 * @see eSport.ESportPackage#getLeague_Groupstage()
+	 * @see eSport.GroupStage#getLeague
+	 * @model opposite="league" containment="true"
+	 * @generated
+	 */
+	GroupStage getGroupstage();
+
+	/**
+	 * Sets the value of the '{@link eSport.League#getGroupstage <em>Groupstage</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Groupstage</em>' containment reference.
+	 * @see #getGroupstage()
+	 * @generated
+	 */
+	void setGroupstage(GroupStage value);
 
 } // League

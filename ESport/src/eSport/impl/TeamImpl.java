@@ -3,13 +3,12 @@
 package eSport.impl;
 
 import eSport.Coach;
-import eSport.Country;
 import eSport.ESportPackage;
-import eSport.League;
+import eSport.FinalStage;
+import eSport.Group;
 import eSport.Player;
 import eSport.Team;
-import eSport.Tournament;
-
+import eSport.Zone;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -37,9 +37,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.TeamImpl#getName <em>Name</em>}</li>
  *   <li>{@link eSport.impl.TeamImpl#getPlayers <em>Players</em>}</li>
  *   <li>{@link eSport.impl.TeamImpl#getCoach <em>Coach</em>}</li>
- *   <li>{@link eSport.impl.TeamImpl#getTournaments <em>Tournaments</em>}</li>
- *   <li>{@link eSport.impl.TeamImpl#getLeague <em>League</em>}</li>
- *   <li>{@link eSport.impl.TeamImpl#getCountry <em>Country</em>}</li>
+ *   <li>{@link eSport.impl.TeamImpl#getZone <em>Zone</em>}</li>
+ *   <li>{@link eSport.impl.TeamImpl#getGroups <em>Groups</em>}</li>
+ *   <li>{@link eSport.impl.TeamImpl#getChampionshipPoints <em>Championship Points</em>}</li>
+ *   <li>{@link eSport.impl.TeamImpl#getFinalstages <em>Finalstages</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,34 +87,44 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	protected Coach coach;
 
 	/**
-	 * The cached value of the '{@link #getTournaments() <em>Tournaments</em>}' reference list.
+	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTournaments()
+	 * @see #getGroups()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Tournament> tournaments;
+	protected EList<Group> groups;
 
 	/**
-	 * The cached value of the '{@link #getLeague() <em>League</em>}' reference.
+	 * The default value of the '{@link #getChampionshipPoints() <em>Championship Points</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLeague()
+	 * @see #getChampionshipPoints()
 	 * @generated
 	 * @ordered
 	 */
-	protected League league;
+	protected static final int CHAMPIONSHIP_POINTS_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getCountry() <em>Country</em>}' reference.
+	 * The cached value of the '{@link #getChampionshipPoints() <em>Championship Points</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCountry()
+	 * @see #getChampionshipPoints()
 	 * @generated
 	 * @ordered
 	 */
-	protected Country country;
+	protected int championshipPoints = CHAMPIONSHIP_POINTS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFinalstages() <em>Finalstages</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinalstages()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FinalStage> finalstages;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,11 +243,9 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Tournament> getTournaments() {
-		if (tournaments == null) {
-			tournaments = new EObjectWithInverseResolvingEList.ManyInverse<Tournament>(Tournament.class, this, ESportPackage.TEAM__TOURNAMENTS, ESportPackage.TOURNAMENT__TEAMS);
-		}
-		return tournaments;
+	public Zone getZone() {
+		if (eContainerFeatureID() != ESportPackage.TEAM__ZONE) return null;
+		return (Zone)eInternalContainer();
 	}
 
 	/**
@@ -244,39 +253,8 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public League getLeague() {
-		if (league != null && league.eIsProxy()) {
-			InternalEObject oldLeague = (InternalEObject)league;
-			league = (League)eResolveProxy(oldLeague);
-			if (league != oldLeague) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.TEAM__LEAGUE, oldLeague, league));
-			}
-		}
-		return league;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public League basicGetLeague() {
-		return league;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetLeague(League newLeague, NotificationChain msgs) {
-		League oldLeague = league;
-		league = newLeague;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.TEAM__LEAGUE, oldLeague, newLeague);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+	public NotificationChain basicSetZone(Zone newZone, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newZone, ESportPackage.TEAM__ZONE, msgs);
 		return msgs;
 	}
 
@@ -285,18 +263,20 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLeague(League newLeague) {
-		if (newLeague != league) {
+	public void setZone(Zone newZone) {
+		if (newZone != eInternalContainer() || (eContainerFeatureID() != ESportPackage.TEAM__ZONE && newZone != null)) {
+			if (EcoreUtil.isAncestor(this, newZone))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (league != null)
-				msgs = ((InternalEObject)league).eInverseRemove(this, ESportPackage.LEAGUE__TEAMS, League.class, msgs);
-			if (newLeague != null)
-				msgs = ((InternalEObject)newLeague).eInverseAdd(this, ESportPackage.LEAGUE__TEAMS, League.class, msgs);
-			msgs = basicSetLeague(newLeague, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newZone != null)
+				msgs = ((InternalEObject)newZone).eInverseAdd(this, ESportPackage.ZONE__TEAMS, Zone.class, msgs);
+			msgs = basicSetZone(newZone, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.TEAM__LEAGUE, newLeague, newLeague));
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.TEAM__ZONE, newZone, newZone));
 	}
 
 	/**
@@ -304,16 +284,11 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Country getCountry() {
-		if (country != null && country.eIsProxy()) {
-			InternalEObject oldCountry = (InternalEObject)country;
-			country = (Country)eResolveProxy(oldCountry);
-			if (country != oldCountry) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.TEAM__COUNTRY, oldCountry, country));
-			}
+	public EList<Group> getGroups() {
+		if (groups == null) {
+			groups = new EObjectWithInverseResolvingEList.ManyInverse<Group>(Group.class, this, ESportPackage.TEAM__GROUPS, ESportPackage.GROUP__TEAMS);
 		}
-		return country;
+		return groups;
 	}
 
 	/**
@@ -321,8 +296,8 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Country basicGetCountry() {
-		return country;
+	public int getChampionshipPoints() {
+		return championshipPoints;
 	}
 
 	/**
@@ -330,33 +305,23 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCountry(Country newCountry, NotificationChain msgs) {
-		Country oldCountry = country;
-		country = newCountry;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.TEAM__COUNTRY, oldCountry, newCountry);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public void setChampionshipPoints(int newChampionshipPoints) {
+		int oldChampionshipPoints = championshipPoints;
+		championshipPoints = newChampionshipPoints;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.TEAM__CHAMPIONSHIP_POINTS, oldChampionshipPoints, championshipPoints));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<FinalStage> getFinalstages() {
+		if (finalstages == null) {
+			finalstages = new EObjectWithInverseResolvingEList.ManyInverse<FinalStage>(FinalStage.class, this, ESportPackage.TEAM__FINALSTAGES, ESportPackage.FINAL_STAGE__TEAMS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCountry(Country newCountry) {
-		if (newCountry != country) {
-			NotificationChain msgs = null;
-			if (country != null)
-				msgs = ((InternalEObject)country).eInverseRemove(this, ESportPackage.COUNTRY__TEAMS, Country.class, msgs);
-			if (newCountry != null)
-				msgs = ((InternalEObject)newCountry).eInverseAdd(this, ESportPackage.COUNTRY__TEAMS, Country.class, msgs);
-			msgs = basicSetCountry(newCountry, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.TEAM__COUNTRY, newCountry, newCountry));
+		return finalstages;
 	}
 
 	/**
@@ -374,16 +339,14 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				if (coach != null)
 					msgs = ((InternalEObject)coach).eInverseRemove(this, ESportPackage.COACH__TEAM, Coach.class, msgs);
 				return basicSetCoach((Coach)otherEnd, msgs);
-			case ESportPackage.TEAM__TOURNAMENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTournaments()).basicAdd(otherEnd, msgs);
-			case ESportPackage.TEAM__LEAGUE:
-				if (league != null)
-					msgs = ((InternalEObject)league).eInverseRemove(this, ESportPackage.LEAGUE__TEAMS, League.class, msgs);
-				return basicSetLeague((League)otherEnd, msgs);
-			case ESportPackage.TEAM__COUNTRY:
-				if (country != null)
-					msgs = ((InternalEObject)country).eInverseRemove(this, ESportPackage.COUNTRY__TEAMS, Country.class, msgs);
-				return basicSetCountry((Country)otherEnd, msgs);
+			case ESportPackage.TEAM__ZONE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetZone((Zone)otherEnd, msgs);
+			case ESportPackage.TEAM__GROUPS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGroups()).basicAdd(otherEnd, msgs);
+			case ESportPackage.TEAM__FINALSTAGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFinalstages()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -400,14 +363,28 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				return ((InternalEList<?>)getPlayers()).basicRemove(otherEnd, msgs);
 			case ESportPackage.TEAM__COACH:
 				return basicSetCoach(null, msgs);
-			case ESportPackage.TEAM__TOURNAMENTS:
-				return ((InternalEList<?>)getTournaments()).basicRemove(otherEnd, msgs);
-			case ESportPackage.TEAM__LEAGUE:
-				return basicSetLeague(null, msgs);
-			case ESportPackage.TEAM__COUNTRY:
-				return basicSetCountry(null, msgs);
+			case ESportPackage.TEAM__ZONE:
+				return basicSetZone(null, msgs);
+			case ESportPackage.TEAM__GROUPS:
+				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
+			case ESportPackage.TEAM__FINALSTAGES:
+				return ((InternalEList<?>)getFinalstages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ESportPackage.TEAM__ZONE:
+				return eInternalContainer().eInverseRemove(this, ESportPackage.ZONE__TEAMS, Zone.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -425,14 +402,14 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 			case ESportPackage.TEAM__COACH:
 				if (resolve) return getCoach();
 				return basicGetCoach();
-			case ESportPackage.TEAM__TOURNAMENTS:
-				return getTournaments();
-			case ESportPackage.TEAM__LEAGUE:
-				if (resolve) return getLeague();
-				return basicGetLeague();
-			case ESportPackage.TEAM__COUNTRY:
-				if (resolve) return getCountry();
-				return basicGetCountry();
+			case ESportPackage.TEAM__ZONE:
+				return getZone();
+			case ESportPackage.TEAM__GROUPS:
+				return getGroups();
+			case ESportPackage.TEAM__CHAMPIONSHIP_POINTS:
+				return getChampionshipPoints();
+			case ESportPackage.TEAM__FINALSTAGES:
+				return getFinalstages();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -456,15 +433,19 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 			case ESportPackage.TEAM__COACH:
 				setCoach((Coach)newValue);
 				return;
-			case ESportPackage.TEAM__TOURNAMENTS:
-				getTournaments().clear();
-				getTournaments().addAll((Collection<? extends Tournament>)newValue);
+			case ESportPackage.TEAM__ZONE:
+				setZone((Zone)newValue);
 				return;
-			case ESportPackage.TEAM__LEAGUE:
-				setLeague((League)newValue);
+			case ESportPackage.TEAM__GROUPS:
+				getGroups().clear();
+				getGroups().addAll((Collection<? extends Group>)newValue);
 				return;
-			case ESportPackage.TEAM__COUNTRY:
-				setCountry((Country)newValue);
+			case ESportPackage.TEAM__CHAMPIONSHIP_POINTS:
+				setChampionshipPoints((Integer)newValue);
+				return;
+			case ESportPackage.TEAM__FINALSTAGES:
+				getFinalstages().clear();
+				getFinalstages().addAll((Collection<? extends FinalStage>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -487,14 +468,17 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 			case ESportPackage.TEAM__COACH:
 				setCoach((Coach)null);
 				return;
-			case ESportPackage.TEAM__TOURNAMENTS:
-				getTournaments().clear();
+			case ESportPackage.TEAM__ZONE:
+				setZone((Zone)null);
 				return;
-			case ESportPackage.TEAM__LEAGUE:
-				setLeague((League)null);
+			case ESportPackage.TEAM__GROUPS:
+				getGroups().clear();
 				return;
-			case ESportPackage.TEAM__COUNTRY:
-				setCountry((Country)null);
+			case ESportPackage.TEAM__CHAMPIONSHIP_POINTS:
+				setChampionshipPoints(CHAMPIONSHIP_POINTS_EDEFAULT);
+				return;
+			case ESportPackage.TEAM__FINALSTAGES:
+				getFinalstages().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -514,12 +498,14 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				return players != null && !players.isEmpty();
 			case ESportPackage.TEAM__COACH:
 				return coach != null;
-			case ESportPackage.TEAM__TOURNAMENTS:
-				return tournaments != null && !tournaments.isEmpty();
-			case ESportPackage.TEAM__LEAGUE:
-				return league != null;
-			case ESportPackage.TEAM__COUNTRY:
-				return country != null;
+			case ESportPackage.TEAM__ZONE:
+				return getZone() != null;
+			case ESportPackage.TEAM__GROUPS:
+				return groups != null && !groups.isEmpty();
+			case ESportPackage.TEAM__CHAMPIONSHIP_POINTS:
+				return championshipPoints != CHAMPIONSHIP_POINTS_EDEFAULT;
+			case ESportPackage.TEAM__FINALSTAGES:
+				return finalstages != null && !finalstages.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -536,6 +522,8 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", championshipPoints: ");
+		result.append(championshipPoints);
 		result.append(')');
 		return result.toString();
 	}

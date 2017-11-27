@@ -18,18 +18,20 @@
         eType="#//TournamentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allowedZones" upperBound="-1"
         eType="#//Zone" eOpposite="#//Zone/tournaments"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="-1"
-        eType="#//Team" eOpposite="#//Team/tournaments"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalstages" upperBound="-1"
+        eType="#//FinalStage" containment="true" eOpposite="#//FinalStage/tournament"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupstages" upperBound="-1"
+        eType="#//GroupStage" containment="true" eOpposite="#//GroupStage/tournament"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="League" eSuperTypes="#//GroupStage">
+  <eClassifiers xsi:type="ecore:EClass" name="League">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="zone" eType="#//Zone" eOpposite="#//Zone/league"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="-1"
-        eType="#//Team" eOpposite="#//Team/league"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupstage" eType="#//GroupStage"
+        containment="true" eOpposite="#//GroupStage/league"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Capacity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" unique="false"
@@ -70,13 +72,12 @@
         eType="#//Player" eOpposite="#//Player/team"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="coach" eType="#//Coach"
         eOpposite="#//Coach/team"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tournaments" upperBound="-1"
-        eType="#//Tournament" eOpposite="#//Tournament/teams"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="league" eType="#//League"
-        eOpposite="#//League/teams"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="zone" eType="#//Zone" eOpposite="#//Zone/teams"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="matchs" upperBound="-1"
-        eType="#//Match" eOpposite="#//Match/teams"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//Group" eOpposite="#//Group/teams"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="championshipPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalstages" upperBound="-1"
+        eType="#//FinalStage" eOpposite="#//FinalStage/teams"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CapacityType">
     <eLiterals name="positioning"/>
@@ -114,24 +115,42 @@
     <eLiterals name="playOff" value="6"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Match">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="2" eType="#//Team"
-        eOpposite="#//Team/matchs"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxNbGames" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="group" eType="#//Group"
         eOpposite="#//Group/matchs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalstage" eType="#//FinalStage"
+        eOpposite="#//FinalStage/matchs"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Group">
     <eStructuralFeatures xsi:type="ecore:EReference" name="groupstage" eType="#//GroupStage"
         eOpposite="#//GroupStage/groups"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchs" upperBound="-1"
         eType="#//Match" eOpposite="#//Match/group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="-1"
+        eType="#//Team" eOpposite="#//Team/groups"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GroupStage">
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//Group" containment="true" eOpposite="#//Group/groupstage"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GroupStageType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tournament" eType="#//Tournament"
+        eOpposite="#//Tournament/groupstages"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxNbGames" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="league" eType="#//League"
+        eOpposite="#//League/groupstage"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="meetingsInSameGroup" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="meetingsWithOtherGroups"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FinalStage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalStage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchs" upperBound="-1"
+        eType="#//Match" eOpposite="#//Match/finalstage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="-1"
+        eType="#//Team" eOpposite="#//Team/finalstages"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tournament" eType="#//Tournament"
+        eOpposite="#//Tournament/finalstages"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxNbGames" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GroupStageType">
     <eLiterals name="league"/>
     <eLiterals name="worldsPlayIn" value="1"/>
@@ -139,5 +158,6 @@
     <eLiterals name="riftRivalsGroup" value="3"/>
     <eLiterals name="msiPlayIn" value="4"/>
     <eLiterals name="msiGroup" value="5"/>
+    <eLiterals name="allStarsGroup" value="6"/>
   </eClassifiers>
 </ecore:EPackage>

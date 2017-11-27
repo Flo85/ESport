@@ -5,6 +5,7 @@ package eSport.impl;
 import eSport.Country;
 import eSport.ESportPackage;
 import eSport.League;
+import eSport.Team;
 import eSport.Tournament;
 import eSport.Zone;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -36,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.ZoneImpl#getTournaments <em>Tournaments</em>}</li>
  *   <li>{@link eSport.impl.ZoneImpl#getLeague <em>League</em>}</li>
  *   <li>{@link eSport.impl.ZoneImpl#getCountries <em>Countries</em>}</li>
+ *   <li>{@link eSport.impl.ZoneImpl#getTeams <em>Teams</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,7 +85,7 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 	protected League league;
 
 	/**
-	 * The cached value of the '{@link #getCountries() <em>Countries</em>}' reference list.
+	 * The cached value of the '{@link #getCountries() <em>Countries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCountries()
@@ -90,6 +93,16 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 	 * @ordered
 	 */
 	protected EList<Country> countries;
+
+	/**
+	 * The cached value of the '{@link #getTeams() <em>Teams</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTeams()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Team> teams;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,9 +223,21 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 	 */
 	public EList<Country> getCountries() {
 		if (countries == null) {
-			countries = new EObjectWithInverseResolvingEList<Country>(Country.class, this, ESportPackage.ZONE__COUNTRIES, ESportPackage.COUNTRY__ZONE);
+			countries = new EObjectContainmentWithInverseEList<Country>(Country.class, this, ESportPackage.ZONE__COUNTRIES, ESportPackage.COUNTRY__ZONE);
 		}
 		return countries;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Team> getTeams() {
+		if (teams == null) {
+			teams = new EObjectContainmentWithInverseEList<Team>(Team.class, this, ESportPackage.ZONE__TEAMS, ESportPackage.TEAM__ZONE);
+		}
+		return teams;
 	}
 
 	/**
@@ -232,6 +257,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 				return basicSetLeague((League)otherEnd, msgs);
 			case ESportPackage.ZONE__COUNTRIES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCountries()).basicAdd(otherEnd, msgs);
+			case ESportPackage.ZONE__TEAMS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeams()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -250,6 +277,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 				return basicSetLeague(null, msgs);
 			case ESportPackage.ZONE__COUNTRIES:
 				return ((InternalEList<?>)getCountries()).basicRemove(otherEnd, msgs);
+			case ESportPackage.ZONE__TEAMS:
+				return ((InternalEList<?>)getTeams()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -271,6 +300,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 				return basicGetLeague();
 			case ESportPackage.ZONE__COUNTRIES:
 				return getCountries();
+			case ESportPackage.ZONE__TEAMS:
+				return getTeams();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,6 +329,10 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 				getCountries().clear();
 				getCountries().addAll((Collection<? extends Country>)newValue);
 				return;
+			case ESportPackage.ZONE__TEAMS:
+				getTeams().clear();
+				getTeams().addAll((Collection<? extends Team>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -322,6 +357,9 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 			case ESportPackage.ZONE__COUNTRIES:
 				getCountries().clear();
 				return;
+			case ESportPackage.ZONE__TEAMS:
+				getTeams().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -342,6 +380,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 				return league != null;
 			case ESportPackage.ZONE__COUNTRIES:
 				return countries != null && !countries.isEmpty();
+			case ESportPackage.ZONE__TEAMS:
+				return teams != null && !teams.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

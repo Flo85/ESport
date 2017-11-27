@@ -104,6 +104,22 @@ public class ESportAdapterFactory extends AdapterFactoryImpl {
 				return createTeamAdapter();
 			}
 			@Override
+			public Adapter caseMatch(Match object) {
+				return createMatchAdapter();
+			}
+			@Override
+			public Adapter caseGroup(Group object) {
+				return createGroupAdapter();
+			}
+			@Override
+			public Adapter caseGroupStage(GroupStage object) {
+				return createGroupStageAdapter();
+			}
+			@Override
+			public Adapter caseFinalStage(FinalStage object) {
+				return createFinalStageAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -246,6 +262,62 @@ public class ESportAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTeamAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eSport.Match <em>Match</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eSport.Match
+	 * @generated
+	 */
+	public Adapter createMatchAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eSport.Group <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eSport.Group
+	 * @generated
+	 */
+	public Adapter createGroupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eSport.GroupStage <em>Group Stage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eSport.GroupStage
+	 * @generated
+	 */
+	public Adapter createGroupStageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eSport.FinalStage <em>Final Stage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eSport.FinalStage
+	 * @generated
+	 */
+	public Adapter createFinalStageAdapter() {
 		return null;
 	}
 

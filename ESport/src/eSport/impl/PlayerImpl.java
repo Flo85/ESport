@@ -3,8 +3,8 @@
 package eSport.impl;
 
 import eSport.ESportPackage;
-import eSport.EnumPosition;
 import eSport.Player;
+import eSport.Position;
 import eSport.Team;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,7 +38,7 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EnumPosition POSITION_EDEFAULT = EnumPosition.ADC;
+	protected static final Position POSITION_EDEFAULT = Position.ATTACK_DAMAGE_CARRY;
 
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute.
@@ -48,7 +48,7 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * @generated
 	 * @ordered
 	 */
-	protected EnumPosition position = POSITION_EDEFAULT;
+	protected Position position = POSITION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTeam() <em>Team</em>}' reference.
@@ -84,7 +84,7 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnumPosition getPosition() {
+	public Position getPosition() {
 		return position;
 	}
 
@@ -93,8 +93,8 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPosition(EnumPosition newPosition) {
-		EnumPosition oldPosition = position;
+	public void setPosition(Position newPosition) {
+		Position oldPosition = position;
 		position = newPosition == null ? POSITION_EDEFAULT : newPosition;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.PLAYER__POSITION, oldPosition, position));
@@ -216,7 +216,7 @@ public class PlayerImpl extends PersonImpl implements Player {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ESportPackage.PLAYER__POSITION:
-				setPosition((EnumPosition)newValue);
+				setPosition((Position)newValue);
 				return;
 			case ESportPackage.PLAYER__TEAM:
 				setTeam((Team)newValue);

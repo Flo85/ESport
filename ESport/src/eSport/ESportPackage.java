@@ -359,22 +359,31 @@ public interface ESportPackage extends EPackage {
 	int TOURNAMENT__ALLOWED_ZONES = 4;
 
 	/**
-	 * The feature id for the '<em><b>Teams</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOURNAMENT__TEAMS = 5;
-
-	/**
 	 * The feature id for the '<em><b>Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOURNAMENT__YEAR = 6;
+	int TOURNAMENT__YEAR = 5;
+
+	/**
+	 * The feature id for the '<em><b>Finalstages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOURNAMENT__FINALSTAGES = 6;
+
+	/**
+	 * The feature id for the '<em><b>Groupstages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOURNAMENT__GROUPSTAGES = 7;
 
 	/**
 	 * The number of structural features of the '<em>Tournament</em>' class.
@@ -383,7 +392,7 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOURNAMENT_FEATURE_COUNT = 7;
+	int TOURNAMENT_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Tournament</em>' class.
@@ -432,22 +441,13 @@ public interface ESportPackage extends EPackage {
 	int LEAGUE__ZONE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Teams</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEAGUE__TEAMS = 3;
-
-	/**
 	 * The feature id for the '<em><b>Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEAGUE__YEAR = 4;
+	int LEAGUE__YEAR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Season</b></em>' attribute.
@@ -456,7 +456,16 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEAGUE__SEASON = 5;
+	int LEAGUE__SEASON = 4;
+
+	/**
+	 * The feature id for the '<em><b>Groupstage</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEAGUE__GROUPSTAGE = 5;
 
 	/**
 	 * The number of structural features of the '<em>League</em>' class.
@@ -551,7 +560,7 @@ public interface ESportPackage extends EPackage {
 	int COUNTRY__TOURNAMENTS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Zone</b></em>' reference.
+	 * The feature id for the '<em><b>Zone</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -560,22 +569,13 @@ public interface ESportPackage extends EPackage {
 	int COUNTRY__ZONE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Teams</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COUNTRY__TEAMS = 3;
-
-	/**
 	 * The feature id for the '<em><b>Persons</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTRY__PERSONS = 4;
+	int COUNTRY__PERSONS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Country</em>' class.
@@ -584,7 +584,7 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COUNTRY_FEATURE_COUNT = 5;
+	int COUNTRY_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Country</em>' class.
@@ -633,7 +633,7 @@ public interface ESportPackage extends EPackage {
 	int ZONE__LEAGUE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Countries</b></em>' reference list.
+	 * The feature id for the '<em><b>Countries</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -642,13 +642,22 @@ public interface ESportPackage extends EPackage {
 	int ZONE__COUNTRIES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Teams</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZONE__TEAMS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Zone</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZONE_FEATURE_COUNT = 4;
+	int ZONE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Zone</em>' class.
@@ -697,31 +706,40 @@ public interface ESportPackage extends EPackage {
 	int TEAM__COACH = 2;
 
 	/**
-	 * The feature id for the '<em><b>Tournaments</b></em>' reference list.
+	 * The feature id for the '<em><b>Zone</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEAM__TOURNAMENTS = 3;
+	int TEAM__ZONE = 3;
 
 	/**
-	 * The feature id for the '<em><b>League</b></em>' reference.
+	 * The feature id for the '<em><b>Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEAM__LEAGUE = 4;
+	int TEAM__GROUPS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Country</b></em>' reference.
+	 * The feature id for the '<em><b>Championship Points</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEAM__COUNTRY = 5;
+	int TEAM__CHAMPIONSHIP_POINTS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Finalstages</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM__FINALSTAGES = 6;
 
 	/**
 	 * The number of structural features of the '<em>Team</em>' class.
@@ -730,7 +748,7 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEAM_FEATURE_COUNT = 6;
+	int TEAM_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Team</em>' class.
@@ -742,35 +760,309 @@ public interface ESportPackage extends EPackage {
 	int TEAM_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link eSport.EnumCapacity <em>Enum Capacity</em>}' enum.
+	 * The meta object id for the '{@link eSport.impl.MatchImpl <em>Match</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see eSport.EnumCapacity
-	 * @see eSport.impl.ESportPackageImpl#getEnumCapacity()
+	 * @see eSport.impl.MatchImpl
+	 * @see eSport.impl.ESportPackageImpl#getMatch()
 	 * @generated
 	 */
-	int ENUM_CAPACITY = 9;
+	int MATCH = 9;
 
 	/**
-	 * The meta object id for the '{@link eSport.EnumPosition <em>Enum Position</em>}' enum.
+	 * The feature id for the '<em><b>Max Nb Games</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see eSport.EnumPosition
-	 * @see eSport.impl.ESportPackageImpl#getEnumPosition()
 	 * @generated
+	 * @ordered
 	 */
-	int ENUM_POSITION = 10;
+	int MATCH__MAX_NB_GAMES = 0;
 
 	/**
-	 * The meta object id for the '{@link eSport.EnumTournamentType <em>Enum Tournament Type</em>}' enum.
+	 * The feature id for the '<em><b>Group</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see eSport.EnumTournamentType
-	 * @see eSport.impl.ESportPackageImpl#getEnumTournamentType()
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH__GROUP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Finalstage</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH__FINALSTAGE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Match</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Match</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link eSport.impl.GroupImpl <em>Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.impl.GroupImpl
+	 * @see eSport.impl.ESportPackageImpl#getGroup()
 	 * @generated
 	 */
-	int ENUM_TOURNAMENT_TYPE = 11;
+	int GROUP = 10;
 
+	/**
+	 * The feature id for the '<em><b>Groupstage</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__GROUPSTAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Matchs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__MATCHS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Teams</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__TEAMS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link eSport.impl.GroupStageImpl <em>Group Stage</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.impl.GroupStageImpl
+	 * @see eSport.impl.ESportPackageImpl#getGroupStage()
+	 * @generated
+	 */
+	int GROUP_STAGE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE__GROUPS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE__TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Tournament</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE__TOURNAMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Max Nb Games</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE__MAX_NB_GAMES = 3;
+
+	/**
+	 * The feature id for the '<em><b>League</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE__LEAGUE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Meetings In Same Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE__MEETINGS_IN_SAME_GROUP = 5;
+
+	/**
+	 * The feature id for the '<em><b>Meetings With Other Groups</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE__MEETINGS_WITH_OTHER_GROUPS = 6;
+
+	/**
+	 * The number of structural features of the '<em>Group Stage</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE_FEATURE_COUNT = 7;
+
+	/**
+	 * The number of operations of the '<em>Group Stage</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_STAGE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link eSport.impl.FinalStageImpl <em>Final Stage</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.impl.FinalStageImpl
+	 * @see eSport.impl.ESportPackageImpl#getFinalStage()
+	 * @generated
+	 */
+	int FINAL_STAGE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Matchs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STAGE__MATCHS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Teams</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STAGE__TEAMS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Tournament</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STAGE__TOURNAMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Max Nb Games</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STAGE__MAX_NB_GAMES = 3;
+
+	/**
+	 * The number of structural features of the '<em>Final Stage</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STAGE_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Final Stage</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STAGE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link eSport.CapacityType <em>Capacity Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.CapacityType
+	 * @see eSport.impl.ESportPackageImpl#getCapacityType()
+	 * @generated
+	 */
+	int CAPACITY_TYPE = 13;
+
+	/**
+	 * The meta object id for the '{@link eSport.Position <em>Position</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.Position
+	 * @see eSport.impl.ESportPackageImpl#getPosition()
+	 * @generated
+	 */
+	int POSITION = 14;
+
+	/**
+	 * The meta object id for the '{@link eSport.TournamentType <em>Tournament Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.TournamentType
+	 * @see eSport.impl.ESportPackageImpl#getTournamentType()
+	 * @generated
+	 */
+	int TOURNAMENT_TYPE = 15;
+
+	/**
+	 * The meta object id for the '{@link eSport.GroupStageType <em>Group Stage Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.GroupStageType
+	 * @see eSport.impl.ESportPackageImpl#getGroupStageType()
+	 * @generated
+	 */
+	int GROUP_STAGE_TYPE = 16;
 
 	/**
 	 * Returns the meta object for class '{@link eSport.Player <em>Player</em>}'.
@@ -891,17 +1183,6 @@ public interface ESportPackage extends EPackage {
 	EReference getTournament_AllowedZones();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.Tournament#getTeams <em>Teams</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Teams</em>'.
-	 * @see eSport.Tournament#getTeams()
-	 * @see #getTournament()
-	 * @generated
-	 */
-	EReference getTournament_Teams();
-
-	/**
 	 * Returns the meta object for the attribute '{@link eSport.Tournament#getYear <em>Year</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -911,6 +1192,28 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTournament_Year();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Tournament#getFinalstages <em>Finalstages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Finalstages</em>'.
+	 * @see eSport.Tournament#getFinalstages()
+	 * @see #getTournament()
+	 * @generated
+	 */
+	EReference getTournament_Finalstages();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Tournament#getGroupstages <em>Groupstages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Groupstages</em>'.
+	 * @see eSport.Tournament#getGroupstages()
+	 * @see #getTournament()
+	 * @generated
+	 */
+	EReference getTournament_Groupstages();
 
 	/**
 	 * Returns the meta object for class '{@link eSport.League <em>League</em>}'.
@@ -956,17 +1259,6 @@ public interface ESportPackage extends EPackage {
 	EReference getLeague_Zone();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.League#getTeams <em>Teams</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Teams</em>'.
-	 * @see eSport.League#getTeams()
-	 * @see #getLeague()
-	 * @generated
-	 */
-	EReference getLeague_Teams();
-
-	/**
 	 * Returns the meta object for the attribute '{@link eSport.League#getYear <em>Year</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -987,6 +1279,17 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLeague_Season();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link eSport.League#getGroupstage <em>Groupstage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Groupstage</em>'.
+	 * @see eSport.League#getGroupstage()
+	 * @see #getLeague()
+	 * @generated
+	 */
+	EReference getLeague_Groupstage();
 
 	/**
 	 * Returns the meta object for class '{@link eSport.Capacity <em>Capacity</em>}'.
@@ -1118,26 +1421,15 @@ public interface ESportPackage extends EPackage {
 	EReference getCountry_Tournaments();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Country#getZone <em>Zone</em>}'.
+	 * Returns the meta object for the container reference '{@link eSport.Country#getZone <em>Zone</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Zone</em>'.
+	 * @return the meta object for the container reference '<em>Zone</em>'.
 	 * @see eSport.Country#getZone()
 	 * @see #getCountry()
 	 * @generated
 	 */
 	EReference getCountry_Zone();
-
-	/**
-	 * Returns the meta object for the reference list '{@link eSport.Country#getTeams <em>Teams</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Teams</em>'.
-	 * @see eSport.Country#getTeams()
-	 * @see #getCountry()
-	 * @generated
-	 */
-	EReference getCountry_Teams();
 
 	/**
 	 * Returns the meta object for the reference list '{@link eSport.Country#getPersons <em>Persons</em>}'.
@@ -1194,15 +1486,26 @@ public interface ESportPackage extends EPackage {
 	EReference getZone_League();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.Zone#getCountries <em>Countries</em>}'.
+	 * Returns the meta object for the containment reference list '{@link eSport.Zone#getCountries <em>Countries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Countries</em>'.
+	 * @return the meta object for the containment reference list '<em>Countries</em>'.
 	 * @see eSport.Zone#getCountries()
 	 * @see #getZone()
 	 * @generated
 	 */
 	EReference getZone_Countries();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Zone#getTeams <em>Teams</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Teams</em>'.
+	 * @see eSport.Zone#getTeams()
+	 * @see #getZone()
+	 * @generated
+	 */
+	EReference getZone_Teams();
 
 	/**
 	 * Returns the meta object for class '{@link eSport.Team <em>Team</em>}'.
@@ -1248,67 +1551,315 @@ public interface ESportPackage extends EPackage {
 	EReference getTeam_Coach();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.Team#getTournaments <em>Tournaments</em>}'.
+	 * Returns the meta object for the container reference '{@link eSport.Team#getZone <em>Zone</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tournaments</em>'.
-	 * @see eSport.Team#getTournaments()
+	 * @return the meta object for the container reference '<em>Zone</em>'.
+	 * @see eSport.Team#getZone()
 	 * @see #getTeam()
 	 * @generated
 	 */
-	EReference getTeam_Tournaments();
+	EReference getTeam_Zone();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Team#getLeague <em>League</em>}'.
+	 * Returns the meta object for the reference list '{@link eSport.Team#getGroups <em>Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>League</em>'.
-	 * @see eSport.Team#getLeague()
+	 * @return the meta object for the reference list '<em>Groups</em>'.
+	 * @see eSport.Team#getGroups()
 	 * @see #getTeam()
 	 * @generated
 	 */
-	EReference getTeam_League();
+	EReference getTeam_Groups();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Team#getCountry <em>Country</em>}'.
+	 * Returns the meta object for the attribute '{@link eSport.Team#getChampionshipPoints <em>Championship Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Country</em>'.
-	 * @see eSport.Team#getCountry()
+	 * @return the meta object for the attribute '<em>Championship Points</em>'.
+	 * @see eSport.Team#getChampionshipPoints()
 	 * @see #getTeam()
 	 * @generated
 	 */
-	EReference getTeam_Country();
+	EAttribute getTeam_ChampionshipPoints();
 
 	/**
-	 * Returns the meta object for enum '{@link eSport.EnumCapacity <em>Enum Capacity</em>}'.
+	 * Returns the meta object for the reference list '{@link eSport.Team#getFinalstages <em>Finalstages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Enum Capacity</em>'.
-	 * @see eSport.EnumCapacity
+	 * @return the meta object for the reference list '<em>Finalstages</em>'.
+	 * @see eSport.Team#getFinalstages()
+	 * @see #getTeam()
 	 * @generated
 	 */
-	EEnum getEnumCapacity();
+	EReference getTeam_Finalstages();
 
 	/**
-	 * Returns the meta object for enum '{@link eSport.EnumPosition <em>Enum Position</em>}'.
+	 * Returns the meta object for class '{@link eSport.Match <em>Match</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Enum Position</em>'.
-	 * @see eSport.EnumPosition
+	 * @return the meta object for class '<em>Match</em>'.
+	 * @see eSport.Match
 	 * @generated
 	 */
-	EEnum getEnumPosition();
+	EClass getMatch();
 
 	/**
-	 * Returns the meta object for enum '{@link eSport.EnumTournamentType <em>Enum Tournament Type</em>}'.
+	 * Returns the meta object for the attribute '{@link eSport.Match#getMaxNbGames <em>Max Nb Games</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Enum Tournament Type</em>'.
-	 * @see eSport.EnumTournamentType
+	 * @return the meta object for the attribute '<em>Max Nb Games</em>'.
+	 * @see eSport.Match#getMaxNbGames()
+	 * @see #getMatch()
 	 * @generated
 	 */
-	EEnum getEnumTournamentType();
+	EAttribute getMatch_MaxNbGames();
+
+	/**
+	 * Returns the meta object for the reference '{@link eSport.Match#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Group</em>'.
+	 * @see eSport.Match#getGroup()
+	 * @see #getMatch()
+	 * @generated
+	 */
+	EReference getMatch_Group();
+
+	/**
+	 * Returns the meta object for the reference '{@link eSport.Match#getFinalstage <em>Finalstage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Finalstage</em>'.
+	 * @see eSport.Match#getFinalstage()
+	 * @see #getMatch()
+	 * @generated
+	 */
+	EReference getMatch_Finalstage();
+
+	/**
+	 * Returns the meta object for class '{@link eSport.Group <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Group</em>'.
+	 * @see eSport.Group
+	 * @generated
+	 */
+	EClass getGroup();
+
+	/**
+	 * Returns the meta object for the container reference '{@link eSport.Group#getGroupstage <em>Groupstage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Groupstage</em>'.
+	 * @see eSport.Group#getGroupstage()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Groupstage();
+
+	/**
+	 * Returns the meta object for the reference list '{@link eSport.Group#getMatchs <em>Matchs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Matchs</em>'.
+	 * @see eSport.Group#getMatchs()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Matchs();
+
+	/**
+	 * Returns the meta object for the reference list '{@link eSport.Group#getTeams <em>Teams</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Teams</em>'.
+	 * @see eSport.Group#getTeams()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Teams();
+
+	/**
+	 * Returns the meta object for class '{@link eSport.GroupStage <em>Group Stage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Group Stage</em>'.
+	 * @see eSport.GroupStage
+	 * @generated
+	 */
+	EClass getGroupStage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.GroupStage#getGroups <em>Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Groups</em>'.
+	 * @see eSport.GroupStage#getGroups()
+	 * @see #getGroupStage()
+	 * @generated
+	 */
+	EReference getGroupStage_Groups();
+
+	/**
+	 * Returns the meta object for the attribute '{@link eSport.GroupStage#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see eSport.GroupStage#getType()
+	 * @see #getGroupStage()
+	 * @generated
+	 */
+	EAttribute getGroupStage_Type();
+
+	/**
+	 * Returns the meta object for the container reference '{@link eSport.GroupStage#getTournament <em>Tournament</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Tournament</em>'.
+	 * @see eSport.GroupStage#getTournament()
+	 * @see #getGroupStage()
+	 * @generated
+	 */
+	EReference getGroupStage_Tournament();
+
+	/**
+	 * Returns the meta object for the attribute '{@link eSport.GroupStage#getMaxNbGames <em>Max Nb Games</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Nb Games</em>'.
+	 * @see eSport.GroupStage#getMaxNbGames()
+	 * @see #getGroupStage()
+	 * @generated
+	 */
+	EAttribute getGroupStage_MaxNbGames();
+
+	/**
+	 * Returns the meta object for the container reference '{@link eSport.GroupStage#getLeague <em>League</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>League</em>'.
+	 * @see eSport.GroupStage#getLeague()
+	 * @see #getGroupStage()
+	 * @generated
+	 */
+	EReference getGroupStage_League();
+
+	/**
+	 * Returns the meta object for the attribute '{@link eSport.GroupStage#getMeetingsInSameGroup <em>Meetings In Same Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Meetings In Same Group</em>'.
+	 * @see eSport.GroupStage#getMeetingsInSameGroup()
+	 * @see #getGroupStage()
+	 * @generated
+	 */
+	EAttribute getGroupStage_MeetingsInSameGroup();
+
+	/**
+	 * Returns the meta object for the attribute '{@link eSport.GroupStage#getMeetingsWithOtherGroups <em>Meetings With Other Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Meetings With Other Groups</em>'.
+	 * @see eSport.GroupStage#getMeetingsWithOtherGroups()
+	 * @see #getGroupStage()
+	 * @generated
+	 */
+	EAttribute getGroupStage_MeetingsWithOtherGroups();
+
+	/**
+	 * Returns the meta object for class '{@link eSport.FinalStage <em>Final Stage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Final Stage</em>'.
+	 * @see eSport.FinalStage
+	 * @generated
+	 */
+	EClass getFinalStage();
+
+	/**
+	 * Returns the meta object for the reference list '{@link eSport.FinalStage#getMatchs <em>Matchs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Matchs</em>'.
+	 * @see eSport.FinalStage#getMatchs()
+	 * @see #getFinalStage()
+	 * @generated
+	 */
+	EReference getFinalStage_Matchs();
+
+	/**
+	 * Returns the meta object for the reference list '{@link eSport.FinalStage#getTeams <em>Teams</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Teams</em>'.
+	 * @see eSport.FinalStage#getTeams()
+	 * @see #getFinalStage()
+	 * @generated
+	 */
+	EReference getFinalStage_Teams();
+
+	/**
+	 * Returns the meta object for the container reference '{@link eSport.FinalStage#getTournament <em>Tournament</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Tournament</em>'.
+	 * @see eSport.FinalStage#getTournament()
+	 * @see #getFinalStage()
+	 * @generated
+	 */
+	EReference getFinalStage_Tournament();
+
+	/**
+	 * Returns the meta object for the attribute '{@link eSport.FinalStage#getMaxNbGames <em>Max Nb Games</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Nb Games</em>'.
+	 * @see eSport.FinalStage#getMaxNbGames()
+	 * @see #getFinalStage()
+	 * @generated
+	 */
+	EAttribute getFinalStage_MaxNbGames();
+
+	/**
+	 * Returns the meta object for enum '{@link eSport.CapacityType <em>Capacity Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Capacity Type</em>'.
+	 * @see eSport.CapacityType
+	 * @generated
+	 */
+	EEnum getCapacityType();
+
+	/**
+	 * Returns the meta object for enum '{@link eSport.Position <em>Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Position</em>'.
+	 * @see eSport.Position
+	 * @generated
+	 */
+	EEnum getPosition();
+
+	/**
+	 * Returns the meta object for enum '{@link eSport.TournamentType <em>Tournament Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Tournament Type</em>'.
+	 * @see eSport.TournamentType
+	 * @generated
+	 */
+	EEnum getTournamentType();
+
+	/**
+	 * Returns the meta object for enum '{@link eSport.GroupStageType <em>Group Stage Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Group Stage Type</em>'.
+	 * @see eSport.GroupStageType
+	 * @generated
+	 */
+	EEnum getGroupStageType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1428,20 +1979,28 @@ public interface ESportPackage extends EPackage {
 		EReference TOURNAMENT__ALLOWED_ZONES = eINSTANCE.getTournament_AllowedZones();
 
 		/**
-		 * The meta object literal for the '<em><b>Teams</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TOURNAMENT__TEAMS = eINSTANCE.getTournament_Teams();
-
-		/**
 		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute TOURNAMENT__YEAR = eINSTANCE.getTournament_Year();
+
+		/**
+		 * The meta object literal for the '<em><b>Finalstages</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOURNAMENT__FINALSTAGES = eINSTANCE.getTournament_Finalstages();
+
+		/**
+		 * The meta object literal for the '<em><b>Groupstages</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOURNAMENT__GROUPSTAGES = eINSTANCE.getTournament_Groupstages();
 
 		/**
 		 * The meta object literal for the '{@link eSport.impl.LeagueImpl <em>League</em>}' class.
@@ -1478,14 +2037,6 @@ public interface ESportPackage extends EPackage {
 		EReference LEAGUE__ZONE = eINSTANCE.getLeague_Zone();
 
 		/**
-		 * The meta object literal for the '<em><b>Teams</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LEAGUE__TEAMS = eINSTANCE.getLeague_Teams();
-
-		/**
 		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1500,6 +2051,14 @@ public interface ESportPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LEAGUE__SEASON = eINSTANCE.getLeague_Season();
+
+		/**
+		 * The meta object literal for the '<em><b>Groupstage</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LEAGUE__GROUPSTAGE = eINSTANCE.getLeague_Groupstage();
 
 		/**
 		 * The meta object literal for the '{@link eSport.impl.CapacityImpl <em>Capacity</em>}' class.
@@ -1604,20 +2163,12 @@ public interface ESportPackage extends EPackage {
 		EReference COUNTRY__TOURNAMENTS = eINSTANCE.getCountry_Tournaments();
 
 		/**
-		 * The meta object literal for the '<em><b>Zone</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Zone</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference COUNTRY__ZONE = eINSTANCE.getCountry_Zone();
-
-		/**
-		 * The meta object literal for the '<em><b>Teams</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COUNTRY__TEAMS = eINSTANCE.getCountry_Teams();
 
 		/**
 		 * The meta object literal for the '<em><b>Persons</b></em>' reference list feature.
@@ -1662,12 +2213,20 @@ public interface ESportPackage extends EPackage {
 		EReference ZONE__LEAGUE = eINSTANCE.getZone_League();
 
 		/**
-		 * The meta object literal for the '<em><b>Countries</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Countries</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ZONE__COUNTRIES = eINSTANCE.getZone_Countries();
+
+		/**
+		 * The meta object literal for the '<em><b>Teams</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ZONE__TEAMS = eINSTANCE.getZone_Teams();
 
 		/**
 		 * The meta object literal for the '{@link eSport.impl.TeamImpl <em>Team</em>}' class.
@@ -1704,58 +2263,252 @@ public interface ESportPackage extends EPackage {
 		EReference TEAM__COACH = eINSTANCE.getTeam_Coach();
 
 		/**
-		 * The meta object literal for the '<em><b>Tournaments</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Zone</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEAM__TOURNAMENTS = eINSTANCE.getTeam_Tournaments();
+		EReference TEAM__ZONE = eINSTANCE.getTeam_Zone();
 
 		/**
-		 * The meta object literal for the '<em><b>League</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Groups</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEAM__LEAGUE = eINSTANCE.getTeam_League();
+		EReference TEAM__GROUPS = eINSTANCE.getTeam_Groups();
 
 		/**
-		 * The meta object literal for the '<em><b>Country</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Championship Points</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEAM__COUNTRY = eINSTANCE.getTeam_Country();
+		EAttribute TEAM__CHAMPIONSHIP_POINTS = eINSTANCE.getTeam_ChampionshipPoints();
 
 		/**
-		 * The meta object literal for the '{@link eSport.EnumCapacity <em>Enum Capacity</em>}' enum.
+		 * The meta object literal for the '<em><b>Finalstages</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see eSport.EnumCapacity
-		 * @see eSport.impl.ESportPackageImpl#getEnumCapacity()
 		 * @generated
 		 */
-		EEnum ENUM_CAPACITY = eINSTANCE.getEnumCapacity();
+		EReference TEAM__FINALSTAGES = eINSTANCE.getTeam_Finalstages();
 
 		/**
-		 * The meta object literal for the '{@link eSport.EnumPosition <em>Enum Position</em>}' enum.
+		 * The meta object literal for the '{@link eSport.impl.MatchImpl <em>Match</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see eSport.EnumPosition
-		 * @see eSport.impl.ESportPackageImpl#getEnumPosition()
+		 * @see eSport.impl.MatchImpl
+		 * @see eSport.impl.ESportPackageImpl#getMatch()
 		 * @generated
 		 */
-		EEnum ENUM_POSITION = eINSTANCE.getEnumPosition();
+		EClass MATCH = eINSTANCE.getMatch();
 
 		/**
-		 * The meta object literal for the '{@link eSport.EnumTournamentType <em>Enum Tournament Type</em>}' enum.
+		 * The meta object literal for the '<em><b>Max Nb Games</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see eSport.EnumTournamentType
-		 * @see eSport.impl.ESportPackageImpl#getEnumTournamentType()
 		 * @generated
 		 */
-		EEnum ENUM_TOURNAMENT_TYPE = eINSTANCE.getEnumTournamentType();
+		EAttribute MATCH__MAX_NB_GAMES = eINSTANCE.getMatch_MaxNbGames();
+
+		/**
+		 * The meta object literal for the '<em><b>Group</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATCH__GROUP = eINSTANCE.getMatch_Group();
+
+		/**
+		 * The meta object literal for the '<em><b>Finalstage</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATCH__FINALSTAGE = eINSTANCE.getMatch_Finalstage();
+
+		/**
+		 * The meta object literal for the '{@link eSport.impl.GroupImpl <em>Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.impl.GroupImpl
+		 * @see eSport.impl.ESportPackageImpl#getGroup()
+		 * @generated
+		 */
+		EClass GROUP = eINSTANCE.getGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Groupstage</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__GROUPSTAGE = eINSTANCE.getGroup_Groupstage();
+
+		/**
+		 * The meta object literal for the '<em><b>Matchs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__MATCHS = eINSTANCE.getGroup_Matchs();
+
+		/**
+		 * The meta object literal for the '<em><b>Teams</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__TEAMS = eINSTANCE.getGroup_Teams();
+
+		/**
+		 * The meta object literal for the '{@link eSport.impl.GroupStageImpl <em>Group Stage</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.impl.GroupStageImpl
+		 * @see eSport.impl.ESportPackageImpl#getGroupStage()
+		 * @generated
+		 */
+		EClass GROUP_STAGE = eINSTANCE.getGroupStage();
+
+		/**
+		 * The meta object literal for the '<em><b>Groups</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP_STAGE__GROUPS = eINSTANCE.getGroupStage_Groups();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP_STAGE__TYPE = eINSTANCE.getGroupStage_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Tournament</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP_STAGE__TOURNAMENT = eINSTANCE.getGroupStage_Tournament();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Nb Games</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP_STAGE__MAX_NB_GAMES = eINSTANCE.getGroupStage_MaxNbGames();
+
+		/**
+		 * The meta object literal for the '<em><b>League</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP_STAGE__LEAGUE = eINSTANCE.getGroupStage_League();
+
+		/**
+		 * The meta object literal for the '<em><b>Meetings In Same Group</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP_STAGE__MEETINGS_IN_SAME_GROUP = eINSTANCE.getGroupStage_MeetingsInSameGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Meetings With Other Groups</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROUP_STAGE__MEETINGS_WITH_OTHER_GROUPS = eINSTANCE.getGroupStage_MeetingsWithOtherGroups();
+
+		/**
+		 * The meta object literal for the '{@link eSport.impl.FinalStageImpl <em>Final Stage</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.impl.FinalStageImpl
+		 * @see eSport.impl.ESportPackageImpl#getFinalStage()
+		 * @generated
+		 */
+		EClass FINAL_STAGE = eINSTANCE.getFinalStage();
+
+		/**
+		 * The meta object literal for the '<em><b>Matchs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FINAL_STAGE__MATCHS = eINSTANCE.getFinalStage_Matchs();
+
+		/**
+		 * The meta object literal for the '<em><b>Teams</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FINAL_STAGE__TEAMS = eINSTANCE.getFinalStage_Teams();
+
+		/**
+		 * The meta object literal for the '<em><b>Tournament</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FINAL_STAGE__TOURNAMENT = eINSTANCE.getFinalStage_Tournament();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Nb Games</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FINAL_STAGE__MAX_NB_GAMES = eINSTANCE.getFinalStage_MaxNbGames();
+
+		/**
+		 * The meta object literal for the '{@link eSport.CapacityType <em>Capacity Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.CapacityType
+		 * @see eSport.impl.ESportPackageImpl#getCapacityType()
+		 * @generated
+		 */
+		EEnum CAPACITY_TYPE = eINSTANCE.getCapacityType();
+
+		/**
+		 * The meta object literal for the '{@link eSport.Position <em>Position</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.Position
+		 * @see eSport.impl.ESportPackageImpl#getPosition()
+		 * @generated
+		 */
+		EEnum POSITION = eINSTANCE.getPosition();
+
+		/**
+		 * The meta object literal for the '{@link eSport.TournamentType <em>Tournament Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.TournamentType
+		 * @see eSport.impl.ESportPackageImpl#getTournamentType()
+		 * @generated
+		 */
+		EEnum TOURNAMENT_TYPE = eINSTANCE.getTournamentType();
+
+		/**
+		 * The meta object literal for the '{@link eSport.GroupStageType <em>Group Stage Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.GroupStageType
+		 * @see eSport.impl.ESportPackageImpl#getGroupStageType()
+		 * @generated
+		 */
+		EEnum GROUP_STAGE_TYPE = eINSTANCE.getGroupStageType();
 
 	}
 

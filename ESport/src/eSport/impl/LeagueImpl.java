@@ -3,25 +3,16 @@
 package eSport.impl;
 
 import eSport.ESportPackage;
+import eSport.GroupStage;
 import eSport.League;
-import eSport.Team;
 import eSport.Zone;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,9 +25,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.LeagueImpl#getName <em>Name</em>}</li>
  *   <li>{@link eSport.impl.LeagueImpl#getSize <em>Size</em>}</li>
  *   <li>{@link eSport.impl.LeagueImpl#getZone <em>Zone</em>}</li>
- *   <li>{@link eSport.impl.LeagueImpl#getTeams <em>Teams</em>}</li>
  *   <li>{@link eSport.impl.LeagueImpl#getYear <em>Year</em>}</li>
  *   <li>{@link eSport.impl.LeagueImpl#getSeason <em>Season</em>}</li>
+ *   <li>{@link eSport.impl.LeagueImpl#getGroupstage <em>Groupstage</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,16 +84,6 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	protected Zone zone;
 
 	/**
-	 * The cached value of the '{@link #getTeams() <em>Teams</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTeams()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Team> teams;
-
-	/**
 	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,6 +122,16 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * @ordered
 	 */
 	protected String season = SEASON_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getGroupstage() <em>Groupstage</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroupstage()
+	 * @generated
+	 * @ordered
+	 */
+	protected GroupStage groupstage;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,18 +259,6 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Team> getTeams() {
-		if (teams == null) {
-			teams = new EObjectWithInverseResolvingEList<Team>(Team.class, this, ESportPackage.LEAGUE__TEAMS, ESportPackage.TEAM__LEAGUE);
-		}
-		return teams;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getYear() {
 		return year;
 	}
@@ -322,6 +301,49 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GroupStage getGroupstage() {
+		return groupstage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGroupstage(GroupStage newGroupstage, NotificationChain msgs) {
+		GroupStage oldGroupstage = groupstage;
+		groupstage = newGroupstage;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.LEAGUE__GROUPSTAGE, oldGroupstage, newGroupstage);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGroupstage(GroupStage newGroupstage) {
+		if (newGroupstage != groupstage) {
+			NotificationChain msgs = null;
+			if (groupstage != null)
+				msgs = ((InternalEObject)groupstage).eInverseRemove(this, ESportPackage.GROUP_STAGE__LEAGUE, GroupStage.class, msgs);
+			if (newGroupstage != null)
+				msgs = ((InternalEObject)newGroupstage).eInverseAdd(this, ESportPackage.GROUP_STAGE__LEAGUE, GroupStage.class, msgs);
+			msgs = basicSetGroupstage(newGroupstage, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.LEAGUE__GROUPSTAGE, newGroupstage, newGroupstage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -330,8 +352,10 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				if (zone != null)
 					msgs = ((InternalEObject)zone).eInverseRemove(this, ESportPackage.ZONE__LEAGUE, Zone.class, msgs);
 				return basicSetZone((Zone)otherEnd, msgs);
-			case ESportPackage.LEAGUE__TEAMS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeams()).basicAdd(otherEnd, msgs);
+			case ESportPackage.LEAGUE__GROUPSTAGE:
+				if (groupstage != null)
+					msgs = ((InternalEObject)groupstage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESportPackage.LEAGUE__GROUPSTAGE, null, msgs);
+				return basicSetGroupstage((GroupStage)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -346,8 +370,8 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 		switch (featureID) {
 			case ESportPackage.LEAGUE__ZONE:
 				return basicSetZone(null, msgs);
-			case ESportPackage.LEAGUE__TEAMS:
-				return ((InternalEList<?>)getTeams()).basicRemove(otherEnd, msgs);
+			case ESportPackage.LEAGUE__GROUPSTAGE:
+				return basicSetGroupstage(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -367,12 +391,12 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 			case ESportPackage.LEAGUE__ZONE:
 				if (resolve) return getZone();
 				return basicGetZone();
-			case ESportPackage.LEAGUE__TEAMS:
-				return getTeams();
 			case ESportPackage.LEAGUE__YEAR:
 				return getYear();
 			case ESportPackage.LEAGUE__SEASON:
 				return getSeason();
+			case ESportPackage.LEAGUE__GROUPSTAGE:
+				return getGroupstage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -395,15 +419,14 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 			case ESportPackage.LEAGUE__ZONE:
 				setZone((Zone)newValue);
 				return;
-			case ESportPackage.LEAGUE__TEAMS:
-				getTeams().clear();
-				getTeams().addAll((Collection<? extends Team>)newValue);
-				return;
 			case ESportPackage.LEAGUE__YEAR:
 				setYear((Integer)newValue);
 				return;
 			case ESportPackage.LEAGUE__SEASON:
 				setSeason((String)newValue);
+				return;
+			case ESportPackage.LEAGUE__GROUPSTAGE:
+				setGroupstage((GroupStage)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -426,14 +449,14 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 			case ESportPackage.LEAGUE__ZONE:
 				setZone((Zone)null);
 				return;
-			case ESportPackage.LEAGUE__TEAMS:
-				getTeams().clear();
-				return;
 			case ESportPackage.LEAGUE__YEAR:
 				setYear(YEAR_EDEFAULT);
 				return;
 			case ESportPackage.LEAGUE__SEASON:
 				setSeason(SEASON_EDEFAULT);
+				return;
+			case ESportPackage.LEAGUE__GROUPSTAGE:
+				setGroupstage((GroupStage)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -453,12 +476,12 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				return size != SIZE_EDEFAULT;
 			case ESportPackage.LEAGUE__ZONE:
 				return zone != null;
-			case ESportPackage.LEAGUE__TEAMS:
-				return teams != null && !teams.isEmpty();
 			case ESportPackage.LEAGUE__YEAR:
 				return year != YEAR_EDEFAULT;
 			case ESportPackage.LEAGUE__SEASON:
 				return SEASON_EDEFAULT == null ? season != null : !SEASON_EDEFAULT.equals(season);
+			case ESportPackage.LEAGUE__GROUPSTAGE:
+				return groupstage != null;
 		}
 		return super.eIsSet(featureID);
 	}

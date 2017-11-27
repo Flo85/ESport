@@ -66,6 +66,10 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 			case ESportPackage.COUNTRY: return createCountry();
 			case ESportPackage.ZONE: return createZone();
 			case ESportPackage.TEAM: return createTeam();
+			case ESportPackage.MATCH: return createMatch();
+			case ESportPackage.GROUP: return createGroup();
+			case ESportPackage.GROUP_STAGE: return createGroupStage();
+			case ESportPackage.FINAL_STAGE: return createFinalStage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,12 +83,14 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ESportPackage.ENUM_CAPACITY:
-				return createEnumCapacityFromString(eDataType, initialValue);
-			case ESportPackage.ENUM_POSITION:
-				return createEnumPositionFromString(eDataType, initialValue);
-			case ESportPackage.ENUM_TOURNAMENT_TYPE:
-				return createEnumTournamentTypeFromString(eDataType, initialValue);
+			case ESportPackage.CAPACITY_TYPE:
+				return createCapacityTypeFromString(eDataType, initialValue);
+			case ESportPackage.POSITION:
+				return createPositionFromString(eDataType, initialValue);
+			case ESportPackage.TOURNAMENT_TYPE:
+				return createTournamentTypeFromString(eDataType, initialValue);
+			case ESportPackage.GROUP_STAGE_TYPE:
+				return createGroupStageTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -98,12 +104,14 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ESportPackage.ENUM_CAPACITY:
-				return convertEnumCapacityToString(eDataType, instanceValue);
-			case ESportPackage.ENUM_POSITION:
-				return convertEnumPositionToString(eDataType, instanceValue);
-			case ESportPackage.ENUM_TOURNAMENT_TYPE:
-				return convertEnumTournamentTypeToString(eDataType, instanceValue);
+			case ESportPackage.CAPACITY_TYPE:
+				return convertCapacityTypeToString(eDataType, instanceValue);
+			case ESportPackage.POSITION:
+				return convertPositionToString(eDataType, instanceValue);
+			case ESportPackage.TOURNAMENT_TYPE:
+				return convertTournamentTypeToString(eDataType, instanceValue);
+			case ESportPackage.GROUP_STAGE_TYPE:
+				return convertGroupStageTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -204,8 +212,48 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnumCapacity createEnumCapacityFromString(EDataType eDataType, String initialValue) {
-		EnumCapacity result = EnumCapacity.get(initialValue);
+	public Match createMatch() {
+		MatchImpl match = new MatchImpl();
+		return match;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Group createGroup() {
+		GroupImpl group = new GroupImpl();
+		return group;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroupStage createGroupStage() {
+		GroupStageImpl groupStage = new GroupStageImpl();
+		return groupStage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FinalStage createFinalStage() {
+		FinalStageImpl finalStage = new FinalStageImpl();
+		return finalStage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CapacityType createCapacityTypeFromString(EDataType eDataType, String initialValue) {
+		CapacityType result = CapacityType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -215,7 +263,7 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEnumCapacityToString(EDataType eDataType, Object instanceValue) {
+	public String convertCapacityTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -224,8 +272,8 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnumPosition createEnumPositionFromString(EDataType eDataType, String initialValue) {
-		EnumPosition result = EnumPosition.get(initialValue);
+	public Position createPositionFromString(EDataType eDataType, String initialValue) {
+		Position result = Position.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -235,7 +283,7 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEnumPositionToString(EDataType eDataType, Object instanceValue) {
+	public String convertPositionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -244,8 +292,8 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnumTournamentType createEnumTournamentTypeFromString(EDataType eDataType, String initialValue) {
-		EnumTournamentType result = EnumTournamentType.get(initialValue);
+	public TournamentType createTournamentTypeFromString(EDataType eDataType, String initialValue) {
+		TournamentType result = TournamentType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -255,7 +303,27 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEnumTournamentTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertTournamentTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroupStageType createGroupStageTypeFromString(EDataType eDataType, String initialValue) {
+		GroupStageType result = GroupStageType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertGroupStageTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

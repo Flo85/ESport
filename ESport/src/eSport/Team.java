@@ -18,9 +18,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Team#getName <em>Name</em>}</li>
  *   <li>{@link eSport.Team#getPlayers <em>Players</em>}</li>
  *   <li>{@link eSport.Team#getCoach <em>Coach</em>}</li>
- *   <li>{@link eSport.Team#getTournaments <em>Tournaments</em>}</li>
- *   <li>{@link eSport.Team#getLeague <em>League</em>}</li>
- *   <li>{@link eSport.Team#getCountry <em>Country</em>}</li>
+ *   <li>{@link eSport.Team#getZone <em>Zone</em>}</li>
+ *   <li>{@link eSport.Team#getGroups <em>Groups</em>}</li>
+ *   <li>{@link eSport.Team#getChampionshipPoints <em>Championship Points</em>}</li>
+ *   <li>{@link eSport.Team#getFinalstages <em>Finalstages</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getTeam()
@@ -101,77 +102,93 @@ public interface Team extends EObject {
 	void setCoach(Coach value);
 
 	/**
-	 * Returns the value of the '<em><b>Tournaments</b></em>' reference list.
-	 * The list contents are of type {@link eSport.Tournament}.
-	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getTeams <em>Teams</em>}'.
+	 * Returns the value of the '<em><b>Zone</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link eSport.Zone#getTeams <em>Teams</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tournaments</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Zone</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tournaments</em>' reference list.
-	 * @see eSport.ESportPackage#getTeam_Tournaments()
-	 * @see eSport.Tournament#getTeams
-	 * @model opposite="teams"
+	 * @return the value of the '<em>Zone</em>' container reference.
+	 * @see #setZone(Zone)
+	 * @see eSport.ESportPackage#getTeam_Zone()
+	 * @see eSport.Zone#getTeams
+	 * @model opposite="teams" transient="false"
 	 * @generated
 	 */
-	EList<Tournament> getTournaments();
+	Zone getZone();
 
 	/**
-	 * Returns the value of the '<em><b>League</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link eSport.League#getTeams <em>Teams</em>}'.
+	 * Sets the value of the '{@link eSport.Team#getZone <em>Zone</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Zone</em>' container reference.
+	 * @see #getZone()
+	 * @generated
+	 */
+	void setZone(Zone value);
+
+	/**
+	 * Returns the value of the '<em><b>Groups</b></em>' reference list.
+	 * The list contents are of type {@link eSport.Group}.
+	 * It is bidirectional and its opposite is '{@link eSport.Group#getTeams <em>Teams</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>League</em>' reference isn't clear,
+	 * If the meaning of the '<em>Groups</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>League</em>' reference.
-	 * @see #setLeague(League)
-	 * @see eSport.ESportPackage#getTeam_League()
-	 * @see eSport.League#getTeams
+	 * @return the value of the '<em>Groups</em>' reference list.
+	 * @see eSport.ESportPackage#getTeam_Groups()
+	 * @see eSport.Group#getTeams
 	 * @model opposite="teams"
 	 * @generated
 	 */
-	League getLeague();
+	EList<Group> getGroups();
 
 	/**
-	 * Sets the value of the '{@link eSport.Team#getLeague <em>League</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>League</em>' reference.
-	 * @see #getLeague()
-	 * @generated
-	 */
-	void setLeague(League value);
-
-	/**
-	 * Returns the value of the '<em><b>Country</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link eSport.Country#getTeams <em>Teams</em>}'.
+	 * Returns the value of the '<em><b>Championship Points</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Country</em>' reference isn't clear,
+	 * If the meaning of the '<em>Championship Points</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Country</em>' reference.
-	 * @see #setCountry(Country)
-	 * @see eSport.ESportPackage#getTeam_Country()
-	 * @see eSport.Country#getTeams
+	 * @return the value of the '<em>Championship Points</em>' attribute.
+	 * @see #setChampionshipPoints(int)
+	 * @see eSport.ESportPackage#getTeam_ChampionshipPoints()
+	 * @model
+	 * @generated
+	 */
+	int getChampionshipPoints();
+
+	/**
+	 * Sets the value of the '{@link eSport.Team#getChampionshipPoints <em>Championship Points</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Championship Points</em>' attribute.
+	 * @see #getChampionshipPoints()
+	 * @generated
+	 */
+	void setChampionshipPoints(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Finalstages</b></em>' reference list.
+	 * The list contents are of type {@link eSport.FinalStage}.
+	 * It is bidirectional and its opposite is '{@link eSport.FinalStage#getTeams <em>Teams</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Finalstages</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Finalstages</em>' reference list.
+	 * @see eSport.ESportPackage#getTeam_Finalstages()
+	 * @see eSport.FinalStage#getTeams
 	 * @model opposite="teams"
 	 * @generated
 	 */
-	Country getCountry();
-
-	/**
-	 * Sets the value of the '{@link eSport.Team#getCountry <em>Country</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Country</em>' reference.
-	 * @see #getCountry()
-	 * @generated
-	 */
-	void setCountry(Country value);
+	EList<FinalStage> getFinalstages();
 
 } // Team

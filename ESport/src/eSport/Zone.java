@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Zone#getTournaments <em>Tournaments</em>}</li>
  *   <li>{@link eSport.Zone#getLeague <em>League</em>}</li>
  *   <li>{@link eSport.Zone#getCountries <em>Countries</em>}</li>
+ *   <li>{@link eSport.Zone#getTeams <em>Teams</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getZone()
@@ -99,7 +100,7 @@ public interface Zone extends EObject {
 	void setLeague(League value);
 
 	/**
-	 * Returns the value of the '<em><b>Countries</b></em>' reference list.
+	 * Returns the value of the '<em><b>Countries</b></em>' containment reference list.
 	 * The list contents are of type {@link eSport.Country}.
 	 * It is bidirectional and its opposite is '{@link eSport.Country#getZone <em>Zone</em>}'.
 	 * <!-- begin-user-doc -->
@@ -108,12 +109,30 @@ public interface Zone extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Countries</em>' reference list.
+	 * @return the value of the '<em>Countries</em>' containment reference list.
 	 * @see eSport.ESportPackage#getZone_Countries()
 	 * @see eSport.Country#getZone
-	 * @model opposite="zone"
+	 * @model opposite="zone" containment="true"
 	 * @generated
 	 */
 	EList<Country> getCountries();
+
+	/**
+	 * Returns the value of the '<em><b>Teams</b></em>' containment reference list.
+	 * The list contents are of type {@link eSport.Team}.
+	 * It is bidirectional and its opposite is '{@link eSport.Team#getZone <em>Zone</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Teams</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Teams</em>' containment reference list.
+	 * @see eSport.ESportPackage#getZone_Teams()
+	 * @see eSport.Team#getZone
+	 * @model opposite="zone" containment="true"
+	 * @generated
+	 */
+	EList<Team> getTeams();
 
 } // Zone
