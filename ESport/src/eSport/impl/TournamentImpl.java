@@ -44,8 +44,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.TournamentImpl#getYear <em>Year</em>}</li>
  *   <li>{@link eSport.impl.TournamentImpl#getFinalstages <em>Finalstages</em>}</li>
  *   <li>{@link eSport.impl.TournamentImpl#getGroupstages <em>Groupstages</em>}</li>
- *   <li>{@link eSport.impl.TournamentImpl#getQualificationFrom <em>Qualification From</em>}</li>
- *   <li>{@link eSport.impl.TournamentImpl#getQualificationsTo <em>Qualifications To</em>}</li>
+ *   <li>{@link eSport.impl.TournamentImpl#getQualifiesFrom <em>Qualifies From</em>}</li>
+ *   <li>{@link eSport.impl.TournamentImpl#getQualifiesFor <em>Qualifies For</em>}</li>
  * </ul>
  *
  * @generated
@@ -172,24 +172,24 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	protected EList<GroupStage> groupstages;
 
 	/**
-	 * The cached value of the '{@link #getQualificationFrom() <em>Qualification From</em>}' reference.
+	 * The cached value of the '{@link #getQualifiesFrom() <em>Qualifies From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQualificationFrom()
+	 * @see #getQualifiesFrom()
 	 * @generated
 	 * @ordered
 	 */
-	protected Qualification qualificationFrom;
+	protected Qualification qualifiesFrom;
 
 	/**
-	 * The cached value of the '{@link #getQualificationsTo() <em>Qualifications To</em>}' reference list.
+	 * The cached value of the '{@link #getQualifiesFor() <em>Qualifies For</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQualificationsTo()
+	 * @see #getQualifiesFor()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Qualification> qualificationsTo;
+	protected EList<Qualification> qualifiesFor;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -347,16 +347,16 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Qualification getQualificationFrom() {
-		if (qualificationFrom != null && qualificationFrom.eIsProxy()) {
-			InternalEObject oldQualificationFrom = (InternalEObject)qualificationFrom;
-			qualificationFrom = (Qualification)eResolveProxy(oldQualificationFrom);
-			if (qualificationFrom != oldQualificationFrom) {
+	public Qualification getQualifiesFrom() {
+		if (qualifiesFrom != null && qualifiesFrom.eIsProxy()) {
+			InternalEObject oldQualifiesFrom = (InternalEObject)qualifiesFrom;
+			qualifiesFrom = (Qualification)eResolveProxy(oldQualifiesFrom);
+			if (qualifiesFrom != oldQualifiesFrom) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.TOURNAMENT__QUALIFICATION_FROM, oldQualificationFrom, qualificationFrom));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.TOURNAMENT__QUALIFIES_FROM, oldQualifiesFrom, qualifiesFrom));
 			}
 		}
-		return qualificationFrom;
+		return qualifiesFrom;
 	}
 
 	/**
@@ -364,8 +364,8 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Qualification basicGetQualificationFrom() {
-		return qualificationFrom;
+	public Qualification basicGetQualifiesFrom() {
+		return qualifiesFrom;
 	}
 
 	/**
@@ -373,11 +373,11 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQualificationFrom(Qualification newQualificationFrom, NotificationChain msgs) {
-		Qualification oldQualificationFrom = qualificationFrom;
-		qualificationFrom = newQualificationFrom;
+	public NotificationChain basicSetQualifiesFrom(Qualification newQualifiesFrom, NotificationChain msgs) {
+		Qualification oldQualifiesFrom = qualifiesFrom;
+		qualifiesFrom = newQualifiesFrom;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.TOURNAMENT__QUALIFICATION_FROM, oldQualificationFrom, newQualificationFrom);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.TOURNAMENT__QUALIFIES_FROM, oldQualifiesFrom, newQualifiesFrom);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -388,18 +388,18 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQualificationFrom(Qualification newQualificationFrom) {
-		if (newQualificationFrom != qualificationFrom) {
+	public void setQualifiesFrom(Qualification newQualifiesFrom) {
+		if (newQualifiesFrom != qualifiesFrom) {
 			NotificationChain msgs = null;
-			if (qualificationFrom != null)
-				msgs = ((InternalEObject)qualificationFrom).eInverseRemove(this, ESportPackage.QUALIFICATION__TOURNAMENT_FROM, Qualification.class, msgs);
-			if (newQualificationFrom != null)
-				msgs = ((InternalEObject)newQualificationFrom).eInverseAdd(this, ESportPackage.QUALIFICATION__TOURNAMENT_FROM, Qualification.class, msgs);
-			msgs = basicSetQualificationFrom(newQualificationFrom, msgs);
+			if (qualifiesFrom != null)
+				msgs = ((InternalEObject)qualifiesFrom).eInverseRemove(this, ESportPackage.QUALIFICATION__TOURNAMENT_FROM, Qualification.class, msgs);
+			if (newQualifiesFrom != null)
+				msgs = ((InternalEObject)newQualifiesFrom).eInverseAdd(this, ESportPackage.QUALIFICATION__TOURNAMENT_FROM, Qualification.class, msgs);
+			msgs = basicSetQualifiesFrom(newQualifiesFrom, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.TOURNAMENT__QUALIFICATION_FROM, newQualificationFrom, newQualificationFrom));
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.TOURNAMENT__QUALIFIES_FROM, newQualifiesFrom, newQualifiesFrom));
 	}
 
 	/**
@@ -407,11 +407,11 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Qualification> getQualificationsTo() {
-		if (qualificationsTo == null) {
-			qualificationsTo = new EObjectWithInverseResolvingEList<Qualification>(Qualification.class, this, ESportPackage.TOURNAMENT__QUALIFICATIONS_TO, ESportPackage.QUALIFICATION__TOURNAMENT_TO);
+	public EList<Qualification> getQualifiesFor() {
+		if (qualifiesFor == null) {
+			qualifiesFor = new EObjectWithInverseResolvingEList<Qualification>(Qualification.class, this, ESportPackage.TOURNAMENT__QUALIFIES_FOR, ESportPackage.QUALIFICATION__TOURNAMENT_TO);
 		}
-		return qualificationsTo;
+		return qualifiesFor;
 	}
 
 	/**
@@ -431,12 +431,12 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFinalstages()).basicAdd(otherEnd, msgs);
 			case ESportPackage.TOURNAMENT__GROUPSTAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGroupstages()).basicAdd(otherEnd, msgs);
-			case ESportPackage.TOURNAMENT__QUALIFICATION_FROM:
-				if (qualificationFrom != null)
-					msgs = ((InternalEObject)qualificationFrom).eInverseRemove(this, ESportPackage.QUALIFICATION__TOURNAMENT_FROM, Qualification.class, msgs);
-				return basicSetQualificationFrom((Qualification)otherEnd, msgs);
-			case ESportPackage.TOURNAMENT__QUALIFICATIONS_TO:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getQualificationsTo()).basicAdd(otherEnd, msgs);
+			case ESportPackage.TOURNAMENT__QUALIFIES_FROM:
+				if (qualifiesFrom != null)
+					msgs = ((InternalEObject)qualifiesFrom).eInverseRemove(this, ESportPackage.QUALIFICATION__TOURNAMENT_FROM, Qualification.class, msgs);
+				return basicSetQualifiesFrom((Qualification)otherEnd, msgs);
+			case ESportPackage.TOURNAMENT__QUALIFIES_FOR:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getQualifiesFor()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -457,10 +457,10 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return ((InternalEList<?>)getFinalstages()).basicRemove(otherEnd, msgs);
 			case ESportPackage.TOURNAMENT__GROUPSTAGES:
 				return ((InternalEList<?>)getGroupstages()).basicRemove(otherEnd, msgs);
-			case ESportPackage.TOURNAMENT__QUALIFICATION_FROM:
-				return basicSetQualificationFrom(null, msgs);
-			case ESportPackage.TOURNAMENT__QUALIFICATIONS_TO:
-				return ((InternalEList<?>)getQualificationsTo()).basicRemove(otherEnd, msgs);
+			case ESportPackage.TOURNAMENT__QUALIFIES_FROM:
+				return basicSetQualifiesFrom(null, msgs);
+			case ESportPackage.TOURNAMENT__QUALIFIES_FOR:
+				return ((InternalEList<?>)getQualifiesFor()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -489,11 +489,11 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return getFinalstages();
 			case ESportPackage.TOURNAMENT__GROUPSTAGES:
 				return getGroupstages();
-			case ESportPackage.TOURNAMENT__QUALIFICATION_FROM:
-				if (resolve) return getQualificationFrom();
-				return basicGetQualificationFrom();
-			case ESportPackage.TOURNAMENT__QUALIFICATIONS_TO:
-				return getQualificationsTo();
+			case ESportPackage.TOURNAMENT__QUALIFIES_FROM:
+				if (resolve) return getQualifiesFrom();
+				return basicGetQualifiesFrom();
+			case ESportPackage.TOURNAMENT__QUALIFIES_FOR:
+				return getQualifiesFor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -535,12 +535,12 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				getGroupstages().clear();
 				getGroupstages().addAll((Collection<? extends GroupStage>)newValue);
 				return;
-			case ESportPackage.TOURNAMENT__QUALIFICATION_FROM:
-				setQualificationFrom((Qualification)newValue);
+			case ESportPackage.TOURNAMENT__QUALIFIES_FROM:
+				setQualifiesFrom((Qualification)newValue);
 				return;
-			case ESportPackage.TOURNAMENT__QUALIFICATIONS_TO:
-				getQualificationsTo().clear();
-				getQualificationsTo().addAll((Collection<? extends Qualification>)newValue);
+			case ESportPackage.TOURNAMENT__QUALIFIES_FOR:
+				getQualifiesFor().clear();
+				getQualifiesFor().addAll((Collection<? extends Qualification>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -578,11 +578,11 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 			case ESportPackage.TOURNAMENT__GROUPSTAGES:
 				getGroupstages().clear();
 				return;
-			case ESportPackage.TOURNAMENT__QUALIFICATION_FROM:
-				setQualificationFrom((Qualification)null);
+			case ESportPackage.TOURNAMENT__QUALIFIES_FROM:
+				setQualifiesFrom((Qualification)null);
 				return;
-			case ESportPackage.TOURNAMENT__QUALIFICATIONS_TO:
-				getQualificationsTo().clear();
+			case ESportPackage.TOURNAMENT__QUALIFIES_FOR:
+				getQualifiesFor().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -612,10 +612,10 @@ public class TournamentImpl extends MinimalEObjectImpl.Container implements Tour
 				return finalstages != null && !finalstages.isEmpty();
 			case ESportPackage.TOURNAMENT__GROUPSTAGES:
 				return groupstages != null && !groupstages.isEmpty();
-			case ESportPackage.TOURNAMENT__QUALIFICATION_FROM:
-				return qualificationFrom != null;
-			case ESportPackage.TOURNAMENT__QUALIFICATIONS_TO:
-				return qualificationsTo != null && !qualificationsTo.isEmpty();
+			case ESportPackage.TOURNAMENT__QUALIFIES_FROM:
+				return qualifiesFrom != null;
+			case ESportPackage.TOURNAMENT__QUALIFIES_FOR:
+				return qualifiesFor != null && !qualifiesFor.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

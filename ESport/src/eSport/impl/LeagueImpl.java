@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.LeagueImpl#getYear <em>Year</em>}</li>
  *   <li>{@link eSport.impl.LeagueImpl#getSeason <em>Season</em>}</li>
  *   <li>{@link eSport.impl.LeagueImpl#getGroupstage <em>Groupstage</em>}</li>
- *   <li>{@link eSport.impl.LeagueImpl#getQualificationsFrom <em>Qualifications From</em>}</li>
+ *   <li>{@link eSport.impl.LeagueImpl#getQualifiesFor <em>Qualifies For</em>}</li>
  * </ul>
  *
  * @generated
@@ -140,14 +140,14 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	protected GroupStage groupstage;
 
 	/**
-	 * The cached value of the '{@link #getQualificationsFrom() <em>Qualifications From</em>}' reference list.
+	 * The cached value of the '{@link #getQualifiesFor() <em>Qualifies For</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getQualificationsFrom()
+	 * @see #getQualifiesFor()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Qualification> qualificationsFrom;
+	protected EList<Qualification> qualifiesFor;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -360,11 +360,11 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Qualification> getQualificationsFrom() {
-		if (qualificationsFrom == null) {
-			qualificationsFrom = new EObjectWithInverseResolvingEList<Qualification>(Qualification.class, this, ESportPackage.LEAGUE__QUALIFICATIONS_FROM, ESportPackage.QUALIFICATION__LEAGUE);
+	public EList<Qualification> getQualifiesFor() {
+		if (qualifiesFor == null) {
+			qualifiesFor = new EObjectWithInverseResolvingEList<Qualification>(Qualification.class, this, ESportPackage.LEAGUE__QUALIFIES_FOR, ESportPackage.QUALIFICATION__LEAGUE_FROM);
 		}
-		return qualificationsFrom;
+		return qualifiesFor;
 	}
 
 	/**
@@ -384,8 +384,8 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				if (groupstage != null)
 					msgs = ((InternalEObject)groupstage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ESportPackage.LEAGUE__GROUPSTAGE, null, msgs);
 				return basicSetGroupstage((GroupStage)otherEnd, msgs);
-			case ESportPackage.LEAGUE__QUALIFICATIONS_FROM:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getQualificationsFrom()).basicAdd(otherEnd, msgs);
+			case ESportPackage.LEAGUE__QUALIFIES_FOR:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getQualifiesFor()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -402,8 +402,8 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				return basicSetZone(null, msgs);
 			case ESportPackage.LEAGUE__GROUPSTAGE:
 				return basicSetGroupstage(null, msgs);
-			case ESportPackage.LEAGUE__QUALIFICATIONS_FROM:
-				return ((InternalEList<?>)getQualificationsFrom()).basicRemove(otherEnd, msgs);
+			case ESportPackage.LEAGUE__QUALIFIES_FOR:
+				return ((InternalEList<?>)getQualifiesFor()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -429,8 +429,8 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				return getSeason();
 			case ESportPackage.LEAGUE__GROUPSTAGE:
 				return getGroupstage();
-			case ESportPackage.LEAGUE__QUALIFICATIONS_FROM:
-				return getQualificationsFrom();
+			case ESportPackage.LEAGUE__QUALIFIES_FOR:
+				return getQualifiesFor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -462,9 +462,9 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 			case ESportPackage.LEAGUE__GROUPSTAGE:
 				setGroupstage((GroupStage)newValue);
 				return;
-			case ESportPackage.LEAGUE__QUALIFICATIONS_FROM:
-				getQualificationsFrom().clear();
-				getQualificationsFrom().addAll((Collection<? extends Qualification>)newValue);
+			case ESportPackage.LEAGUE__QUALIFIES_FOR:
+				getQualifiesFor().clear();
+				getQualifiesFor().addAll((Collection<? extends Qualification>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -496,8 +496,8 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 			case ESportPackage.LEAGUE__GROUPSTAGE:
 				setGroupstage((GroupStage)null);
 				return;
-			case ESportPackage.LEAGUE__QUALIFICATIONS_FROM:
-				getQualificationsFrom().clear();
+			case ESportPackage.LEAGUE__QUALIFIES_FOR:
+				getQualifiesFor().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -523,8 +523,8 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				return SEASON_EDEFAULT == null ? season != null : !SEASON_EDEFAULT.equals(season);
 			case ESportPackage.LEAGUE__GROUPSTAGE:
 				return groupstage != null;
-			case ESportPackage.LEAGUE__QUALIFICATIONS_FROM:
-				return qualificationsFrom != null && !qualificationsFrom.isEmpty();
+			case ESportPackage.LEAGUE__QUALIFIES_FOR:
+				return qualifiesFor != null && !qualifiesFor.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

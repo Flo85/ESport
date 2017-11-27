@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link eSport.Qualification#getTournamentFrom <em>Tournament From</em>}</li>
  *   <li>{@link eSport.Qualification#getTournamentTo <em>Tournament To</em>}</li>
- *   <li>{@link eSport.Qualification#getLeague <em>League</em>}</li>
+ *   <li>{@link eSport.Qualification#getLeagueFrom <em>League From</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getQualification()
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Qualification extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Tournament From</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getQualificationFrom <em>Qualification From</em>}'.
+	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getQualifiesFrom <em>Qualifies From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tournament From</em>' reference isn't clear,
@@ -35,8 +35,8 @@ public interface Qualification extends EObject {
 	 * @return the value of the '<em>Tournament From</em>' reference.
 	 * @see #setTournamentFrom(Tournament)
 	 * @see eSport.ESportPackage#getQualification_TournamentFrom()
-	 * @see eSport.Tournament#getQualificationFrom
-	 * @model opposite="qualificationFrom"
+	 * @see eSport.Tournament#getQualifiesFrom
+	 * @model opposite="qualifiesFrom"
 	 * @generated
 	 */
 	Tournament getTournamentFrom();
@@ -53,7 +53,7 @@ public interface Qualification extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Tournament To</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getQualificationsTo <em>Qualifications To</em>}'.
+	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getQualifiesFor <em>Qualifies For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tournament To</em>' reference isn't clear,
@@ -63,8 +63,8 @@ public interface Qualification extends EObject {
 	 * @return the value of the '<em>Tournament To</em>' reference.
 	 * @see #setTournamentTo(Tournament)
 	 * @see eSport.ESportPackage#getQualification_TournamentTo()
-	 * @see eSport.Tournament#getQualificationsTo
-	 * @model opposite="qualificationsTo"
+	 * @see eSport.Tournament#getQualifiesFor
+	 * @model opposite="qualifiesFor"
 	 * @generated
 	 */
 	Tournament getTournamentTo();
@@ -80,31 +80,31 @@ public interface Qualification extends EObject {
 	void setTournamentTo(Tournament value);
 
 	/**
-	 * Returns the value of the '<em><b>League</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link eSport.League#getQualificationsFrom <em>Qualifications From</em>}'.
+	 * Returns the value of the '<em><b>League From</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link eSport.League#getQualifiesFor <em>Qualifies For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>League</em>' reference isn't clear,
+	 * If the meaning of the '<em>League From</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>League</em>' reference.
-	 * @see #setLeague(League)
-	 * @see eSport.ESportPackage#getQualification_League()
-	 * @see eSport.League#getQualificationsFrom
-	 * @model opposite="qualificationsFrom"
+	 * @return the value of the '<em>League From</em>' reference.
+	 * @see #setLeagueFrom(League)
+	 * @see eSport.ESportPackage#getQualification_LeagueFrom()
+	 * @see eSport.League#getQualifiesFor
+	 * @model opposite="qualifiesFor"
 	 * @generated
 	 */
-	League getLeague();
+	League getLeagueFrom();
 
 	/**
-	 * Sets the value of the '{@link eSport.Qualification#getLeague <em>League</em>}' reference.
+	 * Sets the value of the '{@link eSport.Qualification#getLeagueFrom <em>League From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>League</em>' reference.
-	 * @see #getLeague()
+	 * @param value the new value of the '<em>League From</em>' reference.
+	 * @see #getLeagueFrom()
 	 * @generated
 	 */
-	void setLeague(League value);
+	void setLeagueFrom(League value);
 
 } // Qualification

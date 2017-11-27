@@ -386,22 +386,22 @@ public interface ESportPackage extends EPackage {
 	int TOURNAMENT__GROUPSTAGES = 7;
 
 	/**
-	 * The feature id for the '<em><b>Qualification From</b></em>' reference.
+	 * The feature id for the '<em><b>Qualifies From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOURNAMENT__QUALIFICATION_FROM = 8;
+	int TOURNAMENT__QUALIFIES_FROM = 8;
 
 	/**
-	 * The feature id for the '<em><b>Qualifications To</b></em>' reference list.
+	 * The feature id for the '<em><b>Qualifies For</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOURNAMENT__QUALIFICATIONS_TO = 9;
+	int TOURNAMENT__QUALIFIES_FOR = 9;
 
 	/**
 	 * The number of structural features of the '<em>Tournament</em>' class.
@@ -486,13 +486,13 @@ public interface ESportPackage extends EPackage {
 	int LEAGUE__GROUPSTAGE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Qualifications From</b></em>' reference list.
+	 * The feature id for the '<em><b>Qualifies For</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEAGUE__QUALIFICATIONS_FROM = 6;
+	int LEAGUE__QUALIFIES_FOR = 6;
 
 	/**
 	 * The number of structural features of the '<em>League</em>' class.
@@ -1125,13 +1125,13 @@ public interface ESportPackage extends EPackage {
 	int QUALIFICATION__TOURNAMENT_TO = 1;
 
 	/**
-	 * The feature id for the '<em><b>League</b></em>' reference.
+	 * The feature id for the '<em><b>League From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALIFICATION__LEAGUE = 2;
+	int QUALIFICATION__LEAGUE_FROM = 2;
 
 	/**
 	 * The number of structural features of the '<em>Qualification</em>' class.
@@ -1353,26 +1353,26 @@ public interface ESportPackage extends EPackage {
 	EReference getTournament_Groupstages();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Tournament#getQualificationFrom <em>Qualification From</em>}'.
+	 * Returns the meta object for the reference '{@link eSport.Tournament#getQualifiesFrom <em>Qualifies From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Qualification From</em>'.
-	 * @see eSport.Tournament#getQualificationFrom()
+	 * @return the meta object for the reference '<em>Qualifies From</em>'.
+	 * @see eSport.Tournament#getQualifiesFrom()
 	 * @see #getTournament()
 	 * @generated
 	 */
-	EReference getTournament_QualificationFrom();
+	EReference getTournament_QualifiesFrom();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.Tournament#getQualificationsTo <em>Qualifications To</em>}'.
+	 * Returns the meta object for the reference list '{@link eSport.Tournament#getQualifiesFor <em>Qualifies For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Qualifications To</em>'.
-	 * @see eSport.Tournament#getQualificationsTo()
+	 * @return the meta object for the reference list '<em>Qualifies For</em>'.
+	 * @see eSport.Tournament#getQualifiesFor()
 	 * @see #getTournament()
 	 * @generated
 	 */
-	EReference getTournament_QualificationsTo();
+	EReference getTournament_QualifiesFor();
 
 	/**
 	 * Returns the meta object for class '{@link eSport.League <em>League</em>}'.
@@ -1451,15 +1451,15 @@ public interface ESportPackage extends EPackage {
 	EReference getLeague_Groupstage();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.League#getQualificationsFrom <em>Qualifications From</em>}'.
+	 * Returns the meta object for the reference list '{@link eSport.League#getQualifiesFor <em>Qualifies For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Qualifications From</em>'.
-	 * @see eSport.League#getQualificationsFrom()
+	 * @return the meta object for the reference list '<em>Qualifies For</em>'.
+	 * @see eSport.League#getQualifiesFor()
 	 * @see #getLeague()
 	 * @generated
 	 */
-	EReference getLeague_QualificationsFrom();
+	EReference getLeague_QualifiesFor();
 
 	/**
 	 * Returns the meta object for class '{@link eSport.Capacity <em>Capacity</em>}'.
@@ -2079,15 +2079,15 @@ public interface ESportPackage extends EPackage {
 	EReference getQualification_TournamentTo();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Qualification#getLeague <em>League</em>}'.
+	 * Returns the meta object for the reference '{@link eSport.Qualification#getLeagueFrom <em>League From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>League</em>'.
-	 * @see eSport.Qualification#getLeague()
+	 * @return the meta object for the reference '<em>League From</em>'.
+	 * @see eSport.Qualification#getLeagueFrom()
 	 * @see #getQualification()
 	 * @generated
 	 */
-	EReference getQualification_League();
+	EReference getQualification_LeagueFrom();
 
 	/**
 	 * Returns the meta object for enum '{@link eSport.CapacityType <em>Capacity Type</em>}'.
@@ -2281,20 +2281,20 @@ public interface ESportPackage extends EPackage {
 		EReference TOURNAMENT__GROUPSTAGES = eINSTANCE.getTournament_Groupstages();
 
 		/**
-		 * The meta object literal for the '<em><b>Qualification From</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Qualifies From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TOURNAMENT__QUALIFICATION_FROM = eINSTANCE.getTournament_QualificationFrom();
+		EReference TOURNAMENT__QUALIFIES_FROM = eINSTANCE.getTournament_QualifiesFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Qualifications To</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Qualifies For</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TOURNAMENT__QUALIFICATIONS_TO = eINSTANCE.getTournament_QualificationsTo();
+		EReference TOURNAMENT__QUALIFIES_FOR = eINSTANCE.getTournament_QualifiesFor();
 
 		/**
 		 * The meta object literal for the '{@link eSport.impl.LeagueImpl <em>League</em>}' class.
@@ -2355,12 +2355,12 @@ public interface ESportPackage extends EPackage {
 		EReference LEAGUE__GROUPSTAGE = eINSTANCE.getLeague_Groupstage();
 
 		/**
-		 * The meta object literal for the '<em><b>Qualifications From</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Qualifies For</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LEAGUE__QUALIFICATIONS_FROM = eINSTANCE.getLeague_QualificationsFrom();
+		EReference LEAGUE__QUALIFIES_FOR = eINSTANCE.getLeague_QualifiesFor();
 
 		/**
 		 * The meta object literal for the '{@link eSport.impl.CapacityImpl <em>Capacity</em>}' class.
@@ -2839,12 +2839,12 @@ public interface ESportPackage extends EPackage {
 		EReference QUALIFICATION__TOURNAMENT_TO = eINSTANCE.getQualification_TournamentTo();
 
 		/**
-		 * The meta object literal for the '<em><b>League</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>League From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUALIFICATION__LEAGUE = eINSTANCE.getQualification_League();
+		EReference QUALIFICATION__LEAGUE_FROM = eINSTANCE.getQualification_LeagueFrom();
 
 		/**
 		 * The meta object literal for the '{@link eSport.CapacityType <em>Capacity Type</em>}' enum.

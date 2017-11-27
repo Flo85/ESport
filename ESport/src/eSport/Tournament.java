@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Tournament#getYear <em>Year</em>}</li>
  *   <li>{@link eSport.Tournament#getFinalstages <em>Finalstages</em>}</li>
  *   <li>{@link eSport.Tournament#getGroupstages <em>Groupstages</em>}</li>
- *   <li>{@link eSport.Tournament#getQualificationFrom <em>Qualification From</em>}</li>
- *   <li>{@link eSport.Tournament#getQualificationsTo <em>Qualifications To</em>}</li>
+ *   <li>{@link eSport.Tournament#getQualifiesFrom <em>Qualifies From</em>}</li>
+ *   <li>{@link eSport.Tournament#getQualifiesFor <em>Qualifies For</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getTournament()
@@ -212,49 +212,49 @@ public interface Tournament extends EObject {
 	EList<GroupStage> getGroupstages();
 
 	/**
-	 * Returns the value of the '<em><b>Qualification From</b></em>' reference.
+	 * Returns the value of the '<em><b>Qualifies From</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link eSport.Qualification#getTournamentFrom <em>Tournament From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Qualification From</em>' reference isn't clear,
+	 * If the meaning of the '<em>Qualifies From</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Qualification From</em>' reference.
-	 * @see #setQualificationFrom(Qualification)
-	 * @see eSport.ESportPackage#getTournament_QualificationFrom()
+	 * @return the value of the '<em>Qualifies From</em>' reference.
+	 * @see #setQualifiesFrom(Qualification)
+	 * @see eSport.ESportPackage#getTournament_QualifiesFrom()
 	 * @see eSport.Qualification#getTournamentFrom
 	 * @model opposite="tournamentFrom"
 	 * @generated
 	 */
-	Qualification getQualificationFrom();
+	Qualification getQualifiesFrom();
 
 	/**
-	 * Sets the value of the '{@link eSport.Tournament#getQualificationFrom <em>Qualification From</em>}' reference.
+	 * Sets the value of the '{@link eSport.Tournament#getQualifiesFrom <em>Qualifies From</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Qualification From</em>' reference.
-	 * @see #getQualificationFrom()
+	 * @param value the new value of the '<em>Qualifies From</em>' reference.
+	 * @see #getQualifiesFrom()
 	 * @generated
 	 */
-	void setQualificationFrom(Qualification value);
+	void setQualifiesFrom(Qualification value);
 
 	/**
-	 * Returns the value of the '<em><b>Qualifications To</b></em>' reference list.
+	 * Returns the value of the '<em><b>Qualifies For</b></em>' reference list.
 	 * The list contents are of type {@link eSport.Qualification}.
 	 * It is bidirectional and its opposite is '{@link eSport.Qualification#getTournamentTo <em>Tournament To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Qualifications To</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Qualifies For</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Qualifications To</em>' reference list.
-	 * @see eSport.ESportPackage#getTournament_QualificationsTo()
+	 * @return the value of the '<em>Qualifies For</em>' reference list.
+	 * @see eSport.ESportPackage#getTournament_QualifiesFor()
 	 * @see eSport.Qualification#getTournamentTo
 	 * @model opposite="tournamentTo"
 	 * @generated
 	 */
-	EList<Qualification> getQualificationsTo();
+	EList<Qualification> getQualifiesFor();
 
 } // Tournament

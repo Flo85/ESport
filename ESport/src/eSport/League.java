@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.League#getYear <em>Year</em>}</li>
  *   <li>{@link eSport.League#getSeason <em>Season</em>}</li>
  *   <li>{@link eSport.League#getGroupstage <em>Groupstage</em>}</li>
- *   <li>{@link eSport.League#getQualificationsFrom <em>Qualifications From</em>}</li>
+ *   <li>{@link eSport.League#getQualifiesFor <em>Qualifies For</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getLeague()
@@ -189,21 +189,21 @@ public interface League extends EObject {
 	void setGroupstage(GroupStage value);
 
 	/**
-	 * Returns the value of the '<em><b>Qualifications From</b></em>' reference list.
+	 * Returns the value of the '<em><b>Qualifies For</b></em>' reference list.
 	 * The list contents are of type {@link eSport.Qualification}.
-	 * It is bidirectional and its opposite is '{@link eSport.Qualification#getLeague <em>League</em>}'.
+	 * It is bidirectional and its opposite is '{@link eSport.Qualification#getLeagueFrom <em>League From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Qualifications From</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Qualifies For</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Qualifications From</em>' reference list.
-	 * @see eSport.ESportPackage#getLeague_QualificationsFrom()
-	 * @see eSport.Qualification#getLeague
-	 * @model opposite="league"
+	 * @return the value of the '<em>Qualifies For</em>' reference list.
+	 * @see eSport.ESportPackage#getLeague_QualifiesFor()
+	 * @see eSport.Qualification#getLeagueFrom
+	 * @model opposite="leagueFrom"
 	 * @generated
 	 */
-	EList<Qualification> getQualificationsFrom();
+	EList<Qualification> getQualifiesFor();
 
 } // League

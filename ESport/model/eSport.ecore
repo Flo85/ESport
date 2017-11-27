@@ -23,9 +23,9 @@
         eType="#//FinalStage" containment="true" eOpposite="#//FinalStage/tournament"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groupstages" upperBound="-1"
         eType="#//GroupStage" containment="true" eOpposite="#//GroupStage/tournament"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualificationFrom" eType="#//Qualification"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiesFrom" eType="#//Qualification"
         eOpposite="#//Qualification/tournamentFrom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualificationsTo" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiesFor" upperBound="-1"
         eType="#//Qualification" eOpposite="#//Qualification/tournamentTo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="League">
@@ -36,8 +36,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groupstage" eType="#//GroupStage"
         containment="true" eOpposite="#//GroupStage/league"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualificationsFrom" upperBound="-1"
-        eType="#//Qualification" eOpposite="#//Qualification/league"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiesFor" upperBound="-1"
+        eType="#//Qualification" eOpposite="#//Qualification/leagueFrom"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Capacity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" unique="false"
@@ -177,11 +177,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Qualification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tournamentFrom" eType="#//Tournament"
-        eOpposite="#//Tournament/qualificationFrom"/>
+        eOpposite="#//Tournament/qualifiesFrom"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tournamentTo" eType="#//Tournament"
-        eOpposite="#//Tournament/qualificationsTo"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="league" eType="#//League"
-        eOpposite="#//League/qualificationsFrom"/>
+        eOpposite="#//Tournament/qualifiesFor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leagueFrom" eType="#//League"
+        eOpposite="#//League/qualifiesFor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MatchType">
     <eLiterals name="group"/>
