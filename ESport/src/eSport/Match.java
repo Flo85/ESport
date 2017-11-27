@@ -13,9 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link eSport.Match#getMaxNbGames <em>Max Nb Games</em>}</li>
  *   <li>{@link eSport.Match#getGroup <em>Group</em>}</li>
  *   <li>{@link eSport.Match#getFinalstage <em>Finalstage</em>}</li>
+ *   <li>{@link eSport.Match#getTeamWinner <em>Team Winner</em>}</li>
+ *   <li>{@link eSport.Match#getTeamLoser <em>Team Loser</em>}</li>
+ *   <li>{@link eSport.Match#getLoserWins <em>Loser Wins</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getMatch()
@@ -23,32 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Match extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Max Nb Games</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Max Nb Games</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Max Nb Games</em>' attribute.
-	 * @see #setMaxNbGames(int)
-	 * @see eSport.ESportPackage#getMatch_MaxNbGames()
-	 * @model
-	 * @generated
-	 */
-	int getMaxNbGames();
-
-	/**
-	 * Sets the value of the '{@link eSport.Match#getMaxNbGames <em>Max Nb Games</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max Nb Games</em>' attribute.
-	 * @see #getMaxNbGames()
-	 * @generated
-	 */
-	void setMaxNbGames(int value);
-
 	/**
 	 * Returns the value of the '<em><b>Group</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link eSport.Group#getMatchs <em>Matchs</em>}'.
@@ -104,5 +80,87 @@ public interface Match extends EObject {
 	 * @generated
 	 */
 	void setFinalstage(FinalStage value);
+
+	/**
+	 * Returns the value of the '<em><b>Team Winner</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link eSport.Team#getMatchsWon <em>Matchs Won</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Team Winner</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Team Winner</em>' reference.
+	 * @see #setTeamWinner(Team)
+	 * @see eSport.ESportPackage#getMatch_TeamWinner()
+	 * @see eSport.Team#getMatchsWon
+	 * @model opposite="matchsWon"
+	 * @generated
+	 */
+	Team getTeamWinner();
+
+	/**
+	 * Sets the value of the '{@link eSport.Match#getTeamWinner <em>Team Winner</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Team Winner</em>' reference.
+	 * @see #getTeamWinner()
+	 * @generated
+	 */
+	void setTeamWinner(Team value);
+
+	/**
+	 * Returns the value of the '<em><b>Team Loser</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link eSport.Team#getMatchsLost <em>Matchs Lost</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Team Loser</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Team Loser</em>' reference.
+	 * @see #setTeamLoser(Team)
+	 * @see eSport.ESportPackage#getMatch_TeamLoser()
+	 * @see eSport.Team#getMatchsLost
+	 * @model opposite="matchsLost"
+	 * @generated
+	 */
+	Team getTeamLoser();
+
+	/**
+	 * Sets the value of the '{@link eSport.Match#getTeamLoser <em>Team Loser</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Team Loser</em>' reference.
+	 * @see #getTeamLoser()
+	 * @generated
+	 */
+	void setTeamLoser(Team value);
+
+	/**
+	 * Returns the value of the '<em><b>Loser Wins</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Loser Wins</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Loser Wins</em>' attribute.
+	 * @see #setLoserWins(int)
+	 * @see eSport.ESportPackage#getMatch_LoserWins()
+	 * @model
+	 * @generated
+	 */
+	int getLoserWins();
+
+	/**
+	 * Sets the value of the '{@link eSport.Match#getLoserWins <em>Loser Wins</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Loser Wins</em>' attribute.
+	 * @see #getLoserWins()
+	 * @generated
+	 */
+	void setLoserWins(int value);
 
 } // Match

@@ -7,6 +7,7 @@ import eSport.FinalStage;
 import eSport.Group;
 import eSport.Match;
 
+import eSport.Team;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -24,34 +25,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link eSport.impl.MatchImpl#getMaxNbGames <em>Max Nb Games</em>}</li>
  *   <li>{@link eSport.impl.MatchImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link eSport.impl.MatchImpl#getFinalstage <em>Finalstage</em>}</li>
+ *   <li>{@link eSport.impl.MatchImpl#getTeamWinner <em>Team Winner</em>}</li>
+ *   <li>{@link eSport.impl.MatchImpl#getTeamLoser <em>Team Loser</em>}</li>
+ *   <li>{@link eSport.impl.MatchImpl#getLoserWins <em>Loser Wins</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
-	/**
-	 * The default value of the '{@link #getMaxNbGames() <em>Max Nb Games</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxNbGames()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int MAX_NB_GAMES_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getMaxNbGames() <em>Max Nb Games</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxNbGames()
-	 * @generated
-	 * @ordered
-	 */
-	protected int maxNbGames = MAX_NB_GAMES_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getGroup() <em>Group</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -73,6 +56,46 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	protected FinalStage finalstage;
 
 	/**
+	 * The cached value of the '{@link #getTeamWinner() <em>Team Winner</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTeamWinner()
+	 * @generated
+	 * @ordered
+	 */
+	protected Team teamWinner;
+
+	/**
+	 * The cached value of the '{@link #getTeamLoser() <em>Team Loser</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTeamLoser()
+	 * @generated
+	 * @ordered
+	 */
+	protected Team teamLoser;
+
+	/**
+	 * The default value of the '{@link #getLoserWins() <em>Loser Wins</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLoserWins()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LOSER_WINS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLoserWins() <em>Loser Wins</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLoserWins()
+	 * @generated
+	 * @ordered
+	 */
+	protected int loserWins = LOSER_WINS_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -89,27 +112,6 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	@Override
 	protected EClass eStaticClass() {
 		return ESportPackage.Literals.MATCH;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getMaxNbGames() {
-		return maxNbGames;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMaxNbGames(int newMaxNbGames) {
-		int oldMaxNbGames = maxNbGames;
-		maxNbGames = newMaxNbGames;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__MAX_NB_GAMES, oldMaxNbGames, maxNbGames));
 	}
 
 	/**
@@ -237,6 +239,147 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Team getTeamWinner() {
+		if (teamWinner != null && teamWinner.eIsProxy()) {
+			InternalEObject oldTeamWinner = (InternalEObject)teamWinner;
+			teamWinner = (Team)eResolveProxy(oldTeamWinner);
+			if (teamWinner != oldTeamWinner) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.MATCH__TEAM_WINNER, oldTeamWinner, teamWinner));
+			}
+		}
+		return teamWinner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Team basicGetTeamWinner() {
+		return teamWinner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTeamWinner(Team newTeamWinner, NotificationChain msgs) {
+		Team oldTeamWinner = teamWinner;
+		teamWinner = newTeamWinner;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__TEAM_WINNER, oldTeamWinner, newTeamWinner);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTeamWinner(Team newTeamWinner) {
+		if (newTeamWinner != teamWinner) {
+			NotificationChain msgs = null;
+			if (teamWinner != null)
+				msgs = ((InternalEObject)teamWinner).eInverseRemove(this, ESportPackage.TEAM__MATCHS_WON, Team.class, msgs);
+			if (newTeamWinner != null)
+				msgs = ((InternalEObject)newTeamWinner).eInverseAdd(this, ESportPackage.TEAM__MATCHS_WON, Team.class, msgs);
+			msgs = basicSetTeamWinner(newTeamWinner, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__TEAM_WINNER, newTeamWinner, newTeamWinner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Team getTeamLoser() {
+		if (teamLoser != null && teamLoser.eIsProxy()) {
+			InternalEObject oldTeamLoser = (InternalEObject)teamLoser;
+			teamLoser = (Team)eResolveProxy(oldTeamLoser);
+			if (teamLoser != oldTeamLoser) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.MATCH__TEAM_LOSER, oldTeamLoser, teamLoser));
+			}
+		}
+		return teamLoser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Team basicGetTeamLoser() {
+		return teamLoser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTeamLoser(Team newTeamLoser, NotificationChain msgs) {
+		Team oldTeamLoser = teamLoser;
+		teamLoser = newTeamLoser;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__TEAM_LOSER, oldTeamLoser, newTeamLoser);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTeamLoser(Team newTeamLoser) {
+		if (newTeamLoser != teamLoser) {
+			NotificationChain msgs = null;
+			if (teamLoser != null)
+				msgs = ((InternalEObject)teamLoser).eInverseRemove(this, ESportPackage.TEAM__MATCHS_LOST, Team.class, msgs);
+			if (newTeamLoser != null)
+				msgs = ((InternalEObject)newTeamLoser).eInverseAdd(this, ESportPackage.TEAM__MATCHS_LOST, Team.class, msgs);
+			msgs = basicSetTeamLoser(newTeamLoser, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__TEAM_LOSER, newTeamLoser, newTeamLoser));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getLoserWins() {
+		return loserWins;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLoserWins(int newLoserWins) {
+		int oldLoserWins = loserWins;
+		loserWins = newLoserWins;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__LOSER_WINS, oldLoserWins, loserWins));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -248,6 +391,14 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				if (finalstage != null)
 					msgs = ((InternalEObject)finalstage).eInverseRemove(this, ESportPackage.FINAL_STAGE__MATCHS, FinalStage.class, msgs);
 				return basicSetFinalstage((FinalStage)otherEnd, msgs);
+			case ESportPackage.MATCH__TEAM_WINNER:
+				if (teamWinner != null)
+					msgs = ((InternalEObject)teamWinner).eInverseRemove(this, ESportPackage.TEAM__MATCHS_WON, Team.class, msgs);
+				return basicSetTeamWinner((Team)otherEnd, msgs);
+			case ESportPackage.MATCH__TEAM_LOSER:
+				if (teamLoser != null)
+					msgs = ((InternalEObject)teamLoser).eInverseRemove(this, ESportPackage.TEAM__MATCHS_LOST, Team.class, msgs);
+				return basicSetTeamLoser((Team)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -264,6 +415,10 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				return basicSetGroup(null, msgs);
 			case ESportPackage.MATCH__FINALSTAGE:
 				return basicSetFinalstage(null, msgs);
+			case ESportPackage.MATCH__TEAM_WINNER:
+				return basicSetTeamWinner(null, msgs);
+			case ESportPackage.MATCH__TEAM_LOSER:
+				return basicSetTeamLoser(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -276,14 +431,20 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ESportPackage.MATCH__MAX_NB_GAMES:
-				return getMaxNbGames();
 			case ESportPackage.MATCH__GROUP:
 				if (resolve) return getGroup();
 				return basicGetGroup();
 			case ESportPackage.MATCH__FINALSTAGE:
 				if (resolve) return getFinalstage();
 				return basicGetFinalstage();
+			case ESportPackage.MATCH__TEAM_WINNER:
+				if (resolve) return getTeamWinner();
+				return basicGetTeamWinner();
+			case ESportPackage.MATCH__TEAM_LOSER:
+				if (resolve) return getTeamLoser();
+				return basicGetTeamLoser();
+			case ESportPackage.MATCH__LOSER_WINS:
+				return getLoserWins();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -296,14 +457,20 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ESportPackage.MATCH__MAX_NB_GAMES:
-				setMaxNbGames((Integer)newValue);
-				return;
 			case ESportPackage.MATCH__GROUP:
 				setGroup((Group)newValue);
 				return;
 			case ESportPackage.MATCH__FINALSTAGE:
 				setFinalstage((FinalStage)newValue);
+				return;
+			case ESportPackage.MATCH__TEAM_WINNER:
+				setTeamWinner((Team)newValue);
+				return;
+			case ESportPackage.MATCH__TEAM_LOSER:
+				setTeamLoser((Team)newValue);
+				return;
+			case ESportPackage.MATCH__LOSER_WINS:
+				setLoserWins((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -317,14 +484,20 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ESportPackage.MATCH__MAX_NB_GAMES:
-				setMaxNbGames(MAX_NB_GAMES_EDEFAULT);
-				return;
 			case ESportPackage.MATCH__GROUP:
 				setGroup((Group)null);
 				return;
 			case ESportPackage.MATCH__FINALSTAGE:
 				setFinalstage((FinalStage)null);
+				return;
+			case ESportPackage.MATCH__TEAM_WINNER:
+				setTeamWinner((Team)null);
+				return;
+			case ESportPackage.MATCH__TEAM_LOSER:
+				setTeamLoser((Team)null);
+				return;
+			case ESportPackage.MATCH__LOSER_WINS:
+				setLoserWins(LOSER_WINS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -338,12 +511,16 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ESportPackage.MATCH__MAX_NB_GAMES:
-				return maxNbGames != MAX_NB_GAMES_EDEFAULT;
 			case ESportPackage.MATCH__GROUP:
 				return group != null;
 			case ESportPackage.MATCH__FINALSTAGE:
 				return finalstage != null;
+			case ESportPackage.MATCH__TEAM_WINNER:
+				return teamWinner != null;
+			case ESportPackage.MATCH__TEAM_LOSER:
+				return teamLoser != null;
+			case ESportPackage.MATCH__LOSER_WINS:
+				return loserWins != LOSER_WINS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -358,8 +535,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (maxNbGames: ");
-		result.append(maxNbGames);
+		result.append(" (loserWins: ");
+		result.append(loserWins);
 		result.append(')');
 		return result.toString();
 	}

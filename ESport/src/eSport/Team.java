@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Team#getGroups <em>Groups</em>}</li>
  *   <li>{@link eSport.Team#getChampionshipPoints <em>Championship Points</em>}</li>
  *   <li>{@link eSport.Team#getFinalstages <em>Finalstages</em>}</li>
+ *   <li>{@link eSport.Team#getMatchsWon <em>Matchs Won</em>}</li>
+ *   <li>{@link eSport.Team#getMatchsLost <em>Matchs Lost</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getTeam()
@@ -190,5 +192,41 @@ public interface Team extends EObject {
 	 * @generated
 	 */
 	EList<FinalStage> getFinalstages();
+
+	/**
+	 * Returns the value of the '<em><b>Matchs Won</b></em>' reference list.
+	 * The list contents are of type {@link eSport.Match}.
+	 * It is bidirectional and its opposite is '{@link eSport.Match#getTeamWinner <em>Team Winner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Matchs Won</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Matchs Won</em>' reference list.
+	 * @see eSport.ESportPackage#getTeam_MatchsWon()
+	 * @see eSport.Match#getTeamWinner
+	 * @model opposite="teamWinner"
+	 * @generated
+	 */
+	EList<Match> getMatchsWon();
+
+	/**
+	 * Returns the value of the '<em><b>Matchs Lost</b></em>' reference list.
+	 * The list contents are of type {@link eSport.Match}.
+	 * It is bidirectional and its opposite is '{@link eSport.Match#getTeamLoser <em>Team Loser</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Matchs Lost</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Matchs Lost</em>' reference list.
+	 * @see eSport.ESportPackage#getTeam_MatchsLost()
+	 * @see eSport.Match#getTeamLoser
+	 * @model opposite="teamLoser"
+	 * @generated
+	 */
+	EList<Match> getMatchsLost();
 
 } // Team

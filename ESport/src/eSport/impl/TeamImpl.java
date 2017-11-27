@@ -6,6 +6,7 @@ import eSport.Coach;
 import eSport.ESportPackage;
 import eSport.FinalStage;
 import eSport.Group;
+import eSport.Match;
 import eSport.Player;
 import eSport.Team;
 import eSport.Zone;
@@ -41,6 +42,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link eSport.impl.TeamImpl#getGroups <em>Groups</em>}</li>
  *   <li>{@link eSport.impl.TeamImpl#getChampionshipPoints <em>Championship Points</em>}</li>
  *   <li>{@link eSport.impl.TeamImpl#getFinalstages <em>Finalstages</em>}</li>
+ *   <li>{@link eSport.impl.TeamImpl#getMatchsWon <em>Matchs Won</em>}</li>
+ *   <li>{@link eSport.impl.TeamImpl#getMatchsLost <em>Matchs Lost</em>}</li>
  * </ul>
  *
  * @generated
@@ -125,6 +128,26 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * @ordered
 	 */
 	protected EList<FinalStage> finalstages;
+
+	/**
+	 * The cached value of the '{@link #getMatchsWon() <em>Matchs Won</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMatchsWon()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Match> matchsWon;
+
+	/**
+	 * The cached value of the '{@link #getMatchsLost() <em>Matchs Lost</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMatchsLost()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Match> matchsLost;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -329,6 +352,30 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Match> getMatchsWon() {
+		if (matchsWon == null) {
+			matchsWon = new EObjectWithInverseResolvingEList<Match>(Match.class, this, ESportPackage.TEAM__MATCHS_WON, ESportPackage.MATCH__TEAM_WINNER);
+		}
+		return matchsWon;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Match> getMatchsLost() {
+		if (matchsLost == null) {
+			matchsLost = new EObjectWithInverseResolvingEList<Match>(Match.class, this, ESportPackage.TEAM__MATCHS_LOST, ESportPackage.MATCH__TEAM_LOSER);
+		}
+		return matchsLost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -347,6 +394,10 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGroups()).basicAdd(otherEnd, msgs);
 			case ESportPackage.TEAM__FINALSTAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFinalstages()).basicAdd(otherEnd, msgs);
+			case ESportPackage.TEAM__MATCHS_WON:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMatchsWon()).basicAdd(otherEnd, msgs);
+			case ESportPackage.TEAM__MATCHS_LOST:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMatchsLost()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -369,6 +420,10 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
 			case ESportPackage.TEAM__FINALSTAGES:
 				return ((InternalEList<?>)getFinalstages()).basicRemove(otherEnd, msgs);
+			case ESportPackage.TEAM__MATCHS_WON:
+				return ((InternalEList<?>)getMatchsWon()).basicRemove(otherEnd, msgs);
+			case ESportPackage.TEAM__MATCHS_LOST:
+				return ((InternalEList<?>)getMatchsLost()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -410,6 +465,10 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				return getChampionshipPoints();
 			case ESportPackage.TEAM__FINALSTAGES:
 				return getFinalstages();
+			case ESportPackage.TEAM__MATCHS_WON:
+				return getMatchsWon();
+			case ESportPackage.TEAM__MATCHS_LOST:
+				return getMatchsLost();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,6 +506,14 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				getFinalstages().clear();
 				getFinalstages().addAll((Collection<? extends FinalStage>)newValue);
 				return;
+			case ESportPackage.TEAM__MATCHS_WON:
+				getMatchsWon().clear();
+				getMatchsWon().addAll((Collection<? extends Match>)newValue);
+				return;
+			case ESportPackage.TEAM__MATCHS_LOST:
+				getMatchsLost().clear();
+				getMatchsLost().addAll((Collection<? extends Match>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -480,6 +547,12 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 			case ESportPackage.TEAM__FINALSTAGES:
 				getFinalstages().clear();
 				return;
+			case ESportPackage.TEAM__MATCHS_WON:
+				getMatchsWon().clear();
+				return;
+			case ESportPackage.TEAM__MATCHS_LOST:
+				getMatchsLost().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -506,6 +579,10 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				return championshipPoints != CHAMPIONSHIP_POINTS_EDEFAULT;
 			case ESportPackage.TEAM__FINALSTAGES:
 				return finalstages != null && !finalstages.isEmpty();
+			case ESportPackage.TEAM__MATCHS_WON:
+				return matchsWon != null && !matchsWon.isEmpty();
+			case ESportPackage.TEAM__MATCHS_LOST:
+				return matchsLost != null && !matchsLost.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

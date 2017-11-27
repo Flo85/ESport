@@ -698,6 +698,24 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTeam_MatchsWon() {
+		return (EReference)teamEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTeam_MatchsLost() {
+		return (EReference)teamEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMatch() {
 		return matchEClass;
 	}
@@ -707,17 +725,8 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMatch_MaxNbGames() {
-		return (EAttribute)matchEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getMatch_Group() {
-		return (EReference)matchEClass.getEStructuralFeatures().get(1);
+		return (EReference)matchEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -726,7 +735,34 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * @generated
 	 */
 	public EReference getMatch_Finalstage() {
+		return (EReference)matchEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMatch_TeamWinner() {
 		return (EReference)matchEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMatch_TeamLoser() {
+		return (EReference)matchEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMatch_LoserWins() {
+		return (EAttribute)matchEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1042,11 +1078,15 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		createEReference(teamEClass, TEAM__GROUPS);
 		createEAttribute(teamEClass, TEAM__CHAMPIONSHIP_POINTS);
 		createEReference(teamEClass, TEAM__FINALSTAGES);
+		createEReference(teamEClass, TEAM__MATCHS_WON);
+		createEReference(teamEClass, TEAM__MATCHS_LOST);
 
 		matchEClass = createEClass(MATCH);
-		createEAttribute(matchEClass, MATCH__MAX_NB_GAMES);
 		createEReference(matchEClass, MATCH__GROUP);
 		createEReference(matchEClass, MATCH__FINALSTAGE);
+		createEReference(matchEClass, MATCH__TEAM_WINNER);
+		createEReference(matchEClass, MATCH__TEAM_LOSER);
+		createEAttribute(matchEClass, MATCH__LOSER_WINS);
 
 		groupEClass = createEClass(GROUP);
 		createEReference(groupEClass, GROUP__GROUPSTAGE);
@@ -1172,11 +1212,15 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		initEReference(getTeam_Groups(), this.getGroup(), this.getGroup_Teams(), "groups", null, 0, -1, Team.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTeam_ChampionshipPoints(), ecorePackage.getEInt(), "championshipPoints", null, 0, 1, Team.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTeam_Finalstages(), this.getFinalStage(), this.getFinalStage_Teams(), "finalstages", null, 0, -1, Team.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTeam_MatchsWon(), this.getMatch(), this.getMatch_TeamWinner(), "matchsWon", null, 0, -1, Team.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTeam_MatchsLost(), this.getMatch(), this.getMatch_TeamLoser(), "matchsLost", null, 0, -1, Team.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(matchEClass, Match.class, "Match", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMatch_MaxNbGames(), ecorePackage.getEInt(), "maxNbGames", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMatch_Group(), this.getGroup(), this.getGroup_Matchs(), "group", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMatch_Finalstage(), this.getFinalStage(), this.getFinalStage_Matchs(), "finalstage", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMatch_TeamWinner(), this.getTeam(), this.getTeam_MatchsWon(), "teamWinner", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMatch_TeamLoser(), this.getTeam(), this.getTeam_MatchsLost(), "teamLoser", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMatch_LoserWins(), ecorePackage.getEInt(), "loserWins", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGroup_Groupstage(), this.getGroupStage(), this.getGroupStage_Groups(), "groupstage", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

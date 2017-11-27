@@ -769,13 +769,31 @@ public interface ESportPackage extends EPackage {
 	int TEAM__FINALSTAGES = 6;
 
 	/**
+	 * The feature id for the '<em><b>Matchs Won</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM__MATCHS_WON = 7;
+
+	/**
+	 * The feature id for the '<em><b>Matchs Lost</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM__MATCHS_LOST = 8;
+
+	/**
 	 * The number of structural features of the '<em>Team</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEAM_FEATURE_COUNT = 7;
+	int TEAM_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Team</em>' class.
@@ -797,22 +815,13 @@ public interface ESportPackage extends EPackage {
 	int MATCH = 9;
 
 	/**
-	 * The feature id for the '<em><b>Max Nb Games</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATCH__MAX_NB_GAMES = 0;
-
-	/**
 	 * The feature id for the '<em><b>Group</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCH__GROUP = 1;
+	int MATCH__GROUP = 0;
 
 	/**
 	 * The feature id for the '<em><b>Finalstage</b></em>' reference.
@@ -821,7 +830,34 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATCH__FINALSTAGE = 2;
+	int MATCH__FINALSTAGE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Team Winner</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH__TEAM_WINNER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Team Loser</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH__TEAM_LOSER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Loser Wins</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH__LOSER_WINS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Match</em>' class.
@@ -830,7 +866,7 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATCH_FEATURE_COUNT = 3;
+	int MATCH_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Match</em>' class.
@@ -1710,6 +1746,28 @@ public interface ESportPackage extends EPackage {
 	EReference getTeam_Finalstages();
 
 	/**
+	 * Returns the meta object for the reference list '{@link eSport.Team#getMatchsWon <em>Matchs Won</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Matchs Won</em>'.
+	 * @see eSport.Team#getMatchsWon()
+	 * @see #getTeam()
+	 * @generated
+	 */
+	EReference getTeam_MatchsWon();
+
+	/**
+	 * Returns the meta object for the reference list '{@link eSport.Team#getMatchsLost <em>Matchs Lost</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Matchs Lost</em>'.
+	 * @see eSport.Team#getMatchsLost()
+	 * @see #getTeam()
+	 * @generated
+	 */
+	EReference getTeam_MatchsLost();
+
+	/**
 	 * Returns the meta object for class '{@link eSport.Match <em>Match</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1718,17 +1776,6 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMatch();
-
-	/**
-	 * Returns the meta object for the attribute '{@link eSport.Match#getMaxNbGames <em>Max Nb Games</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Nb Games</em>'.
-	 * @see eSport.Match#getMaxNbGames()
-	 * @see #getMatch()
-	 * @generated
-	 */
-	EAttribute getMatch_MaxNbGames();
 
 	/**
 	 * Returns the meta object for the reference '{@link eSport.Match#getGroup <em>Group</em>}'.
@@ -1751,6 +1798,39 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMatch_Finalstage();
+
+	/**
+	 * Returns the meta object for the reference '{@link eSport.Match#getTeamWinner <em>Team Winner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Team Winner</em>'.
+	 * @see eSport.Match#getTeamWinner()
+	 * @see #getMatch()
+	 * @generated
+	 */
+	EReference getMatch_TeamWinner();
+
+	/**
+	 * Returns the meta object for the reference '{@link eSport.Match#getTeamLoser <em>Team Loser</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Team Loser</em>'.
+	 * @see eSport.Match#getTeamLoser()
+	 * @see #getMatch()
+	 * @generated
+	 */
+	EReference getMatch_TeamLoser();
+
+	/**
+	 * Returns the meta object for the attribute '{@link eSport.Match#getLoserWins <em>Loser Wins</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Loser Wins</em>'.
+	 * @see eSport.Match#getLoserWins()
+	 * @see #getMatch()
+	 * @generated
+	 */
+	EAttribute getMatch_LoserWins();
 
 	/**
 	 * Returns the meta object for class '{@link eSport.Group <em>Group</em>}'.
@@ -2477,6 +2557,22 @@ public interface ESportPackage extends EPackage {
 		EReference TEAM__FINALSTAGES = eINSTANCE.getTeam_Finalstages();
 
 		/**
+		 * The meta object literal for the '<em><b>Matchs Won</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEAM__MATCHS_WON = eINSTANCE.getTeam_MatchsWon();
+
+		/**
+		 * The meta object literal for the '<em><b>Matchs Lost</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEAM__MATCHS_LOST = eINSTANCE.getTeam_MatchsLost();
+
+		/**
 		 * The meta object literal for the '{@link eSport.impl.MatchImpl <em>Match</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2485,14 +2581,6 @@ public interface ESportPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MATCH = eINSTANCE.getMatch();
-
-		/**
-		 * The meta object literal for the '<em><b>Max Nb Games</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MATCH__MAX_NB_GAMES = eINSTANCE.getMatch_MaxNbGames();
 
 		/**
 		 * The meta object literal for the '<em><b>Group</b></em>' reference feature.
@@ -2509,6 +2597,30 @@ public interface ESportPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MATCH__FINALSTAGE = eINSTANCE.getMatch_Finalstage();
+
+		/**
+		 * The meta object literal for the '<em><b>Team Winner</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATCH__TEAM_WINNER = eINSTANCE.getMatch_TeamWinner();
+
+		/**
+		 * The meta object literal for the '<em><b>Team Loser</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATCH__TEAM_LOSER = eINSTANCE.getMatch_TeamLoser();
+
+		/**
+		 * The meta object literal for the '<em><b>Loser Wins</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATCH__LOSER_WINS = eINSTANCE.getMatch_LoserWins();
 
 		/**
 		 * The meta object literal for the '{@link eSport.impl.GroupImpl <em>Group</em>}' class.
