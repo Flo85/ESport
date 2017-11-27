@@ -386,22 +386,22 @@ public interface ESportPackage extends EPackage {
 	int TOURNAMENT__GROUPSTAGES = 7;
 
 	/**
-	 * The feature id for the '<em><b>Qualifies From</b></em>' reference.
+	 * The feature id for the '<em><b>Qualifies For</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOURNAMENT__QUALIFIES_FROM = 8;
+	int TOURNAMENT__QUALIFIES_FOR = 8;
 
 	/**
-	 * The feature id for the '<em><b>Qualifies For</b></em>' reference list.
+	 * The feature id for the '<em><b>Qualifies From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOURNAMENT__QUALIFIES_FOR = 9;
+	int TOURNAMENT__QUALIFIES_FROM = 9;
 
 	/**
 	 * The number of structural features of the '<em>Tournament</em>' class.
@@ -1353,10 +1353,10 @@ public interface ESportPackage extends EPackage {
 	EReference getTournament_Groupstages();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Tournament#getQualifiesFrom <em>Qualifies From</em>}'.
+	 * Returns the meta object for the reference list '{@link eSport.Tournament#getQualifiesFrom <em>Qualifies From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Qualifies From</em>'.
+	 * @return the meta object for the reference list '<em>Qualifies From</em>'.
 	 * @see eSport.Tournament#getQualifiesFrom()
 	 * @see #getTournament()
 	 * @generated
@@ -1364,10 +1364,10 @@ public interface ESportPackage extends EPackage {
 	EReference getTournament_QualifiesFrom();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.Tournament#getQualifiesFor <em>Qualifies For</em>}'.
+	 * Returns the meta object for the reference '{@link eSport.Tournament#getQualifiesFor <em>Qualifies For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Qualifies For</em>'.
+	 * @return the meta object for the reference '<em>Qualifies For</em>'.
 	 * @see eSport.Tournament#getQualifiesFor()
 	 * @see #getTournament()
 	 * @generated
@@ -2281,7 +2281,7 @@ public interface ESportPackage extends EPackage {
 		EReference TOURNAMENT__GROUPSTAGES = eINSTANCE.getTournament_Groupstages();
 
 		/**
-		 * The meta object literal for the '<em><b>Qualifies From</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Qualifies From</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2289,7 +2289,7 @@ public interface ESportPackage extends EPackage {
 		EReference TOURNAMENT__QUALIFIES_FROM = eINSTANCE.getTournament_QualifiesFrom();
 
 		/**
-		 * The meta object literal for the '<em><b>Qualifies For</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Qualifies For</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

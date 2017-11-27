@@ -131,9 +131,9 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 		if (newTournamentFrom != tournamentFrom) {
 			NotificationChain msgs = null;
 			if (tournamentFrom != null)
-				msgs = ((InternalEObject)tournamentFrom).eInverseRemove(this, ESportPackage.TOURNAMENT__QUALIFIES_FROM, Tournament.class, msgs);
+				msgs = ((InternalEObject)tournamentFrom).eInverseRemove(this, ESportPackage.TOURNAMENT__QUALIFIES_FOR, Tournament.class, msgs);
 			if (newTournamentFrom != null)
-				msgs = ((InternalEObject)newTournamentFrom).eInverseAdd(this, ESportPackage.TOURNAMENT__QUALIFIES_FROM, Tournament.class, msgs);
+				msgs = ((InternalEObject)newTournamentFrom).eInverseAdd(this, ESportPackage.TOURNAMENT__QUALIFIES_FOR, Tournament.class, msgs);
 			msgs = basicSetTournamentFrom(newTournamentFrom, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -191,9 +191,9 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 		if (newTournamentTo != tournamentTo) {
 			NotificationChain msgs = null;
 			if (tournamentTo != null)
-				msgs = ((InternalEObject)tournamentTo).eInverseRemove(this, ESportPackage.TOURNAMENT__QUALIFIES_FOR, Tournament.class, msgs);
+				msgs = ((InternalEObject)tournamentTo).eInverseRemove(this, ESportPackage.TOURNAMENT__QUALIFIES_FROM, Tournament.class, msgs);
 			if (newTournamentTo != null)
-				msgs = ((InternalEObject)newTournamentTo).eInverseAdd(this, ESportPackage.TOURNAMENT__QUALIFIES_FOR, Tournament.class, msgs);
+				msgs = ((InternalEObject)newTournamentTo).eInverseAdd(this, ESportPackage.TOURNAMENT__QUALIFIES_FROM, Tournament.class, msgs);
 			msgs = basicSetTournamentTo(newTournamentTo, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -271,11 +271,11 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 		switch (featureID) {
 			case ESportPackage.QUALIFICATION__TOURNAMENT_FROM:
 				if (tournamentFrom != null)
-					msgs = ((InternalEObject)tournamentFrom).eInverseRemove(this, ESportPackage.TOURNAMENT__QUALIFIES_FROM, Tournament.class, msgs);
+					msgs = ((InternalEObject)tournamentFrom).eInverseRemove(this, ESportPackage.TOURNAMENT__QUALIFIES_FOR, Tournament.class, msgs);
 				return basicSetTournamentFrom((Tournament)otherEnd, msgs);
 			case ESportPackage.QUALIFICATION__TOURNAMENT_TO:
 				if (tournamentTo != null)
-					msgs = ((InternalEObject)tournamentTo).eInverseRemove(this, ESportPackage.TOURNAMENT__QUALIFIES_FOR, Tournament.class, msgs);
+					msgs = ((InternalEObject)tournamentTo).eInverseRemove(this, ESportPackage.TOURNAMENT__QUALIFIES_FROM, Tournament.class, msgs);
 				return basicSetTournamentTo((Tournament)otherEnd, msgs);
 			case ESportPackage.QUALIFICATION__LEAGUE_FROM:
 				if (leagueFrom != null)

@@ -23,9 +23,9 @@
         eType="#//FinalStage" containment="true" eOpposite="#//FinalStage/tournament"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groupstages" upperBound="-1"
         eType="#//GroupStage" containment="true" eOpposite="#//GroupStage/tournament"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiesFrom" eType="#//Qualification"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiesFor" eType="#//Qualification"
         eOpposite="#//Qualification/tournamentFrom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiesFor" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiesFrom" upperBound="-1"
         eType="#//Qualification" eOpposite="#//Qualification/tournamentTo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="League">
@@ -177,9 +177,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Qualification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tournamentFrom" eType="#//Tournament"
-        eOpposite="#//Tournament/qualifiesFrom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tournamentTo" eType="#//Tournament"
         eOpposite="#//Tournament/qualifiesFor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tournamentTo" eType="#//Tournament"
+        eOpposite="#//Tournament/qualifiesFrom"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="leagueFrom" eType="#//League"
         eOpposite="#//League/qualifiesFor"/>
   </eClassifiers>

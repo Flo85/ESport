@@ -636,7 +636,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qTMP8c3aEee_IrW_dT0-ug" x="-25" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_qTNeEM3aEee_IrW_dT0-ug" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qTNeEc3aEee_IrW_dT0-ug" x="33" y="-38"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qTNeEc3aEee_IrW_dT0-ug" x="-54" y="-31"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_qTOFIM3aEee_IrW_dT0-ug" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qTOFIc3aEee_IrW_dT0-ug" x="33" y="-13"/>
@@ -783,7 +783,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Djw54tNNEee6OaiVxcFR4g" x="-9" y="-63"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Djxg8NNNEee6OaiVxcFR4g" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Djxg8dNNEee6OaiVxcFR4g" x="-48" y="9"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Djxg8dNNEee6OaiVxcFR4g" x="-36" y="9"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_DjvrwdNNEee6OaiVxcFR4g" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_DjvrwtNNEee6OaiVxcFR4g" fontName="Segoe UI" fontHeight="8"/>
@@ -809,17 +809,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_Ka5w0NNNEee6OaiVxcFR4g" type="4001" element="_KaObYNNNEee6OaiVxcFR4g" source="_bDjUcM3DEee_IrW_dT0-ug" target="_xafnYNNMEee6OaiVxcFR4g">
           <children xmi:type="notation:Node" xmi:id="_Ka_QYNNNEee6OaiVxcFR4g" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ka_QYdNNEee6OaiVxcFR4g" x="-23" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ka_QYdNNEee6OaiVxcFR4g" x="-25" y="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Ka_QYtNNEee6OaiVxcFR4g" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ka_QY9NNEee6OaiVxcFR4g" x="-39" y="-131"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ka_QY9NNEee6OaiVxcFR4g" x="-46" y="-131"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Ka_3cNNNEee6OaiVxcFR4g" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ka_3cdNNEee6OaiVxcFR4g" x="80" y="9"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ka_3cdNNEee6OaiVxcFR4g" x="92" y="9"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_Ka5w0dNNEee6OaiVxcFR4g" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_Ka5w0tNNEee6OaiVxcFR4g" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ka5w09NNEee6OaiVxcFR4g" points="[15, -13, 802, 105]$[15, -158, 802, -40]$[-585, -158, 202, -40]$[-585, -118, 202, 0]$[-787, -118, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ka5w09NNEee6OaiVxcFR4g" points="[10, -13, 797, 105]$[10, -158, 797, -40]$[-585, -158, 202, -40]$[-585, -118, 202, 0]$[-787, -118, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KbAegNNNEee6OaiVxcFR4g" id="(0.0,0.1326530612244898)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KbAegdNNEee6OaiVxcFR4g" id="(1.0,0.40816326530612246)"/>
         </edges>
@@ -867,7 +867,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_F4Ql8M3EEee_IrW_dT0-ug" name="Invalid feature as name" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_F4Ql8M3EEee_IrW_dT0-ug" name="position : Position = adc" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Player/position"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Player/position"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_S-p_AM3FEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -893,7 +893,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_YK_ckNNNEee6OaiVxcFR4g" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_WeDGsNNaEeew1YAqePJdwg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -905,7 +905,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_1nlscM3GEee_IrW_dT0-ug" name="size : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_1nlscM3GEee_IrW_dT0-ug" name="size : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Tournament/size"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Tournament/size"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_4z6egM3GEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -913,7 +913,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fbmV8M3HEee_IrW_dT0-ug" name="Invalid feature as name" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fbmV8M3HEee_IrW_dT0-ug" name="type : TournamentType = worlds" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Tournament/type"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Tournament/type"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_nl3BoM3HEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -921,7 +921,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_wtMjIM3TEee_IrW_dT0-ug" name="year : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_wtMjIM3TEee_IrW_dT0-ug" name="year : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Tournament/year"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Tournament/year"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_0tvAYM3TEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -948,7 +948,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_6swPcM3GEee_IrW_dT0-ug" name="size : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_6swPcM3GEee_IrW_dT0-ug" name="size : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//League/size"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//League/size"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_78RWkM3GEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -956,7 +956,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_vqTiwM3TEee_IrW_dT0-ug" name="year : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_vqTiwM3TEee_IrW_dT0-ug" name="year : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//League/year"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//League/year"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_2SEg8M3TEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -983,7 +983,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_6UNT8M3DEee_IrW_dT0-ug" name="Invalid feature as name" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_6UNT8M3DEee_IrW_dT0-ug" name="type : CapacityType = positioning" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Capacity/type"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Capacity/type"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_20-XgM3EEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -991,7 +991,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_8S2x8M3DEee_IrW_dT0-ug" name="value : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_8S2x8M3DEee_IrW_dT0-ug" name="value : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Capacity/value"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Capacity/value"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_MrewwM3FEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -1018,7 +1018,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JfgZcM3EEee_IrW_dT0-ug" name="age : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JfgZcM3EEee_IrW_dT0-ug" name="age : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Person/age"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Person/age"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_JjByEM3FEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -1091,7 +1091,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Pbrf4NNJEee6OaiVxcFR4g" name="championshipPoints : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Pbrf4NNJEee6OaiVxcFR4g" name="championshipPoints : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Team/championshipPoints"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Team/championshipPoints"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Tdsj0NNJEee6OaiVxcFR4g" labelAlignment="LEFT">
@@ -1499,7 +1499,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_NUqhUNNPEee6OaiVxcFR4g" name="loserWins : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_NUqhUNNPEee6OaiVxcFR4g" name="loserWins : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Match/loserWins"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Match/loserWins"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PicAcNNPEee6OaiVxcFR4g" labelAlignment="LEFT">
@@ -1507,7 +1507,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_00qg0NNPEee6OaiVxcFR4g" name="Invalid feature as name" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_00qg0NNPEee6OaiVxcFR4g" name="type : MatchType = group" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//Match/type"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//Match/type"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_20jU8NNPEee6OaiVxcFR4g" labelAlignment="LEFT">
@@ -1548,7 +1548,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JbKQsM3fEee_IrW_dT0-ug" name="Invalid feature as name" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JbKQsM3fEee_IrW_dT0-ug" name="type : GroupStageType = league" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//GroupStage/type"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//GroupStage/type"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_RZA4EM3fEee_IrW_dT0-ug" labelAlignment="LEFT">
@@ -1556,7 +1556,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_q7cLMNNKEee6OaiVxcFR4g" name="maxNbGames : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_q7cLMNNKEee6OaiVxcFR4g" name="maxNbGames : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//GroupStage/maxNbGames"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//GroupStage/maxNbGames"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_u2IfINNKEee6OaiVxcFR4g" labelAlignment="LEFT">
@@ -1564,7 +1564,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_pmGTcNNLEee6OaiVxcFR4g" name="meetingsInSameGroup : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_pmGTcNNLEee6OaiVxcFR4g" name="meetingsInSameGroup : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//GroupStage/meetingsInSameGroup"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//GroupStage/meetingsInSameGroup"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tnr5kNNLEee6OaiVxcFR4g" labelAlignment="LEFT">
@@ -1572,7 +1572,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_px1CUNNLEee6OaiVxcFR4g" name="meetingsWithOtherGroups : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_px1CUNNLEee6OaiVxcFR4g" name="meetingsWithOtherGroups : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//GroupStage/meetingsWithOtherGroups"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//GroupStage/meetingsWithOtherGroups"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_y3CTUNNLEee6OaiVxcFR4g" labelAlignment="LEFT">
@@ -1601,7 +1601,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qloTQNNKEee6OaiVxcFR4g" name="maxNbGames : EInt = " tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qloTQNNKEee6OaiVxcFR4g" name="maxNbGames : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="eSport.ecore#//FinalStage/maxNbGames"/>
         <semanticElements xmi:type="ecore:EAttribute" href="eSport.ecore#//FinalStage/maxNbGames"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tCTKANNKEee6OaiVxcFR4g" labelAlignment="LEFT">
@@ -1751,9 +1751,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_DjDvQNNNEee6OaiVxcFR4g" sourceNode="_a3zXcM3DEee_IrW_dT0-ug" targetNode="_xZwAgNNMEee6OaiVxcFR4g" beginLabel="[0..1] tournamentFrom" endLabel="[0..1] qualifiesFrom">
-      <target xmi:type="ecore:EReference" href="eSport.ecore#//Tournament/qualifiesFrom"/>
-      <semanticElements xmi:type="ecore:EReference" href="eSport.ecore#//Tournament/qualifiesFrom"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_DjDvQNNNEee6OaiVxcFR4g" sourceNode="_a3zXcM3DEee_IrW_dT0-ug" targetNode="_xZwAgNNMEee6OaiVxcFR4g" beginLabel="[0..1] tournamentFrom" endLabel="[0..1] qualifiesFor">
+      <target xmi:type="ecore:EReference" href="eSport.ecore#//Tournament/qualifiesFor"/>
+      <semanticElements xmi:type="ecore:EReference" href="eSport.ecore#//Tournament/qualifiesFor"/>
       <semanticElements xmi:type="ecore:EReference" href="eSport.ecore#//Qualification/tournamentFrom"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_DjEWUNNNEee6OaiVxcFR4g" sourceArrow="InputArrow" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']/@style"/>
@@ -1762,9 +1762,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_D_w5YNNNEee6OaiVxcFR4g" sourceNode="_a3zXcM3DEee_IrW_dT0-ug" targetNode="_xZwAgNNMEee6OaiVxcFR4g" beginLabel="[0..1] tournamentTo" endLabel="[0..*] qualifiesFor">
-      <target xmi:type="ecore:EReference" href="eSport.ecore#//Tournament/qualifiesFor"/>
-      <semanticElements xmi:type="ecore:EReference" href="eSport.ecore#//Tournament/qualifiesFor"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_D_w5YNNNEee6OaiVxcFR4g" sourceNode="_a3zXcM3DEee_IrW_dT0-ug" targetNode="_xZwAgNNMEee6OaiVxcFR4g" beginLabel="[0..1] tournamentTo" endLabel="[0..*] qualifiesFrom">
+      <target xmi:type="ecore:EReference" href="eSport.ecore#//Tournament/qualifiesFrom"/>
+      <semanticElements xmi:type="ecore:EReference" href="eSport.ecore#//Tournament/qualifiesFrom"/>
       <semanticElements xmi:type="ecore:EReference" href="eSport.ecore#//Qualification/tournamentTo"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_D_xgcNNNEee6OaiVxcFR4g" sourceArrow="InputArrow" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']/@style"/>

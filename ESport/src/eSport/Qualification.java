@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Qualification extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Tournament From</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getQualifiesFrom <em>Qualifies From</em>}'.
+	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getQualifiesFor <em>Qualifies For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tournament From</em>' reference isn't clear,
@@ -35,8 +35,8 @@ public interface Qualification extends EObject {
 	 * @return the value of the '<em>Tournament From</em>' reference.
 	 * @see #setTournamentFrom(Tournament)
 	 * @see eSport.ESportPackage#getQualification_TournamentFrom()
-	 * @see eSport.Tournament#getQualifiesFrom
-	 * @model opposite="qualifiesFrom"
+	 * @see eSport.Tournament#getQualifiesFor
+	 * @model opposite="qualifiesFor"
 	 * @generated
 	 */
 	Tournament getTournamentFrom();
@@ -53,7 +53,7 @@ public interface Qualification extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Tournament To</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getQualifiesFor <em>Qualifies For</em>}'.
+	 * It is bidirectional and its opposite is '{@link eSport.Tournament#getQualifiesFrom <em>Qualifies From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tournament To</em>' reference isn't clear,
@@ -63,8 +63,8 @@ public interface Qualification extends EObject {
 	 * @return the value of the '<em>Tournament To</em>' reference.
 	 * @see #setTournamentTo(Tournament)
 	 * @see eSport.ESportPackage#getQualification_TournamentTo()
-	 * @see eSport.Tournament#getQualifiesFor
-	 * @model opposite="qualifiesFor"
+	 * @see eSport.Tournament#getQualifiesFrom
+	 * @model opposite="qualifiesFrom"
 	 * @generated
 	 */
 	Tournament getTournamentTo();
