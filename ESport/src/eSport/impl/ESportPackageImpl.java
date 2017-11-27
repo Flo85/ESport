@@ -1326,6 +1326,7 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		addEEnumLiteral(matchTypeEEnum, MatchType.FINAL);
 		addEEnumLiteral(matchTypeEEnum, MatchType.SEMI_FINAL);
 		addEEnumLiteral(matchTypeEEnum, MatchType.QUARTER_FINAL);
+		addEEnumLiteral(matchTypeEEnum, MatchType.SINGLE_ROUND_ELIMINATION);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -56,7 +56,15 @@ public enum MatchType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	QUARTER_FINAL(3, "quarterFinal", "quarterFinal");
+	QUARTER_FINAL(3, "quarterFinal", "quarterFinal"), /**
+	 * The '<em><b>Single Round Elimination</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SINGLE_ROUND_ELIMINATION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SINGLE_ROUND_ELIMINATION(4, "singleRoundElimination", "singleRoundElimination");
 
 	/**
 	 * The '<em><b>Group</b></em>' literal value.
@@ -119,6 +127,21 @@ public enum MatchType implements Enumerator {
 	public static final int QUARTER_FINAL_VALUE = 3;
 
 	/**
+	 * The '<em><b>Single Round Elimination</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Single Round Elimination</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SINGLE_ROUND_ELIMINATION
+	 * @model name="singleRoundElimination"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SINGLE_ROUND_ELIMINATION_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Match Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,6 +153,7 @@ public enum MatchType implements Enumerator {
 			FINAL,
 			SEMI_FINAL,
 			QUARTER_FINAL,
+			SINGLE_ROUND_ELIMINATION,
 		};
 
 	/**
@@ -190,6 +214,7 @@ public enum MatchType implements Enumerator {
 			case FINAL_VALUE: return FINAL;
 			case SEMI_FINAL_VALUE: return SEMI_FINAL;
 			case QUARTER_FINAL_VALUE: return QUARTER_FINAL;
+			case SINGLE_ROUND_ELIMINATION_VALUE: return SINGLE_ROUND_ELIMINATION;
 		}
 		return null;
 	}

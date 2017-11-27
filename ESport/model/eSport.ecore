@@ -188,5 +188,6 @@
     <eLiterals name="final" value="1"/>
     <eLiterals name="semiFinal" value="2"/>
     <eLiterals name="quarterFinal" value="3"/>
+    <eLiterals name="singleRoundElimination" value="4"/>
   </eClassifiers>
 </ecore:EPackage>
