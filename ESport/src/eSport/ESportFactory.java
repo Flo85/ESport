@@ -139,6 +139,15 @@ public interface ESportFactory extends EFactory {
 	FinalStage createFinalStage();
 
 	/**
+	 * Returns a new object of class '<em>Qualification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Qualification</em>'.
+	 * @generated
+	 */
+	Qualification createQualification();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

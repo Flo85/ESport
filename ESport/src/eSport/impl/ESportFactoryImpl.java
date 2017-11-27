@@ -70,6 +70,7 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 			case ESportPackage.GROUP: return createGroup();
 			case ESportPackage.GROUP_STAGE: return createGroupStage();
 			case ESportPackage.FINAL_STAGE: return createFinalStage();
+			case ESportPackage.QUALIFICATION: return createQualification();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -245,6 +246,16 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	public FinalStage createFinalStage() {
 		FinalStageImpl finalStage = new FinalStageImpl();
 		return finalStage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Qualification createQualification() {
+		QualificationImpl qualification = new QualificationImpl();
+		return qualification;
 	}
 
 	/**

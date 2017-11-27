@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link eSport.Zone#getName <em>Name</em>}</li>
  *   <li>{@link eSport.Zone#getTournaments <em>Tournaments</em>}</li>
- *   <li>{@link eSport.Zone#getLeague <em>League</em>}</li>
+ *   <li>{@link eSport.Zone#getLeagues <em>Leagues</em>}</li>
  *   <li>{@link eSport.Zone#getCountries <em>Countries</em>}</li>
  *   <li>{@link eSport.Zone#getTeams <em>Teams</em>}</li>
  * </ul>
@@ -72,32 +72,22 @@ public interface Zone extends EObject {
 	EList<Tournament> getTournaments();
 
 	/**
-	 * Returns the value of the '<em><b>League</b></em>' reference.
+	 * Returns the value of the '<em><b>Leagues</b></em>' reference list.
+	 * The list contents are of type {@link eSport.League}.
 	 * It is bidirectional and its opposite is '{@link eSport.League#getZone <em>Zone</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>League</em>' reference isn't clear,
+	 * If the meaning of the '<em>Leagues</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>League</em>' reference.
-	 * @see #setLeague(League)
-	 * @see eSport.ESportPackage#getZone_League()
+	 * @return the value of the '<em>Leagues</em>' reference list.
+	 * @see eSport.ESportPackage#getZone_Leagues()
 	 * @see eSport.League#getZone
 	 * @model opposite="zone"
 	 * @generated
 	 */
-	League getLeague();
-
-	/**
-	 * Sets the value of the '{@link eSport.Zone#getLeague <em>League</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>League</em>' reference.
-	 * @see #getLeague()
-	 * @generated
-	 */
-	void setLeague(League value);
+	EList<League> getLeagues();
 
 	/**
 	 * Returns the value of the '<em><b>Countries</b></em>' containment reference list.

@@ -17,6 +17,7 @@ import eSport.Match;
 import eSport.Person;
 import eSport.Player;
 import eSport.Position;
+import eSport.Qualification;
 import eSport.Team;
 import eSport.Tournament;
 import eSport.TournamentType;
@@ -127,6 +128,13 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * @generated
 	 */
 	private EClass finalStageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass qualificationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -348,6 +356,24 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTournament_QualificationFrom() {
+		return (EReference)tournamentEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTournament_QualificationsTo() {
+		return (EReference)tournamentEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLeague() {
 		return leagueEClass;
 	}
@@ -404,6 +430,15 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 */
 	public EReference getLeague_Groupstage() {
 		return (EReference)leagueEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLeague_QualificationsFrom() {
+		return (EReference)leagueEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -564,7 +599,7 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getZone_League() {
+	public EReference getZone_Leagues() {
 		return (EReference)zoneEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -852,6 +887,42 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getQualification() {
+		return qualificationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQualification_TournamentFrom() {
+		return (EReference)qualificationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQualification_TournamentTo() {
+		return (EReference)qualificationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQualification_League() {
+		return (EReference)qualificationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCapacityType() {
 		return capacityTypeEEnum;
 	}
@@ -927,6 +998,8 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		createEAttribute(tournamentEClass, TOURNAMENT__YEAR);
 		createEReference(tournamentEClass, TOURNAMENT__FINALSTAGES);
 		createEReference(tournamentEClass, TOURNAMENT__GROUPSTAGES);
+		createEReference(tournamentEClass, TOURNAMENT__QUALIFICATION_FROM);
+		createEReference(tournamentEClass, TOURNAMENT__QUALIFICATIONS_TO);
 
 		leagueEClass = createEClass(LEAGUE);
 		createEAttribute(leagueEClass, LEAGUE__NAME);
@@ -935,6 +1008,7 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		createEAttribute(leagueEClass, LEAGUE__YEAR);
 		createEAttribute(leagueEClass, LEAGUE__SEASON);
 		createEReference(leagueEClass, LEAGUE__GROUPSTAGE);
+		createEReference(leagueEClass, LEAGUE__QUALIFICATIONS_FROM);
 
 		capacityEClass = createEClass(CAPACITY);
 		createEAttribute(capacityEClass, CAPACITY__TYPE);
@@ -956,7 +1030,7 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		zoneEClass = createEClass(ZONE);
 		createEAttribute(zoneEClass, ZONE__NAME);
 		createEReference(zoneEClass, ZONE__TOURNAMENTS);
-		createEReference(zoneEClass, ZONE__LEAGUE);
+		createEReference(zoneEClass, ZONE__LEAGUES);
 		createEReference(zoneEClass, ZONE__COUNTRIES);
 		createEReference(zoneEClass, ZONE__TEAMS);
 
@@ -993,6 +1067,11 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		createEReference(finalStageEClass, FINAL_STAGE__TEAMS);
 		createEReference(finalStageEClass, FINAL_STAGE__TOURNAMENT);
 		createEAttribute(finalStageEClass, FINAL_STAGE__MAX_NB_GAMES);
+
+		qualificationEClass = createEClass(QUALIFICATION);
+		createEReference(qualificationEClass, QUALIFICATION__TOURNAMENT_FROM);
+		createEReference(qualificationEClass, QUALIFICATION__TOURNAMENT_TO);
+		createEReference(qualificationEClass, QUALIFICATION__LEAGUE);
 
 		// Create enums
 		capacityTypeEEnum = createEEnum(CAPACITY_TYPE);
@@ -1049,14 +1128,17 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		initEAttribute(getTournament_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTournament_Finalstages(), this.getFinalStage(), this.getFinalStage_Tournament(), "finalstages", null, 0, -1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTournament_Groupstages(), this.getGroupStage(), this.getGroupStage_Tournament(), "groupstages", null, 0, -1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTournament_QualificationFrom(), this.getQualification(), this.getQualification_TournamentFrom(), "qualificationFrom", null, 0, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTournament_QualificationsTo(), this.getQualification(), this.getQualification_TournamentTo(), "qualificationsTo", null, 0, -1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(leagueEClass, League.class, "League", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLeague_Name(), ecorePackage.getEString(), "name", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLeague_Size(), ecorePackage.getEInt(), "size", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLeague_Zone(), this.getZone(), this.getZone_League(), "zone", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLeague_Zone(), this.getZone(), this.getZone_Leagues(), "zone", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLeague_Year(), ecorePackage.getEInt(), "year", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLeague_Season(), ecorePackage.getEString(), "season", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLeague_Groupstage(), this.getGroupStage(), this.getGroupStage_League(), "groupstage", null, 0, 1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLeague_QualificationsFrom(), this.getQualification(), this.getQualification_League(), "qualificationsFrom", null, 0, -1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(capacityEClass, Capacity.class, "Capacity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCapacity_Type(), this.getCapacityType(), "type", null, 0, 1, Capacity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1078,7 +1160,7 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		initEClass(zoneEClass, Zone.class, "Zone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getZone_Name(), ecorePackage.getEString(), "name", null, 0, 1, Zone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getZone_Tournaments(), this.getTournament(), this.getTournament_AllowedZones(), "tournaments", null, 0, -1, Zone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getZone_League(), this.getLeague(), this.getLeague_Zone(), "league", null, 0, 1, Zone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getZone_Leagues(), this.getLeague(), this.getLeague_Zone(), "leagues", null, 0, -1, Zone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getZone_Countries(), this.getCountry(), this.getCountry_Zone(), "countries", null, 0, -1, Zone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getZone_Teams(), this.getTeam(), this.getTeam_Zone(), "teams", null, 0, -1, Zone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1115,6 +1197,11 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		initEReference(getFinalStage_Teams(), this.getTeam(), this.getTeam_Finalstages(), "teams", null, 0, -1, FinalStage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFinalStage_Tournament(), this.getTournament(), this.getTournament_Finalstages(), "tournament", null, 0, 1, FinalStage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFinalStage_MaxNbGames(), ecorePackage.getEInt(), "maxNbGames", null, 0, 1, FinalStage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(qualificationEClass, Qualification.class, "Qualification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQualification_TournamentFrom(), this.getTournament(), this.getTournament_QualificationFrom(), "tournamentFrom", null, 0, 1, Qualification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQualification_TournamentTo(), this.getTournament(), this.getTournament_QualificationsTo(), "tournamentTo", null, 0, 1, Qualification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQualification_League(), this.getLeague(), this.getLeague_QualificationsFrom(), "league", null, 0, 1, Qualification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(capacityTypeEEnum, CapacityType.class, "CapacityType");

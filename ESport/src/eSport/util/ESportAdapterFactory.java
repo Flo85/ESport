@@ -120,6 +120,10 @@ public class ESportAdapterFactory extends AdapterFactoryImpl {
 				return createFinalStageAdapter();
 			}
 			@Override
+			public Adapter caseQualification(Qualification object) {
+				return createQualificationAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -318,6 +322,20 @@ public class ESportAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFinalStageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link eSport.Qualification <em>Qualification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see eSport.Qualification
+	 * @generated
+	 */
+	public Adapter createQualificationAdapter() {
 		return null;
 	}
 

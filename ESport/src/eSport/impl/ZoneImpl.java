@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link eSport.impl.ZoneImpl#getName <em>Name</em>}</li>
  *   <li>{@link eSport.impl.ZoneImpl#getTournaments <em>Tournaments</em>}</li>
- *   <li>{@link eSport.impl.ZoneImpl#getLeague <em>League</em>}</li>
+ *   <li>{@link eSport.impl.ZoneImpl#getLeagues <em>Leagues</em>}</li>
  *   <li>{@link eSport.impl.ZoneImpl#getCountries <em>Countries</em>}</li>
  *   <li>{@link eSport.impl.ZoneImpl#getTeams <em>Teams</em>}</li>
  * </ul>
@@ -75,14 +75,14 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 	protected EList<Tournament> tournaments;
 
 	/**
-	 * The cached value of the '{@link #getLeague() <em>League</em>}' reference.
+	 * The cached value of the '{@link #getLeagues() <em>Leagues</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLeague()
+	 * @see #getLeagues()
 	 * @generated
 	 * @ordered
 	 */
-	protected League league;
+	protected EList<League> leagues;
 
 	/**
 	 * The cached value of the '{@link #getCountries() <em>Countries</em>}' containment reference list.
@@ -161,59 +161,11 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public League getLeague() {
-		if (league != null && league.eIsProxy()) {
-			InternalEObject oldLeague = (InternalEObject)league;
-			league = (League)eResolveProxy(oldLeague);
-			if (league != oldLeague) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.ZONE__LEAGUE, oldLeague, league));
-			}
+	public EList<League> getLeagues() {
+		if (leagues == null) {
+			leagues = new EObjectWithInverseResolvingEList<League>(League.class, this, ESportPackage.ZONE__LEAGUES, ESportPackage.LEAGUE__ZONE);
 		}
-		return league;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public League basicGetLeague() {
-		return league;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetLeague(League newLeague, NotificationChain msgs) {
-		League oldLeague = league;
-		league = newLeague;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.ZONE__LEAGUE, oldLeague, newLeague);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLeague(League newLeague) {
-		if (newLeague != league) {
-			NotificationChain msgs = null;
-			if (league != null)
-				msgs = ((InternalEObject)league).eInverseRemove(this, ESportPackage.LEAGUE__ZONE, League.class, msgs);
-			if (newLeague != null)
-				msgs = ((InternalEObject)newLeague).eInverseAdd(this, ESportPackage.LEAGUE__ZONE, League.class, msgs);
-			msgs = basicSetLeague(newLeague, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.ZONE__LEAGUE, newLeague, newLeague));
+		return leagues;
 	}
 
 	/**
@@ -251,10 +203,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 		switch (featureID) {
 			case ESportPackage.ZONE__TOURNAMENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTournaments()).basicAdd(otherEnd, msgs);
-			case ESportPackage.ZONE__LEAGUE:
-				if (league != null)
-					msgs = ((InternalEObject)league).eInverseRemove(this, ESportPackage.LEAGUE__ZONE, League.class, msgs);
-				return basicSetLeague((League)otherEnd, msgs);
+			case ESportPackage.ZONE__LEAGUES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLeagues()).basicAdd(otherEnd, msgs);
 			case ESportPackage.ZONE__COUNTRIES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCountries()).basicAdd(otherEnd, msgs);
 			case ESportPackage.ZONE__TEAMS:
@@ -273,8 +223,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 		switch (featureID) {
 			case ESportPackage.ZONE__TOURNAMENTS:
 				return ((InternalEList<?>)getTournaments()).basicRemove(otherEnd, msgs);
-			case ESportPackage.ZONE__LEAGUE:
-				return basicSetLeague(null, msgs);
+			case ESportPackage.ZONE__LEAGUES:
+				return ((InternalEList<?>)getLeagues()).basicRemove(otherEnd, msgs);
 			case ESportPackage.ZONE__COUNTRIES:
 				return ((InternalEList<?>)getCountries()).basicRemove(otherEnd, msgs);
 			case ESportPackage.ZONE__TEAMS:
@@ -295,9 +245,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 				return getName();
 			case ESportPackage.ZONE__TOURNAMENTS:
 				return getTournaments();
-			case ESportPackage.ZONE__LEAGUE:
-				if (resolve) return getLeague();
-				return basicGetLeague();
+			case ESportPackage.ZONE__LEAGUES:
+				return getLeagues();
 			case ESportPackage.ZONE__COUNTRIES:
 				return getCountries();
 			case ESportPackage.ZONE__TEAMS:
@@ -322,8 +271,9 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 				getTournaments().clear();
 				getTournaments().addAll((Collection<? extends Tournament>)newValue);
 				return;
-			case ESportPackage.ZONE__LEAGUE:
-				setLeague((League)newValue);
+			case ESportPackage.ZONE__LEAGUES:
+				getLeagues().clear();
+				getLeagues().addAll((Collection<? extends League>)newValue);
 				return;
 			case ESportPackage.ZONE__COUNTRIES:
 				getCountries().clear();
@@ -351,8 +301,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 			case ESportPackage.ZONE__TOURNAMENTS:
 				getTournaments().clear();
 				return;
-			case ESportPackage.ZONE__LEAGUE:
-				setLeague((League)null);
+			case ESportPackage.ZONE__LEAGUES:
+				getLeagues().clear();
 				return;
 			case ESportPackage.ZONE__COUNTRIES:
 				getCountries().clear();
@@ -376,8 +326,8 @@ public class ZoneImpl extends MinimalEObjectImpl.Container implements Zone {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ESportPackage.ZONE__TOURNAMENTS:
 				return tournaments != null && !tournaments.isEmpty();
-			case ESportPackage.ZONE__LEAGUE:
-				return league != null;
+			case ESportPackage.ZONE__LEAGUES:
+				return leagues != null && !leagues.isEmpty();
 			case ESportPackage.ZONE__COUNTRIES:
 				return countries != null && !countries.isEmpty();
 			case ESportPackage.ZONE__TEAMS:
