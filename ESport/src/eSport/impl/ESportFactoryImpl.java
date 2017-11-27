@@ -92,6 +92,8 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 				return createTournamentTypeFromString(eDataType, initialValue);
 			case ESportPackage.GROUP_STAGE_TYPE:
 				return createGroupStageTypeFromString(eDataType, initialValue);
+			case ESportPackage.MATCH_TYPE:
+				return createMatchTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -113,6 +115,8 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 				return convertTournamentTypeToString(eDataType, instanceValue);
 			case ESportPackage.GROUP_STAGE_TYPE:
 				return convertGroupStageTypeToString(eDataType, instanceValue);
+			case ESportPackage.MATCH_TYPE:
+				return convertMatchTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -335,6 +339,26 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	 * @generated
 	 */
 	public String convertGroupStageTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MatchType createMatchTypeFromString(EDataType eDataType, String initialValue) {
+		MatchType result = MatchType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMatchTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

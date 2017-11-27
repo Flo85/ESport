@@ -7,6 +7,7 @@ import eSport.FinalStage;
 import eSport.Group;
 import eSport.Match;
 
+import eSport.MatchType;
 import eSport.Team;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link eSport.impl.MatchImpl#getTeamWinner <em>Team Winner</em>}</li>
  *   <li>{@link eSport.impl.MatchImpl#getTeamLoser <em>Team Loser</em>}</li>
  *   <li>{@link eSport.impl.MatchImpl#getLoserWins <em>Loser Wins</em>}</li>
+ *   <li>{@link eSport.impl.MatchImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,6 +96,26 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @ordered
 	 */
 	protected int loserWins = LOSER_WINS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MatchType TYPE_EDEFAULT = MatchType.GROUP;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected MatchType type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -380,6 +402,27 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MatchType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(MatchType newType) {
+		MatchType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -445,6 +488,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				return basicGetTeamLoser();
 			case ESportPackage.MATCH__LOSER_WINS:
 				return getLoserWins();
+			case ESportPackage.MATCH__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -471,6 +516,9 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				return;
 			case ESportPackage.MATCH__LOSER_WINS:
 				setLoserWins((Integer)newValue);
+				return;
+			case ESportPackage.MATCH__TYPE:
+				setType((MatchType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -499,6 +547,9 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 			case ESportPackage.MATCH__LOSER_WINS:
 				setLoserWins(LOSER_WINS_EDEFAULT);
 				return;
+			case ESportPackage.MATCH__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -521,6 +572,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				return teamLoser != null;
 			case ESportPackage.MATCH__LOSER_WINS:
 				return loserWins != LOSER_WINS_EDEFAULT;
+			case ESportPackage.MATCH__TYPE:
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -537,6 +590,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (loserWins: ");
 		result.append(loserWins);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Match#getTeamWinner <em>Team Winner</em>}</li>
  *   <li>{@link eSport.Match#getTeamLoser <em>Team Loser</em>}</li>
  *   <li>{@link eSport.Match#getLoserWins <em>Loser Wins</em>}</li>
+ *   <li>{@link eSport.Match#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getMatch()
@@ -162,5 +163,34 @@ public interface Match extends EObject {
 	 * @generated
 	 */
 	void setLoserWins(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link eSport.MatchType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see eSport.MatchType
+	 * @see #setType(MatchType)
+	 * @see eSport.ESportPackage#getMatch_Type()
+	 * @model
+	 * @generated
+	 */
+	MatchType getType();
+
+	/**
+	 * Sets the value of the '{@link eSport.Match#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see eSport.MatchType
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(MatchType value);
 
 } // Match

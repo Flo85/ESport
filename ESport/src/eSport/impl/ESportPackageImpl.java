@@ -14,6 +14,7 @@ import eSport.GroupStage;
 import eSport.GroupStageType;
 import eSport.League;
 import eSport.Match;
+import eSport.MatchType;
 import eSport.Person;
 import eSport.Player;
 import eSport.Position;
@@ -163,6 +164,13 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * @generated
 	 */
 	private EEnum groupStageTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum matchTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -770,6 +778,15 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMatch_Type() {
+		return (EAttribute)matchEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGroup() {
 		return groupEClass;
 	}
@@ -995,6 +1012,15 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getMatchType() {
+		return matchTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ESportFactory getESportFactory() {
 		return (ESportFactory)getEFactoryInstance();
 	}
@@ -1087,6 +1113,7 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		createEReference(matchEClass, MATCH__TEAM_WINNER);
 		createEReference(matchEClass, MATCH__TEAM_LOSER);
 		createEAttribute(matchEClass, MATCH__LOSER_WINS);
+		createEAttribute(matchEClass, MATCH__TYPE);
 
 		groupEClass = createEClass(GROUP);
 		createEReference(groupEClass, GROUP__GROUPSTAGE);
@@ -1118,6 +1145,7 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		positionEEnum = createEEnum(POSITION);
 		tournamentTypeEEnum = createEEnum(TOURNAMENT_TYPE);
 		groupStageTypeEEnum = createEEnum(GROUP_STAGE_TYPE);
+		matchTypeEEnum = createEEnum(MATCH_TYPE);
 	}
 
 	/**
@@ -1221,6 +1249,7 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		initEReference(getMatch_TeamWinner(), this.getTeam(), this.getTeam_MatchsWon(), "teamWinner", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMatch_TeamLoser(), this.getTeam(), this.getTeam_MatchsLost(), "teamLoser", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMatch_LoserWins(), ecorePackage.getEInt(), "loserWins", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMatch_Type(), this.getMatchType(), "type", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGroup_Groupstage(), this.getGroupStage(), this.getGroupStage_Groups(), "groupstage", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1291,6 +1320,12 @@ public class ESportPackageImpl extends EPackageImpl implements ESportPackage {
 		addEEnumLiteral(groupStageTypeEEnum, GroupStageType.MSI_PLAY_IN);
 		addEEnumLiteral(groupStageTypeEEnum, GroupStageType.MSI_GROUP);
 		addEEnumLiteral(groupStageTypeEEnum, GroupStageType.ALL_STARS_GROUP);
+
+		initEEnum(matchTypeEEnum, MatchType.class, "MatchType");
+		addEEnumLiteral(matchTypeEEnum, MatchType.GROUP);
+		addEEnumLiteral(matchTypeEEnum, MatchType.FINAL);
+		addEEnumLiteral(matchTypeEEnum, MatchType.SEMI_FINAL);
+		addEEnumLiteral(matchTypeEEnum, MatchType.QUARTER_FINAL);
 
 		// Create resource
 		createResource(eNS_URI);

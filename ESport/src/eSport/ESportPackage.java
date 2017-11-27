@@ -860,13 +860,22 @@ public interface ESportPackage extends EPackage {
 	int MATCH__LOSER_WINS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH__TYPE = 5;
+
+	/**
 	 * The number of structural features of the '<em>Match</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCH_FEATURE_COUNT = 5;
+	int MATCH_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Match</em>' class.
@@ -1181,6 +1190,16 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 */
 	int GROUP_STAGE_TYPE = 17;
+
+	/**
+	 * The meta object id for the '{@link eSport.MatchType <em>Match Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.MatchType
+	 * @see eSport.impl.ESportPackageImpl#getMatchType()
+	 * @generated
+	 */
+	int MATCH_TYPE = 18;
 
 	/**
 	 * Returns the meta object for class '{@link eSport.Player <em>Player</em>}'.
@@ -1833,6 +1852,17 @@ public interface ESportPackage extends EPackage {
 	EAttribute getMatch_LoserWins();
 
 	/**
+	 * Returns the meta object for the attribute '{@link eSport.Match#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see eSport.Match#getType()
+	 * @see #getMatch()
+	 * @generated
+	 */
+	EAttribute getMatch_Type();
+
+	/**
 	 * Returns the meta object for class '{@link eSport.Group <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2098,6 +2128,16 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getGroupStageType();
+
+	/**
+	 * Returns the meta object for enum '{@link eSport.MatchType <em>Match Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Match Type</em>'.
+	 * @see eSport.MatchType
+	 * @generated
+	 */
+	EEnum getMatchType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2623,6 +2663,14 @@ public interface ESportPackage extends EPackage {
 		EAttribute MATCH__LOSER_WINS = eINSTANCE.getMatch_LoserWins();
 
 		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATCH__TYPE = eINSTANCE.getMatch_Type();
+
+		/**
 		 * The meta object literal for the '{@link eSport.impl.GroupImpl <em>Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2837,6 +2885,16 @@ public interface ESportPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum GROUP_STAGE_TYPE = eINSTANCE.getGroupStageType();
+
+		/**
+		 * The meta object literal for the '{@link eSport.MatchType <em>Match Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.MatchType
+		 * @see eSport.impl.ESportPackageImpl#getMatchType()
+		 * @generated
+		 */
+		EEnum MATCH_TYPE = eINSTANCE.getMatchType();
 
 	}
 

@@ -134,6 +134,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="teamLoser" eType="#//Team"
         eOpposite="#//Team/matchsLost"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="loserWins" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MatchType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Group">
     <eStructuralFeatures xsi:type="ecore:EReference" name="groupstage" eType="#//GroupStage"
@@ -181,5 +182,11 @@
         eOpposite="#//Tournament/qualificationsTo"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="league" eType="#//League"
         eOpposite="#//League/qualificationsFrom"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MatchType">
+    <eLiterals name="group"/>
+    <eLiterals name="final" value="1"/>
+    <eLiterals name="semiFinal" value="2"/>
+    <eLiterals name="quarterFinal" value="3"/>
   </eClassifiers>
 </ecore:EPackage>
