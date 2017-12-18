@@ -33,7 +33,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="zone" eType="#//Zone" eOpposite="#//Zone/leagues"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="#//Season"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groupstage" eType="#//GroupStage"
         containment="true" eOpposite="#//GroupStage/league"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiesFor" upperBound="-1"
@@ -44,14 +44,14 @@
         eType="#//CapacityType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person">
+  <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="age" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="capacities" upperBound="-1"
-        eType="#//Capacity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="country" eType="#//Country"
         eOpposite="#//Country/persons"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capacities" upperBound="-1"
+        eType="#//Capacity" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Country">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -75,19 +75,19 @@
   <eClassifiers xsi:type="ecore:EClass" name="Team">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="players" upperBound="-1"
-        eType="#//Player" eOpposite="#//Player/team"/>
+        eType="#//Player" containment="true" eOpposite="#//Player/team"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="coach" eType="#//Coach"
-        eOpposite="#//Coach/team"/>
+        containment="true" eOpposite="#//Coach/team"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="zone" eType="#//Zone" eOpposite="#//Zone/teams"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//Group" eOpposite="#//Group/teams"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="championshipPoints" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="finalstages" upperBound="-1"
-        eType="#//FinalStage" eOpposite="#//FinalStage/teams"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchsWon" upperBound="-1"
         eType="#//Match" eOpposite="#//Match/teamWinner"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchsLost" upperBound="-1"
         eType="#//Match" eOpposite="#//Match/teamLoser"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalstages" upperBound="-1"
+        eType="#//FinalStage" eOpposite="#//FinalStage/teams"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CapacityType">
     <eLiterals name="positioning"/>
@@ -140,7 +140,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="groupstage" eType="#//GroupStage"
         eOpposite="#//GroupStage/groups"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchs" upperBound="-1"
-        eType="#//Match" eOpposite="#//Match/group"/>
+        eType="#//Match" containment="true" eOpposite="#//Match/group"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="-1"
         eType="#//Team" eOpposite="#//Team/groups"/>
   </eClassifiers>
@@ -159,12 +159,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FinalStage">
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchs" upperBound="-1"
-        eType="#//Match" eOpposite="#//Match/finalstage"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="-1"
-        eType="#//Team" eOpposite="#//Team/finalstages"/>
+        eType="#//Match" containment="true" eOpposite="#//Match/finalstage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tournament" eType="#//Tournament"
         eOpposite="#//Tournament/finalstages"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxNbGames" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="-1"
+        eType="#//Team" eOpposite="#//Team/finalstages"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="GroupStageType">
     <eLiterals name="league"/>
@@ -182,6 +182,7 @@
         eOpposite="#//Tournament/qualifiesFrom"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="leagueFrom" eType="#//League"
         eOpposite="#//League/qualifiesFor"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MatchType">
     <eLiterals name="group"/>
@@ -189,5 +190,25 @@
     <eLiterals name="semiFinal" value="2"/>
     <eLiterals name="quarterFinal" value="3"/>
     <eLiterals name="singleRoundElimination" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="zones" upperBound="-1"
+        eType="#//Zone" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tournaments" upperBound="-1"
+        eType="#//Tournament" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leagues" upperBound="-1"
+        eType="#//League" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="teams" upperBound="-1"
+        eType="#//Team" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="persons" upperBound="-1"
+        eType="#//Person" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifications" upperBound="-1"
+        eType="#//Qualification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="countries" upperBound="-1"
+        eType="#//Country" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Season">
+    <eLiterals name="spring"/>
+    <eLiterals name="summer" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

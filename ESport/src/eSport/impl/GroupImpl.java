@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -42,7 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	/**
-	 * The cached value of the '{@link #getMatchs() <em>Matchs</em>}' reference list.
+	 * The cached value of the '{@link #getMatchs() <em>Matchs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMatchs()
@@ -128,7 +129,7 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group {
 	 */
 	public EList<Match> getMatchs() {
 		if (matchs == null) {
-			matchs = new EObjectWithInverseResolvingEList<Match>(Match.class, this, ESportPackage.GROUP__MATCHS, ESportPackage.MATCH__GROUP);
+			matchs = new EObjectContainmentWithInverseEList<Match>(Match.class, this, ESportPackage.GROUP__MATCHS, ESportPackage.MATCH__GROUP);
 		}
 		return matchs;
 	}

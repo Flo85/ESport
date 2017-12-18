@@ -20,7 +20,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,13 +34,13 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link eSport.impl.PersonImpl#getName <em>Name</em>}</li>
  *   <li>{@link eSport.impl.PersonImpl#getAge <em>Age</em>}</li>
  *   <li>{@link eSport.impl.PersonImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link eSport.impl.PersonImpl#getCapacities <em>Capacities</em>}</li>
  *   <li>{@link eSport.impl.PersonImpl#getCountry <em>Country</em>}</li>
+ *   <li>{@link eSport.impl.PersonImpl#getCapacities <em>Capacities</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
+public abstract class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -101,16 +102,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCapacities() <em>Capacities</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCapacities()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Capacity> capacities;
-
-	/**
 	 * The cached value of the '{@link #getCountry() <em>Country</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +110,16 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @ordered
 	 */
 	protected Country country;
+
+	/**
+	 * The cached value of the '{@link #getCapacities() <em>Capacities</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapacities()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Capacity> capacities;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,7 +210,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 */
 	public EList<Capacity> getCapacities() {
 		if (capacities == null) {
-			capacities = new EObjectResolvingEList<Capacity>(Capacity.class, this, ESportPackage.PERSON__CAPACITIES);
+			capacities = new EObjectContainmentEList<Capacity>(Capacity.class, this, ESportPackage.PERSON__CAPACITIES);
 		}
 		return capacities;
 	}
@@ -300,6 +301,8 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 		switch (featureID) {
 			case ESportPackage.PERSON__COUNTRY:
 				return basicSetCountry(null, msgs);
+			case ESportPackage.PERSON__CAPACITIES:
+				return ((InternalEList<?>)getCapacities()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -318,11 +321,11 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 				return getAge();
 			case ESportPackage.PERSON__DESCRIPTION:
 				return getDescription();
-			case ESportPackage.PERSON__CAPACITIES:
-				return getCapacities();
 			case ESportPackage.PERSON__COUNTRY:
 				if (resolve) return getCountry();
 				return basicGetCountry();
+			case ESportPackage.PERSON__CAPACITIES:
+				return getCapacities();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -345,12 +348,12 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 			case ESportPackage.PERSON__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
+			case ESportPackage.PERSON__COUNTRY:
+				setCountry((Country)newValue);
+				return;
 			case ESportPackage.PERSON__CAPACITIES:
 				getCapacities().clear();
 				getCapacities().addAll((Collection<? extends Capacity>)newValue);
-				return;
-			case ESportPackage.PERSON__COUNTRY:
-				setCountry((Country)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -373,11 +376,11 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 			case ESportPackage.PERSON__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case ESportPackage.PERSON__CAPACITIES:
-				getCapacities().clear();
-				return;
 			case ESportPackage.PERSON__COUNTRY:
 				setCountry((Country)null);
+				return;
+			case ESportPackage.PERSON__CAPACITIES:
+				getCapacities().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -397,10 +400,10 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 				return age != AGE_EDEFAULT;
 			case ESportPackage.PERSON__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ESportPackage.PERSON__CAPACITIES:
-				return capacities != null && !capacities.isEmpty();
 			case ESportPackage.PERSON__COUNTRY:
 				return country != null;
+			case ESportPackage.PERSON__CAPACITIES:
+				return capacities != null && !capacities.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

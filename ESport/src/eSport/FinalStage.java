@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link eSport.FinalStage#getMatchs <em>Matchs</em>}</li>
- *   <li>{@link eSport.FinalStage#getTeams <em>Teams</em>}</li>
  *   <li>{@link eSport.FinalStage#getTournament <em>Tournament</em>}</li>
  *   <li>{@link eSport.FinalStage#getMaxNbGames <em>Max Nb Games</em>}</li>
+ *   <li>{@link eSport.FinalStage#getTeams <em>Teams</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getFinalStage()
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface FinalStage extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Matchs</b></em>' reference list.
+	 * Returns the value of the '<em><b>Matchs</b></em>' containment reference list.
 	 * The list contents are of type {@link eSport.Match}.
 	 * It is bidirectional and its opposite is '{@link eSport.Match#getFinalstage <em>Finalstage</em>}'.
 	 * <!-- begin-user-doc -->
@@ -36,10 +36,10 @@ public interface FinalStage extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Matchs</em>' reference list.
+	 * @return the value of the '<em>Matchs</em>' containment reference list.
 	 * @see eSport.ESportPackage#getFinalStage_Matchs()
 	 * @see eSport.Match#getFinalstage
-	 * @model opposite="finalstage"
+	 * @model opposite="finalstage" containment="true"
 	 * @generated
 	 */
 	EList<Match> getMatchs();

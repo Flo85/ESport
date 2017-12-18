@@ -95,22 +95,22 @@ public interface ESportPackage extends EPackage {
 	int PERSON__DESCRIPTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Capacities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON__CAPACITIES = 3;
-
-	/**
 	 * The feature id for the '<em><b>Country</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__COUNTRY = 4;
+	int PERSON__COUNTRY = 3;
+
+	/**
+	 * The feature id for the '<em><b>Capacities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__CAPACITIES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Person</em>' class.
@@ -168,15 +168,6 @@ public interface ESportPackage extends EPackage {
 	int PLAYER__DESCRIPTION = PERSON__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Capacities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLAYER__CAPACITIES = PERSON__CAPACITIES;
-
-	/**
 	 * The feature id for the '<em><b>Country</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,6 +175,15 @@ public interface ESportPackage extends EPackage {
 	 * @ordered
 	 */
 	int PLAYER__COUNTRY = PERSON__COUNTRY;
+
+	/**
+	 * The feature id for the '<em><b>Capacities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAYER__CAPACITIES = PERSON__CAPACITIES;
 
 	/**
 	 * The feature id for the '<em><b>Position</b></em>' attribute.
@@ -195,7 +195,7 @@ public interface ESportPackage extends EPackage {
 	int PLAYER__POSITION = PERSON_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Team</b></em>' reference.
+	 * The feature id for the '<em><b>Team</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -259,15 +259,6 @@ public interface ESportPackage extends EPackage {
 	int COACH__DESCRIPTION = PERSON__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Capacities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COACH__CAPACITIES = PERSON__CAPACITIES;
-
-	/**
 	 * The feature id for the '<em><b>Country</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,7 +268,16 @@ public interface ESportPackage extends EPackage {
 	int COACH__COUNTRY = PERSON__COUNTRY;
 
 	/**
-	 * The feature id for the '<em><b>Team</b></em>' reference.
+	 * The feature id for the '<em><b>Capacities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COACH__CAPACITIES = PERSON__CAPACITIES;
+
+	/**
+	 * The feature id for the '<em><b>Team</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -715,7 +715,7 @@ public interface ESportPackage extends EPackage {
 	int TEAM__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Players</b></em>' reference list.
+	 * The feature id for the '<em><b>Players</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -724,7 +724,7 @@ public interface ESportPackage extends EPackage {
 	int TEAM__PLAYERS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Coach</b></em>' reference.
+	 * The feature id for the '<em><b>Coach</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -760,22 +760,13 @@ public interface ESportPackage extends EPackage {
 	int TEAM__CHAMPIONSHIP_POINTS = 5;
 
 	/**
-	 * The feature id for the '<em><b>Finalstages</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEAM__FINALSTAGES = 6;
-
-	/**
 	 * The feature id for the '<em><b>Matchs Won</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEAM__MATCHS_WON = 7;
+	int TEAM__MATCHS_WON = 6;
 
 	/**
 	 * The feature id for the '<em><b>Matchs Lost</b></em>' reference list.
@@ -784,7 +775,16 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEAM__MATCHS_LOST = 8;
+	int TEAM__MATCHS_LOST = 7;
+
+	/**
+	 * The feature id for the '<em><b>Finalstages</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM__FINALSTAGES = 8;
 
 	/**
 	 * The number of structural features of the '<em>Team</em>' class.
@@ -815,7 +815,7 @@ public interface ESportPackage extends EPackage {
 	int MATCH = 9;
 
 	/**
-	 * The feature id for the '<em><b>Group</b></em>' reference.
+	 * The feature id for the '<em><b>Group</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -824,7 +824,7 @@ public interface ESportPackage extends EPackage {
 	int MATCH__GROUP = 0;
 
 	/**
-	 * The feature id for the '<em><b>Finalstage</b></em>' reference.
+	 * The feature id for the '<em><b>Finalstage</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -906,7 +906,7 @@ public interface ESportPackage extends EPackage {
 	int GROUP__GROUPSTAGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Matchs</b></em>' reference list.
+	 * The feature id for the '<em><b>Matchs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1043,7 +1043,7 @@ public interface ESportPackage extends EPackage {
 	int FINAL_STAGE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Matchs</b></em>' reference list.
+	 * The feature id for the '<em><b>Matchs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1052,22 +1052,13 @@ public interface ESportPackage extends EPackage {
 	int FINAL_STAGE__MATCHS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Teams</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_STAGE__TEAMS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Tournament</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FINAL_STAGE__TOURNAMENT = 2;
+	int FINAL_STAGE__TOURNAMENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Max Nb Games</b></em>' attribute.
@@ -1076,7 +1067,16 @@ public interface ESportPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FINAL_STAGE__MAX_NB_GAMES = 3;
+	int FINAL_STAGE__MAX_NB_GAMES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Teams</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STAGE__TEAMS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Final Stage</em>' class.
@@ -1134,13 +1134,22 @@ public interface ESportPackage extends EPackage {
 	int QUALIFICATION__LEAGUE_FROM = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALIFICATION__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Qualification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALIFICATION_FEATURE_COUNT = 3;
+	int QUALIFICATION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Qualification</em>' class.
@@ -1152,6 +1161,97 @@ public interface ESportPackage extends EPackage {
 	int QUALIFICATION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link eSport.impl.RootImpl <em>Root</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.impl.RootImpl
+	 * @see eSport.impl.ESportPackageImpl#getRoot()
+	 * @generated
+	 */
+	int ROOT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Zones</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__ZONES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Tournaments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__TOURNAMENTS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Leagues</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__LEAGUES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Teams</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__TEAMS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Persons</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__PERSONS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Qualifications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__QUALIFICATIONS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Countries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__COUNTRIES = 6;
+
+	/**
+	 * The number of structural features of the '<em>Root</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_FEATURE_COUNT = 7;
+
+	/**
+	 * The number of operations of the '<em>Root</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link eSport.CapacityType <em>Capacity Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1159,7 +1259,7 @@ public interface ESportPackage extends EPackage {
 	 * @see eSport.impl.ESportPackageImpl#getCapacityType()
 	 * @generated
 	 */
-	int CAPACITY_TYPE = 14;
+	int CAPACITY_TYPE = 15;
 
 	/**
 	 * The meta object id for the '{@link eSport.Position <em>Position</em>}' enum.
@@ -1169,7 +1269,7 @@ public interface ESportPackage extends EPackage {
 	 * @see eSport.impl.ESportPackageImpl#getPosition()
 	 * @generated
 	 */
-	int POSITION = 15;
+	int POSITION = 16;
 
 	/**
 	 * The meta object id for the '{@link eSport.TournamentType <em>Tournament Type</em>}' enum.
@@ -1179,7 +1279,7 @@ public interface ESportPackage extends EPackage {
 	 * @see eSport.impl.ESportPackageImpl#getTournamentType()
 	 * @generated
 	 */
-	int TOURNAMENT_TYPE = 16;
+	int TOURNAMENT_TYPE = 17;
 
 	/**
 	 * The meta object id for the '{@link eSport.GroupStageType <em>Group Stage Type</em>}' enum.
@@ -1189,7 +1289,7 @@ public interface ESportPackage extends EPackage {
 	 * @see eSport.impl.ESportPackageImpl#getGroupStageType()
 	 * @generated
 	 */
-	int GROUP_STAGE_TYPE = 17;
+	int GROUP_STAGE_TYPE = 18;
 
 	/**
 	 * The meta object id for the '{@link eSport.MatchType <em>Match Type</em>}' enum.
@@ -1199,7 +1299,17 @@ public interface ESportPackage extends EPackage {
 	 * @see eSport.impl.ESportPackageImpl#getMatchType()
 	 * @generated
 	 */
-	int MATCH_TYPE = 18;
+	int MATCH_TYPE = 19;
+
+	/**
+	 * The meta object id for the '{@link eSport.Season <em>Season</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see eSport.Season
+	 * @see eSport.impl.ESportPackageImpl#getSeason()
+	 * @generated
+	 */
+	int SEASON = 20;
 
 	/**
 	 * Returns the meta object for class '{@link eSport.Player <em>Player</em>}'.
@@ -1223,10 +1333,10 @@ public interface ESportPackage extends EPackage {
 	EAttribute getPlayer_Position();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Player#getTeam <em>Team</em>}'.
+	 * Returns the meta object for the container reference '{@link eSport.Player#getTeam <em>Team</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Team</em>'.
+	 * @return the meta object for the container reference '<em>Team</em>'.
 	 * @see eSport.Player#getTeam()
 	 * @see #getPlayer()
 	 * @generated
@@ -1244,10 +1354,10 @@ public interface ESportPackage extends EPackage {
 	EClass getCoach();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Coach#getTeam <em>Team</em>}'.
+	 * Returns the meta object for the container reference '{@link eSport.Coach#getTeam <em>Team</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Team</em>'.
+	 * @return the meta object for the container reference '<em>Team</em>'.
 	 * @see eSport.Coach#getTeam()
 	 * @see #getCoach()
 	 * @generated
@@ -1537,10 +1647,10 @@ public interface ESportPackage extends EPackage {
 	EAttribute getPerson_Description();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.Person#getCapacities <em>Capacities</em>}'.
+	 * Returns the meta object for the containment reference list '{@link eSport.Person#getCapacities <em>Capacities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Capacities</em>'.
+	 * @return the meta object for the containment reference list '<em>Capacities</em>'.
 	 * @see eSport.Person#getCapacities()
 	 * @see #getPerson()
 	 * @generated
@@ -1699,10 +1809,10 @@ public interface ESportPackage extends EPackage {
 	EAttribute getTeam_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.Team#getPlayers <em>Players</em>}'.
+	 * Returns the meta object for the containment reference list '{@link eSport.Team#getPlayers <em>Players</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Players</em>'.
+	 * @return the meta object for the containment reference list '<em>Players</em>'.
 	 * @see eSport.Team#getPlayers()
 	 * @see #getTeam()
 	 * @generated
@@ -1710,10 +1820,10 @@ public interface ESportPackage extends EPackage {
 	EReference getTeam_Players();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Team#getCoach <em>Coach</em>}'.
+	 * Returns the meta object for the containment reference '{@link eSport.Team#getCoach <em>Coach</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Coach</em>'.
+	 * @return the meta object for the containment reference '<em>Coach</em>'.
 	 * @see eSport.Team#getCoach()
 	 * @see #getTeam()
 	 * @generated
@@ -1797,10 +1907,10 @@ public interface ESportPackage extends EPackage {
 	EClass getMatch();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Match#getGroup <em>Group</em>}'.
+	 * Returns the meta object for the container reference '{@link eSport.Match#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Group</em>'.
+	 * @return the meta object for the container reference '<em>Group</em>'.
 	 * @see eSport.Match#getGroup()
 	 * @see #getMatch()
 	 * @generated
@@ -1808,10 +1918,10 @@ public interface ESportPackage extends EPackage {
 	EReference getMatch_Group();
 
 	/**
-	 * Returns the meta object for the reference '{@link eSport.Match#getFinalstage <em>Finalstage</em>}'.
+	 * Returns the meta object for the container reference '{@link eSport.Match#getFinalstage <em>Finalstage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Finalstage</em>'.
+	 * @return the meta object for the container reference '<em>Finalstage</em>'.
 	 * @see eSport.Match#getFinalstage()
 	 * @see #getMatch()
 	 * @generated
@@ -1884,10 +1994,10 @@ public interface ESportPackage extends EPackage {
 	EReference getGroup_Groupstage();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.Group#getMatchs <em>Matchs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link eSport.Group#getMatchs <em>Matchs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Matchs</em>'.
+	 * @return the meta object for the containment reference list '<em>Matchs</em>'.
 	 * @see eSport.Group#getMatchs()
 	 * @see #getGroup()
 	 * @generated
@@ -2003,10 +2113,10 @@ public interface ESportPackage extends EPackage {
 	EClass getFinalStage();
 
 	/**
-	 * Returns the meta object for the reference list '{@link eSport.FinalStage#getMatchs <em>Matchs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link eSport.FinalStage#getMatchs <em>Matchs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Matchs</em>'.
+	 * @return the meta object for the containment reference list '<em>Matchs</em>'.
 	 * @see eSport.FinalStage#getMatchs()
 	 * @see #getFinalStage()
 	 * @generated
@@ -2090,6 +2200,104 @@ public interface ESportPackage extends EPackage {
 	EReference getQualification_LeagueFrom();
 
 	/**
+	 * Returns the meta object for the attribute '{@link eSport.Qualification#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see eSport.Qualification#getName()
+	 * @see #getQualification()
+	 * @generated
+	 */
+	EAttribute getQualification_Name();
+
+	/**
+	 * Returns the meta object for class '{@link eSport.Root <em>Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Root</em>'.
+	 * @see eSport.Root
+	 * @generated
+	 */
+	EClass getRoot();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Root#getZones <em>Zones</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Zones</em>'.
+	 * @see eSport.Root#getZones()
+	 * @see #getRoot()
+	 * @generated
+	 */
+	EReference getRoot_Zones();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Root#getLeagues <em>Leagues</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Leagues</em>'.
+	 * @see eSport.Root#getLeagues()
+	 * @see #getRoot()
+	 * @generated
+	 */
+	EReference getRoot_Leagues();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Root#getTournaments <em>Tournaments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tournaments</em>'.
+	 * @see eSport.Root#getTournaments()
+	 * @see #getRoot()
+	 * @generated
+	 */
+	EReference getRoot_Tournaments();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Root#getTeams <em>Teams</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Teams</em>'.
+	 * @see eSport.Root#getTeams()
+	 * @see #getRoot()
+	 * @generated
+	 */
+	EReference getRoot_Teams();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Root#getPersons <em>Persons</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Persons</em>'.
+	 * @see eSport.Root#getPersons()
+	 * @see #getRoot()
+	 * @generated
+	 */
+	EReference getRoot_Persons();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Root#getQualifications <em>Qualifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Qualifications</em>'.
+	 * @see eSport.Root#getQualifications()
+	 * @see #getRoot()
+	 * @generated
+	 */
+	EReference getRoot_Qualifications();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link eSport.Root#getCountries <em>Countries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Countries</em>'.
+	 * @see eSport.Root#getCountries()
+	 * @see #getRoot()
+	 * @generated
+	 */
+	EReference getRoot_Countries();
+
+	/**
 	 * Returns the meta object for enum '{@link eSport.CapacityType <em>Capacity Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2140,6 +2348,16 @@ public interface ESportPackage extends EPackage {
 	EEnum getMatchType();
 
 	/**
+	 * Returns the meta object for enum '{@link eSport.Season <em>Season</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Season</em>'.
+	 * @see eSport.Season
+	 * @generated
+	 */
+	EEnum getSeason();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2181,7 +2399,7 @@ public interface ESportPackage extends EPackage {
 		EAttribute PLAYER__POSITION = eINSTANCE.getPlayer_Position();
 
 		/**
-		 * The meta object literal for the '<em><b>Team</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Team</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2199,7 +2417,7 @@ public interface ESportPackage extends EPackage {
 		EClass COACH = eINSTANCE.getCoach();
 
 		/**
-		 * The meta object literal for the '<em><b>Team</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Team</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2423,7 +2641,7 @@ public interface ESportPackage extends EPackage {
 		EAttribute PERSON__DESCRIPTION = eINSTANCE.getPerson_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Capacities</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Capacities</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2549,7 +2767,7 @@ public interface ESportPackage extends EPackage {
 		EAttribute TEAM__NAME = eINSTANCE.getTeam_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Players</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Players</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2557,7 +2775,7 @@ public interface ESportPackage extends EPackage {
 		EReference TEAM__PLAYERS = eINSTANCE.getTeam_Players();
 
 		/**
-		 * The meta object literal for the '<em><b>Coach</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coach</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2623,7 +2841,7 @@ public interface ESportPackage extends EPackage {
 		EClass MATCH = eINSTANCE.getMatch();
 
 		/**
-		 * The meta object literal for the '<em><b>Group</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Group</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2631,7 +2849,7 @@ public interface ESportPackage extends EPackage {
 		EReference MATCH__GROUP = eINSTANCE.getMatch_Group();
 
 		/**
-		 * The meta object literal for the '<em><b>Finalstage</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Finalstage</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2689,7 +2907,7 @@ public interface ESportPackage extends EPackage {
 		EReference GROUP__GROUPSTAGE = eINSTANCE.getGroup_Groupstage();
 
 		/**
-		 * The meta object literal for the '<em><b>Matchs</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Matchs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2781,7 +2999,7 @@ public interface ESportPackage extends EPackage {
 		EClass FINAL_STAGE = eINSTANCE.getFinalStage();
 
 		/**
-		 * The meta object literal for the '<em><b>Matchs</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Matchs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2847,6 +3065,80 @@ public interface ESportPackage extends EPackage {
 		EReference QUALIFICATION__LEAGUE_FROM = eINSTANCE.getQualification_LeagueFrom();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUALIFICATION__NAME = eINSTANCE.getQualification_Name();
+
+		/**
+		 * The meta object literal for the '{@link eSport.impl.RootImpl <em>Root</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.impl.RootImpl
+		 * @see eSport.impl.ESportPackageImpl#getRoot()
+		 * @generated
+		 */
+		EClass ROOT = eINSTANCE.getRoot();
+
+		/**
+		 * The meta object literal for the '<em><b>Zones</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT__ZONES = eINSTANCE.getRoot_Zones();
+
+		/**
+		 * The meta object literal for the '<em><b>Leagues</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT__LEAGUES = eINSTANCE.getRoot_Leagues();
+
+		/**
+		 * The meta object literal for the '<em><b>Tournaments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT__TOURNAMENTS = eINSTANCE.getRoot_Tournaments();
+
+		/**
+		 * The meta object literal for the '<em><b>Teams</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT__TEAMS = eINSTANCE.getRoot_Teams();
+
+		/**
+		 * The meta object literal for the '<em><b>Persons</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT__PERSONS = eINSTANCE.getRoot_Persons();
+
+		/**
+		 * The meta object literal for the '<em><b>Qualifications</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT__QUALIFICATIONS = eINSTANCE.getRoot_Qualifications();
+
+		/**
+		 * The meta object literal for the '<em><b>Countries</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT__COUNTRIES = eINSTANCE.getRoot_Countries();
+
+		/**
 		 * The meta object literal for the '{@link eSport.CapacityType <em>Capacity Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2895,6 +3187,16 @@ public interface ESportPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum MATCH_TYPE = eINSTANCE.getMatchType();
+
+		/**
+		 * The meta object literal for the '{@link eSport.Season <em>Season</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see eSport.Season
+		 * @see eSport.impl.ESportPackageImpl#getSeason()
+		 * @generated
+		 */
+		EEnum SEASON = eINSTANCE.getSeason();
 
 	}
 

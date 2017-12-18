@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,26 +38,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
-	/**
-	 * The cached value of the '{@link #getGroup() <em>Group</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGroup()
-	 * @generated
-	 * @ordered
-	 */
-	protected Group group;
-
-	/**
-	 * The cached value of the '{@link #getFinalstage() <em>Finalstage</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinalstage()
-	 * @generated
-	 * @ordered
-	 */
-	protected FinalStage finalstage;
-
 	/**
 	 * The cached value of the '{@link #getTeamWinner() <em>Team Winner</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -142,24 +123,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 */
 	public Group getGroup() {
-		if (group != null && group.eIsProxy()) {
-			InternalEObject oldGroup = (InternalEObject)group;
-			group = (Group)eResolveProxy(oldGroup);
-			if (group != oldGroup) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.MATCH__GROUP, oldGroup, group));
-			}
-		}
-		return group;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Group basicGetGroup() {
-		return group;
+		if (eContainerFeatureID() != ESportPackage.MATCH__GROUP) return null;
+		return (Group)eInternalContainer();
 	}
 
 	/**
@@ -168,12 +133,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 */
 	public NotificationChain basicSetGroup(Group newGroup, NotificationChain msgs) {
-		Group oldGroup = group;
-		group = newGroup;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__GROUP, oldGroup, newGroup);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newGroup, ESportPackage.MATCH__GROUP, msgs);
 		return msgs;
 	}
 
@@ -183,10 +143,12 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 */
 	public void setGroup(Group newGroup) {
-		if (newGroup != group) {
+		if (newGroup != eInternalContainer() || (eContainerFeatureID() != ESportPackage.MATCH__GROUP && newGroup != null)) {
+			if (EcoreUtil.isAncestor(this, newGroup))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (group != null)
-				msgs = ((InternalEObject)group).eInverseRemove(this, ESportPackage.GROUP__MATCHS, Group.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newGroup != null)
 				msgs = ((InternalEObject)newGroup).eInverseAdd(this, ESportPackage.GROUP__MATCHS, Group.class, msgs);
 			msgs = basicSetGroup(newGroup, msgs);
@@ -202,24 +164,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 */
 	public FinalStage getFinalstage() {
-		if (finalstage != null && finalstage.eIsProxy()) {
-			InternalEObject oldFinalstage = (InternalEObject)finalstage;
-			finalstage = (FinalStage)eResolveProxy(oldFinalstage);
-			if (finalstage != oldFinalstage) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.MATCH__FINALSTAGE, oldFinalstage, finalstage));
-			}
-		}
-		return finalstage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FinalStage basicGetFinalstage() {
-		return finalstage;
+		if (eContainerFeatureID() != ESportPackage.MATCH__FINALSTAGE) return null;
+		return (FinalStage)eInternalContainer();
 	}
 
 	/**
@@ -228,12 +174,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 */
 	public NotificationChain basicSetFinalstage(FinalStage newFinalstage, NotificationChain msgs) {
-		FinalStage oldFinalstage = finalstage;
-		finalstage = newFinalstage;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.MATCH__FINALSTAGE, oldFinalstage, newFinalstage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newFinalstage, ESportPackage.MATCH__FINALSTAGE, msgs);
 		return msgs;
 	}
 
@@ -243,10 +184,12 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 */
 	public void setFinalstage(FinalStage newFinalstage) {
-		if (newFinalstage != finalstage) {
+		if (newFinalstage != eInternalContainer() || (eContainerFeatureID() != ESportPackage.MATCH__FINALSTAGE && newFinalstage != null)) {
+			if (EcoreUtil.isAncestor(this, newFinalstage))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (finalstage != null)
-				msgs = ((InternalEObject)finalstage).eInverseRemove(this, ESportPackage.FINAL_STAGE__MATCHS, FinalStage.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newFinalstage != null)
 				msgs = ((InternalEObject)newFinalstage).eInverseAdd(this, ESportPackage.FINAL_STAGE__MATCHS, FinalStage.class, msgs);
 			msgs = basicSetFinalstage(newFinalstage, msgs);
@@ -427,12 +370,12 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ESportPackage.MATCH__GROUP:
-				if (group != null)
-					msgs = ((InternalEObject)group).eInverseRemove(this, ESportPackage.GROUP__MATCHS, Group.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetGroup((Group)otherEnd, msgs);
 			case ESportPackage.MATCH__FINALSTAGE:
-				if (finalstage != null)
-					msgs = ((InternalEObject)finalstage).eInverseRemove(this, ESportPackage.FINAL_STAGE__MATCHS, FinalStage.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetFinalstage((FinalStage)otherEnd, msgs);
 			case ESportPackage.MATCH__TEAM_WINNER:
 				if (teamWinner != null)
@@ -472,14 +415,28 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ESportPackage.MATCH__GROUP:
+				return eInternalContainer().eInverseRemove(this, ESportPackage.GROUP__MATCHS, Group.class, msgs);
+			case ESportPackage.MATCH__FINALSTAGE:
+				return eInternalContainer().eInverseRemove(this, ESportPackage.FINAL_STAGE__MATCHS, FinalStage.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ESportPackage.MATCH__GROUP:
-				if (resolve) return getGroup();
-				return basicGetGroup();
+				return getGroup();
 			case ESportPackage.MATCH__FINALSTAGE:
-				if (resolve) return getFinalstage();
-				return basicGetFinalstage();
+				return getFinalstage();
 			case ESportPackage.MATCH__TEAM_WINNER:
 				if (resolve) return getTeamWinner();
 				return basicGetTeamWinner();
@@ -563,9 +520,9 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ESportPackage.MATCH__GROUP:
-				return group != null;
+				return getGroup() != null;
 			case ESportPackage.MATCH__FINALSTAGE:
-				return finalstage != null;
+				return getFinalstage() != null;
 			case ESportPackage.MATCH__TEAM_WINNER:
 				return teamWinner != null;
 			case ESportPackage.MATCH__TEAM_LOSER:

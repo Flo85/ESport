@@ -67,15 +67,6 @@ public interface ESportFactory extends EFactory {
 	Capacity createCapacity();
 
 	/**
-	 * Returns a new object of class '<em>Person</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Person</em>'.
-	 * @generated
-	 */
-	Person createPerson();
-
-	/**
 	 * Returns a new object of class '<em>Country</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +137,15 @@ public interface ESportFactory extends EFactory {
 	 * @generated
 	 */
 	Qualification createQualification();
+
+	/**
+	 * Returns a new object of class '<em>Root</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Root</em>'.
+	 * @generated
+	 */
+	Root createRoot();
 
 	/**
 	 * Returns the package supported by this factory.

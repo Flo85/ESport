@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,16 +50,6 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * @ordered
 	 */
 	protected Position position = POSITION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getTeam() <em>Team</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTeam()
-	 * @generated
-	 * @ordered
-	 */
-	protected Team team;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,24 +97,8 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * @generated
 	 */
 	public Team getTeam() {
-		if (team != null && team.eIsProxy()) {
-			InternalEObject oldTeam = (InternalEObject)team;
-			team = (Team)eResolveProxy(oldTeam);
-			if (team != oldTeam) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.PLAYER__TEAM, oldTeam, team));
-			}
-		}
-		return team;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Team basicGetTeam() {
-		return team;
+		if (eContainerFeatureID() != ESportPackage.PLAYER__TEAM) return null;
+		return (Team)eInternalContainer();
 	}
 
 	/**
@@ -132,12 +107,7 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * @generated
 	 */
 	public NotificationChain basicSetTeam(Team newTeam, NotificationChain msgs) {
-		Team oldTeam = team;
-		team = newTeam;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.PLAYER__TEAM, oldTeam, newTeam);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newTeam, ESportPackage.PLAYER__TEAM, msgs);
 		return msgs;
 	}
 
@@ -147,10 +117,12 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * @generated
 	 */
 	public void setTeam(Team newTeam) {
-		if (newTeam != team) {
+		if (newTeam != eInternalContainer() || (eContainerFeatureID() != ESportPackage.PLAYER__TEAM && newTeam != null)) {
+			if (EcoreUtil.isAncestor(this, newTeam))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (team != null)
-				msgs = ((InternalEObject)team).eInverseRemove(this, ESportPackage.TEAM__PLAYERS, Team.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTeam != null)
 				msgs = ((InternalEObject)newTeam).eInverseAdd(this, ESportPackage.TEAM__PLAYERS, Team.class, msgs);
 			msgs = basicSetTeam(newTeam, msgs);
@@ -169,8 +141,8 @@ public class PlayerImpl extends PersonImpl implements Player {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ESportPackage.PLAYER__TEAM:
-				if (team != null)
-					msgs = ((InternalEObject)team).eInverseRemove(this, ESportPackage.TEAM__PLAYERS, Team.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTeam((Team)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -196,13 +168,26 @@ public class PlayerImpl extends PersonImpl implements Player {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ESportPackage.PLAYER__TEAM:
+				return eInternalContainer().eInverseRemove(this, ESportPackage.TEAM__PLAYERS, Team.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ESportPackage.PLAYER__POSITION:
 				return getPosition();
 			case ESportPackage.PLAYER__TEAM:
-				if (resolve) return getTeam();
-				return basicGetTeam();
+				return getTeam();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -254,7 +239,7 @@ public class PlayerImpl extends PersonImpl implements Player {
 			case ESportPackage.PLAYER__POSITION:
 				return position != POSITION_EDEFAULT;
 			case ESportPackage.PLAYER__TEAM:
-				return team != null;
+				return getTeam() != null;
 		}
 		return super.eIsSet(featureID);
 	}

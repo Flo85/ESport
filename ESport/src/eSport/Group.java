@@ -54,7 +54,7 @@ public interface Group extends EObject {
 	void setGroupstage(GroupStage value);
 
 	/**
-	 * Returns the value of the '<em><b>Matchs</b></em>' reference list.
+	 * Returns the value of the '<em><b>Matchs</b></em>' containment reference list.
 	 * The list contents are of type {@link eSport.Match}.
 	 * It is bidirectional and its opposite is '{@link eSport.Match#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
@@ -63,10 +63,10 @@ public interface Group extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Matchs</em>' reference list.
+	 * @return the value of the '<em>Matchs</em>' containment reference list.
 	 * @see eSport.ESportPackage#getGroup_Matchs()
 	 * @see eSport.Match#getGroup
-	 * @model opposite="group"
+	 * @model opposite="group" containment="true"
 	 * @generated
 	 */
 	EList<Match> getMatchs();

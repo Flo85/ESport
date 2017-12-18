@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Match extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Group</b></em>' reference.
+	 * Returns the value of the '<em><b>Group</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link eSport.Group#getMatchs <em>Matchs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -35,27 +35,27 @@ public interface Match extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Group</em>' reference.
+	 * @return the value of the '<em>Group</em>' container reference.
 	 * @see #setGroup(Group)
 	 * @see eSport.ESportPackage#getMatch_Group()
 	 * @see eSport.Group#getMatchs
-	 * @model opposite="matchs"
+	 * @model opposite="matchs" transient="false"
 	 * @generated
 	 */
 	Group getGroup();
 
 	/**
-	 * Sets the value of the '{@link eSport.Match#getGroup <em>Group</em>}' reference.
+	 * Sets the value of the '{@link eSport.Match#getGroup <em>Group</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Group</em>' reference.
+	 * @param value the new value of the '<em>Group</em>' container reference.
 	 * @see #getGroup()
 	 * @generated
 	 */
 	void setGroup(Group value);
 
 	/**
-	 * Returns the value of the '<em><b>Finalstage</b></em>' reference.
+	 * Returns the value of the '<em><b>Finalstage</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link eSport.FinalStage#getMatchs <em>Matchs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -63,20 +63,20 @@ public interface Match extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Finalstage</em>' reference.
+	 * @return the value of the '<em>Finalstage</em>' container reference.
 	 * @see #setFinalstage(FinalStage)
 	 * @see eSport.ESportPackage#getMatch_Finalstage()
 	 * @see eSport.FinalStage#getMatchs
-	 * @model opposite="matchs"
+	 * @model opposite="matchs" transient="false"
 	 * @generated
 	 */
 	FinalStage getFinalstage();
 
 	/**
-	 * Sets the value of the '{@link eSport.Match#getFinalstage <em>Finalstage</em>}' reference.
+	 * Sets the value of the '{@link eSport.Match#getFinalstage <em>Finalstage</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Finalstage</em>' reference.
+	 * @param value the new value of the '<em>Finalstage</em>' container reference.
 	 * @see #getFinalstage()
 	 * @generated
 	 */

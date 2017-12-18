@@ -136,6 +136,7 @@ public interface League extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Season</b></em>' attribute.
+	 * The literals are from the enumeration {@link eSport.Season}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Season</em>' attribute isn't clear,
@@ -143,22 +144,24 @@ public interface League extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Season</em>' attribute.
-	 * @see #setSeason(String)
+	 * @see eSport.Season
+	 * @see #setSeason(Season)
 	 * @see eSport.ESportPackage#getLeague_Season()
 	 * @model
 	 * @generated
 	 */
-	String getSeason();
+	Season getSeason();
 
 	/**
 	 * Sets the value of the '{@link eSport.League#getSeason <em>Season</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Season</em>' attribute.
+	 * @see eSport.Season
 	 * @see #getSeason()
 	 * @generated
 	 */
-	void setSeason(String value);
+	void setSeason(Season value);
 
 	/**
 	 * Returns the value of the '<em><b>Groupstage</b></em>' containment reference.

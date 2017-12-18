@@ -62,7 +62,6 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 			case ESportPackage.TOURNAMENT: return createTournament();
 			case ESportPackage.LEAGUE: return createLeague();
 			case ESportPackage.CAPACITY: return createCapacity();
-			case ESportPackage.PERSON: return createPerson();
 			case ESportPackage.COUNTRY: return createCountry();
 			case ESportPackage.ZONE: return createZone();
 			case ESportPackage.TEAM: return createTeam();
@@ -71,6 +70,7 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 			case ESportPackage.GROUP_STAGE: return createGroupStage();
 			case ESportPackage.FINAL_STAGE: return createFinalStage();
 			case ESportPackage.QUALIFICATION: return createQualification();
+			case ESportPackage.ROOT: return createRoot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -94,6 +94,8 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 				return createGroupStageTypeFromString(eDataType, initialValue);
 			case ESportPackage.MATCH_TYPE:
 				return createMatchTypeFromString(eDataType, initialValue);
+			case ESportPackage.SEASON:
+				return createSeasonFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -117,6 +119,8 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 				return convertGroupStageTypeToString(eDataType, instanceValue);
 			case ESportPackage.MATCH_TYPE:
 				return convertMatchTypeToString(eDataType, instanceValue);
+			case ESportPackage.SEASON:
+				return convertSeasonToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -170,16 +174,6 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	public Capacity createCapacity() {
 		CapacityImpl capacity = new CapacityImpl();
 		return capacity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Person createPerson() {
-		PersonImpl person = new PersonImpl();
-		return person;
 	}
 
 	/**
@@ -260,6 +254,16 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	public Qualification createQualification() {
 		QualificationImpl qualification = new QualificationImpl();
 		return qualification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Root createRoot() {
+		RootImpl root = new RootImpl();
+		return root;
 	}
 
 	/**
@@ -359,6 +363,26 @@ public class ESportFactoryImpl extends EFactoryImpl implements ESportFactory {
 	 * @generated
 	 */
 	public String convertMatchTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Season createSeasonFromString(EDataType eDataType, String initialValue) {
+		Season result = Season.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSeasonToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

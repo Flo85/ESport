@@ -6,6 +6,7 @@ import eSport.ESportPackage;
 import eSport.GroupStage;
 import eSport.League;
 import eSport.Qualification;
+import eSport.Season;
 import eSport.Zone;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
@@ -117,7 +118,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SEASON_EDEFAULT = null;
+	protected static final Season SEASON_EDEFAULT = Season.SPRING;
 
 	/**
 	 * The cached value of the '{@link #getSeason() <em>Season</em>}' attribute.
@@ -127,7 +128,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * @generated
 	 * @ordered
 	 */
-	protected String season = SEASON_EDEFAULT;
+	protected Season season = SEASON_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getGroupstage() <em>Groupstage</em>}' containment reference.
@@ -296,7 +297,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSeason() {
+	public Season getSeason() {
 		return season;
 	}
 
@@ -305,9 +306,9 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSeason(String newSeason) {
-		String oldSeason = season;
-		season = newSeason;
+	public void setSeason(Season newSeason) {
+		Season oldSeason = season;
+		season = newSeason == null ? SEASON_EDEFAULT : newSeason;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.LEAGUE__SEASON, oldSeason, season));
 	}
@@ -457,7 +458,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 				setYear((Integer)newValue);
 				return;
 			case ESportPackage.LEAGUE__SEASON:
-				setSeason((String)newValue);
+				setSeason((Season)newValue);
 				return;
 			case ESportPackage.LEAGUE__GROUPSTAGE:
 				setGroupstage((GroupStage)newValue);
@@ -520,7 +521,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 			case ESportPackage.LEAGUE__YEAR:
 				return year != YEAR_EDEFAULT;
 			case ESportPackage.LEAGUE__SEASON:
-				return SEASON_EDEFAULT == null ? season != null : !SEASON_EDEFAULT.equals(season);
+				return season != SEASON_EDEFAULT;
 			case ESportPackage.LEAGUE__GROUPSTAGE:
 				return groupstage != null;
 			case ESportPackage.LEAGUE__QUALIFIES_FOR:

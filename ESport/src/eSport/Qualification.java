@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Qualification#getTournamentFrom <em>Tournament From</em>}</li>
  *   <li>{@link eSport.Qualification#getTournamentTo <em>Tournament To</em>}</li>
  *   <li>{@link eSport.Qualification#getLeagueFrom <em>League From</em>}</li>
+ *   <li>{@link eSport.Qualification#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getQualification()
@@ -106,5 +107,31 @@ public interface Qualification extends EObject {
 	 * @generated
 	 */
 	void setLeagueFrom(League value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see eSport.ESportPackage#getQualification_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link eSport.Qualification#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Qualification

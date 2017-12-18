@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Person#getName <em>Name</em>}</li>
  *   <li>{@link eSport.Person#getAge <em>Age</em>}</li>
  *   <li>{@link eSport.Person#getDescription <em>Description</em>}</li>
- *   <li>{@link eSport.Person#getCapacities <em>Capacities</em>}</li>
  *   <li>{@link eSport.Person#getCountry <em>Country</em>}</li>
+ *   <li>{@link eSport.Person#getCapacities <em>Capacities</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getPerson()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Person extends EObject {
@@ -106,7 +106,7 @@ public interface Person extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Capacities</b></em>' reference list.
+	 * Returns the value of the '<em><b>Capacities</b></em>' containment reference list.
 	 * The list contents are of type {@link eSport.Capacity}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -114,9 +114,9 @@ public interface Person extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Capacities</em>' reference list.
+	 * @return the value of the '<em>Capacities</em>' containment reference list.
 	 * @see eSport.ESportPackage#getPerson_Capacities()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Capacity> getCapacities();

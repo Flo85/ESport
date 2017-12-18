@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -34,16 +35,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link eSport.impl.FinalStageImpl#getMatchs <em>Matchs</em>}</li>
- *   <li>{@link eSport.impl.FinalStageImpl#getTeams <em>Teams</em>}</li>
  *   <li>{@link eSport.impl.FinalStageImpl#getTournament <em>Tournament</em>}</li>
  *   <li>{@link eSport.impl.FinalStageImpl#getMaxNbGames <em>Max Nb Games</em>}</li>
+ *   <li>{@link eSport.impl.FinalStageImpl#getTeams <em>Teams</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FinalStageImpl extends MinimalEObjectImpl.Container implements FinalStage {
 	/**
-	 * The cached value of the '{@link #getMatchs() <em>Matchs</em>}' reference list.
+	 * The cached value of the '{@link #getMatchs() <em>Matchs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMatchs()
@@ -51,16 +52,6 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 	 * @ordered
 	 */
 	protected EList<Match> matchs;
-
-	/**
-	 * The cached value of the '{@link #getTeams() <em>Teams</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTeams()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Team> teams;
 
 	/**
 	 * The default value of the '{@link #getMaxNbGames() <em>Max Nb Games</em>}' attribute.
@@ -81,6 +72,16 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 	 * @ordered
 	 */
 	protected int maxNbGames = MAX_NB_GAMES_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTeams() <em>Teams</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTeams()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Team> teams;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,7 +109,7 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 	 */
 	public EList<Match> getMatchs() {
 		if (matchs == null) {
-			matchs = new EObjectWithInverseResolvingEList<Match>(Match.class, this, ESportPackage.FINAL_STAGE__MATCHS, ESportPackage.MATCH__FINALSTAGE);
+			matchs = new EObjectContainmentWithInverseEList<Match>(Match.class, this, ESportPackage.FINAL_STAGE__MATCHS, ESportPackage.MATCH__FINALSTAGE);
 		}
 		return matchs;
 	}
@@ -198,12 +199,12 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 		switch (featureID) {
 			case ESportPackage.FINAL_STAGE__MATCHS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMatchs()).basicAdd(otherEnd, msgs);
-			case ESportPackage.FINAL_STAGE__TEAMS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeams()).basicAdd(otherEnd, msgs);
 			case ESportPackage.FINAL_STAGE__TOURNAMENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTournament((Tournament)otherEnd, msgs);
+			case ESportPackage.FINAL_STAGE__TEAMS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeams()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -218,10 +219,10 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 		switch (featureID) {
 			case ESportPackage.FINAL_STAGE__MATCHS:
 				return ((InternalEList<?>)getMatchs()).basicRemove(otherEnd, msgs);
-			case ESportPackage.FINAL_STAGE__TEAMS:
-				return ((InternalEList<?>)getTeams()).basicRemove(otherEnd, msgs);
 			case ESportPackage.FINAL_STAGE__TOURNAMENT:
 				return basicSetTournament(null, msgs);
+			case ESportPackage.FINAL_STAGE__TEAMS:
+				return ((InternalEList<?>)getTeams()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -250,12 +251,12 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 		switch (featureID) {
 			case ESportPackage.FINAL_STAGE__MATCHS:
 				return getMatchs();
-			case ESportPackage.FINAL_STAGE__TEAMS:
-				return getTeams();
 			case ESportPackage.FINAL_STAGE__TOURNAMENT:
 				return getTournament();
 			case ESportPackage.FINAL_STAGE__MAX_NB_GAMES:
 				return getMaxNbGames();
+			case ESportPackage.FINAL_STAGE__TEAMS:
+				return getTeams();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -273,15 +274,15 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 				getMatchs().clear();
 				getMatchs().addAll((Collection<? extends Match>)newValue);
 				return;
-			case ESportPackage.FINAL_STAGE__TEAMS:
-				getTeams().clear();
-				getTeams().addAll((Collection<? extends Team>)newValue);
-				return;
 			case ESportPackage.FINAL_STAGE__TOURNAMENT:
 				setTournament((Tournament)newValue);
 				return;
 			case ESportPackage.FINAL_STAGE__MAX_NB_GAMES:
 				setMaxNbGames((Integer)newValue);
+				return;
+			case ESportPackage.FINAL_STAGE__TEAMS:
+				getTeams().clear();
+				getTeams().addAll((Collection<? extends Team>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -298,14 +299,14 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 			case ESportPackage.FINAL_STAGE__MATCHS:
 				getMatchs().clear();
 				return;
-			case ESportPackage.FINAL_STAGE__TEAMS:
-				getTeams().clear();
-				return;
 			case ESportPackage.FINAL_STAGE__TOURNAMENT:
 				setTournament((Tournament)null);
 				return;
 			case ESportPackage.FINAL_STAGE__MAX_NB_GAMES:
 				setMaxNbGames(MAX_NB_GAMES_EDEFAULT);
+				return;
+			case ESportPackage.FINAL_STAGE__TEAMS:
+				getTeams().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -321,12 +322,12 @@ public class FinalStageImpl extends MinimalEObjectImpl.Container implements Fina
 		switch (featureID) {
 			case ESportPackage.FINAL_STAGE__MATCHS:
 				return matchs != null && !matchs.isEmpty();
-			case ESportPackage.FINAL_STAGE__TEAMS:
-				return teams != null && !teams.isEmpty();
 			case ESportPackage.FINAL_STAGE__TOURNAMENT:
 				return getTournament() != null;
 			case ESportPackage.FINAL_STAGE__MAX_NB_GAMES:
 				return maxNbGames != MAX_NB_GAMES_EDEFAULT;
+			case ESportPackage.FINAL_STAGE__TEAMS:
+				return teams != null && !teams.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eSport.Team#getZone <em>Zone</em>}</li>
  *   <li>{@link eSport.Team#getGroups <em>Groups</em>}</li>
  *   <li>{@link eSport.Team#getChampionshipPoints <em>Championship Points</em>}</li>
- *   <li>{@link eSport.Team#getFinalstages <em>Finalstages</em>}</li>
  *   <li>{@link eSport.Team#getMatchsWon <em>Matchs Won</em>}</li>
  *   <li>{@link eSport.Team#getMatchsLost <em>Matchs Lost</em>}</li>
+ *   <li>{@link eSport.Team#getFinalstages <em>Finalstages</em>}</li>
  * </ul>
  *
  * @see eSport.ESportPackage#getTeam()
@@ -58,7 +58,7 @@ public interface Team extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Players</b></em>' reference list.
+	 * Returns the value of the '<em><b>Players</b></em>' containment reference list.
 	 * The list contents are of type {@link eSport.Player}.
 	 * It is bidirectional and its opposite is '{@link eSport.Player#getTeam <em>Team</em>}'.
 	 * <!-- begin-user-doc -->
@@ -67,16 +67,16 @@ public interface Team extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Players</em>' reference list.
+	 * @return the value of the '<em>Players</em>' containment reference list.
 	 * @see eSport.ESportPackage#getTeam_Players()
 	 * @see eSport.Player#getTeam
-	 * @model opposite="team"
+	 * @model opposite="team" containment="true"
 	 * @generated
 	 */
 	EList<Player> getPlayers();
 
 	/**
-	 * Returns the value of the '<em><b>Coach</b></em>' reference.
+	 * Returns the value of the '<em><b>Coach</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link eSport.Coach#getTeam <em>Team</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -84,20 +84,20 @@ public interface Team extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Coach</em>' reference.
+	 * @return the value of the '<em>Coach</em>' containment reference.
 	 * @see #setCoach(Coach)
 	 * @see eSport.ESportPackage#getTeam_Coach()
 	 * @see eSport.Coach#getTeam
-	 * @model opposite="team"
+	 * @model opposite="team" containment="true"
 	 * @generated
 	 */
 	Coach getCoach();
 
 	/**
-	 * Sets the value of the '{@link eSport.Team#getCoach <em>Coach</em>}' reference.
+	 * Sets the value of the '{@link eSport.Team#getCoach <em>Coach</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Coach</em>' reference.
+	 * @param value the new value of the '<em>Coach</em>' containment reference.
 	 * @see #getCoach()
 	 * @generated
 	 */

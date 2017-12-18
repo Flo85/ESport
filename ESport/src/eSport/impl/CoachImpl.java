@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,16 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class CoachImpl extends PersonImpl implements Coach {
-	/**
-	 * The cached value of the '{@link #getTeam() <em>Team</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTeam()
-	 * @generated
-	 * @ordered
-	 */
-	protected Team team;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -63,24 +54,8 @@ public class CoachImpl extends PersonImpl implements Coach {
 	 * @generated
 	 */
 	public Team getTeam() {
-		if (team != null && team.eIsProxy()) {
-			InternalEObject oldTeam = (InternalEObject)team;
-			team = (Team)eResolveProxy(oldTeam);
-			if (team != oldTeam) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ESportPackage.COACH__TEAM, oldTeam, team));
-			}
-		}
-		return team;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Team basicGetTeam() {
-		return team;
+		if (eContainerFeatureID() != ESportPackage.COACH__TEAM) return null;
+		return (Team)eInternalContainer();
 	}
 
 	/**
@@ -89,12 +64,7 @@ public class CoachImpl extends PersonImpl implements Coach {
 	 * @generated
 	 */
 	public NotificationChain basicSetTeam(Team newTeam, NotificationChain msgs) {
-		Team oldTeam = team;
-		team = newTeam;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ESportPackage.COACH__TEAM, oldTeam, newTeam);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newTeam, ESportPackage.COACH__TEAM, msgs);
 		return msgs;
 	}
 
@@ -104,10 +74,12 @@ public class CoachImpl extends PersonImpl implements Coach {
 	 * @generated
 	 */
 	public void setTeam(Team newTeam) {
-		if (newTeam != team) {
+		if (newTeam != eInternalContainer() || (eContainerFeatureID() != ESportPackage.COACH__TEAM && newTeam != null)) {
+			if (EcoreUtil.isAncestor(this, newTeam))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (team != null)
-				msgs = ((InternalEObject)team).eInverseRemove(this, ESportPackage.TEAM__COACH, Team.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTeam != null)
 				msgs = ((InternalEObject)newTeam).eInverseAdd(this, ESportPackage.TEAM__COACH, Team.class, msgs);
 			msgs = basicSetTeam(newTeam, msgs);
@@ -126,8 +98,8 @@ public class CoachImpl extends PersonImpl implements Coach {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ESportPackage.COACH__TEAM:
-				if (team != null)
-					msgs = ((InternalEObject)team).eInverseRemove(this, ESportPackage.TEAM__COACH, Team.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTeam((Team)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -153,11 +125,24 @@ public class CoachImpl extends PersonImpl implements Coach {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ESportPackage.COACH__TEAM:
+				return eInternalContainer().eInverseRemove(this, ESportPackage.TEAM__COACH, Team.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ESportPackage.COACH__TEAM:
-				if (resolve) return getTeam();
-				return basicGetTeam();
+				return getTeam();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,7 +186,7 @@ public class CoachImpl extends PersonImpl implements Coach {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ESportPackage.COACH__TEAM:
-				return team != null;
+				return getTeam() != null;
 		}
 		return super.eIsSet(featureID);
 	}

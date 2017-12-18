@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link eSport.impl.QualificationImpl#getTournamentFrom <em>Tournament From</em>}</li>
  *   <li>{@link eSport.impl.QualificationImpl#getTournamentTo <em>Tournament To</em>}</li>
  *   <li>{@link eSport.impl.QualificationImpl#getLeagueFrom <em>League From</em>}</li>
+ *   <li>{@link eSport.impl.QualificationImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,6 +62,26 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 	 * @ordered
 	 */
 	protected League leagueFrom;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -266,6 +287,27 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ESportPackage.QUALIFICATION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -320,6 +362,8 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 			case ESportPackage.QUALIFICATION__LEAGUE_FROM:
 				if (resolve) return getLeagueFrom();
 				return basicGetLeagueFrom();
+			case ESportPackage.QUALIFICATION__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -340,6 +384,9 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 				return;
 			case ESportPackage.QUALIFICATION__LEAGUE_FROM:
 				setLeagueFrom((League)newValue);
+				return;
+			case ESportPackage.QUALIFICATION__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -362,6 +409,9 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 			case ESportPackage.QUALIFICATION__LEAGUE_FROM:
 				setLeagueFrom((League)null);
 				return;
+			case ESportPackage.QUALIFICATION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -380,8 +430,26 @@ public class QualificationImpl extends MinimalEObjectImpl.Container implements Q
 				return tournamentTo != null;
 			case ESportPackage.QUALIFICATION__LEAGUE_FROM:
 				return leagueFrom != null;
+			case ESportPackage.QUALIFICATION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //QualificationImpl
